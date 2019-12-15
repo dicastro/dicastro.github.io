@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Diego Castro | Pandora Box</title>
+    <link>https://dicastro.github.io/post/</link>
+      <atom:link href="https://dicastro.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sat, 14 Dec 2019 15:39:00 +0000</lastBuildDate>
+    <image>
+      <url>https://dicastro.github.io/img/logo.png</url>
+      <title>Posts</title>
+      <link>https://dicastro.github.io/post/</link>
+    </image>
+    
+    <item>
+      <title>Hola Mundo!</title>
+      <link>https://dicastro.github.io/post/how-to-create-a-site-with-gohugo/</link>
+      <pubDate>Sat, 14 Dec 2019 15:39:00 +0000</pubDate>
+      <guid>https://dicastro.github.io/post/how-to-create-a-site-with-gohugo/</guid>
+      <description>&lt;p&gt;Este es mi primer post de prueba.&lt;/p&gt;
+
+&lt;p&gt;La idea es utilizar este blog para escribir artículos sobre programación a modo de base de datos para posteriores consultas. Serán artículos sobre algún tema nuevo que esté investigando o artículos sobre cómo resolver problemas a los que me haya enfrentado.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dicastro.github.io/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dicastro.github.io/posts/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

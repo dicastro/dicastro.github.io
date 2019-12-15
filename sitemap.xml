@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://dicastro.github.io/</loc>
+    <lastmod>2019-12-14T15:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/post/how-to-create-a-site-with-gohugo/</loc>
+    <lastmod>2019-12-14T15:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/post/</loc>
+    <lastmod>2019-12-14T15:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/tags/data-science/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/tags/deep-learning/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/project/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/project/sistema-de-deteccion-de-baches-en-el-asfalto/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/tags/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/tags/yolo/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/authors/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/posts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dicastro.github.io/publication_types/</loc>
+  </url>
+  
+</urlset>
