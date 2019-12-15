@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.1">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -251,13 +251,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Diego Castro | Pandora Box"></a>
+    </div>
     
 
     
@@ -265,6 +266,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Diego Castro | Pandora Box"></a>
+    </div>
     
 
     
@@ -618,10 +625,8 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Este proyecto ha sido realizado como <strong>trabajo final del <a href="https://www.u-tad.com/estudios/master-en-data-science-big-data/" target="_blank">máster en Data Science &amp; Big Data</a></strong> de la <a href="https://www.u-tad.com/" target="_blank">U-TAD</a>.</p>
-
+      <p>Este proyecto ha sido realizado como <strong>trabajo final del <a href="https://www.u-tad.com/estudios/master-en-data-science-big-data/">máster en Data Science &amp; Big Data</a></strong> de la <a href="https://www.u-tad.com/">U-TAD</a>.</p>
 <p>Para el desarrollo del proyecto se han realizado las siguientes tareas:</p>
-
 <ul>
 <li>Estudio del estado del arte en lo que a la detección de objetos se refiere</li>
 <li>Desarrollo de una implementación de <em>YOLO V3</em> y de <em>YOLO V3 Lite</em> en python</li>
@@ -630,9 +635,7 @@
 <li>Transformación del modelo entrenado para ser explotado en un dispositivo móvil</li>
 <li>Desarrollo de aplicación android para la explotación del modelo</li>
 </ul>
-
 <p>El proyecto se compone de los siguientes repositorios:</p>
-
 <table>
 <thead>
 <tr>
@@ -640,31 +643,26 @@
 <th>Descripción</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td><a href="https://github.com/dicastro/tfm" target="_blank">tfm</a></td>
+<td><a href="https://github.com/dicastro/tfm">tfm</a></td>
 <td>Contiene una implementación en python de YOLO V3 y YOLO V3 Lite</td>
 </tr>
-
 <tr>
-<td><a href="https://github.com/dicastro/tfm-android" target="_blank">tfm-android</a></td>
-<td>Contiene una aplicación móvil android para la explotación del modelo entrenado mediante el uso de <a href="https://www.tensorflow.org/lite" target="_blank">Tensor Flow Lite</a></td>
+<td><a href="https://github.com/dicastro/tfm-android">tfm-android</a></td>
+<td>Contiene una aplicación móvil android para la explotación del modelo entrenado mediante el uso de <a href="https://www.tensorflow.org/lite">Tensor Flow Lite</a></td>
 </tr>
-
 <tr>
-<td><a href="https://github.com/dicastro/tfm-doc" target="_blank">tfm-doc</a></td>
-<td>Contiene la <a href="https://github.com/dicastro/tfm-doc/raw/master/memoria.pdf" target="_blank">memoria del TFM</a></td>
+<td><a href="https://github.com/dicastro/tfm-doc">tfm-doc</a></td>
+<td>Contiene la <a href="https://github.com/dicastro/tfm-doc/raw/master/memoria.pdf">memoria del TFM</a></td>
 </tr>
 </tbody>
 </table>
-
 <p>Referencias:</p>
-
 <ul>
-<li>Las imágenes utilizadas para entrenar los modelos han sido obtenidas de <a href="https://www.kaggle.com/felipemuller5/nienaber-potholes-2-complex" target="_blank">kaggle</a></li>
-<li>La aplicación móvil se basa en un <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android" target="_blank">ejemplo de tensorflow lite</a></li>
-<li>La implementación de YOLO V3 es un fork de <a href="https://github.com/experiencor/keras-yolo3" target="_blank">este repositorio</a> y la implementación de YOLO V3 Lite está basada en <a href="https://github.com/qqwweee/keras-yolo3" target="_blank">este repositorio</a>. Se han unificado ambas implementaciones en una única, se han añadido más opciones de configuración de los modelos y se soportan más formatos de etiquetas de las imágenes</li>
+<li>Las imágenes utilizadas para entrenar los modelos han sido obtenidas de <a href="https://www.kaggle.com/felipemuller5/nienaber-potholes-2-complex">kaggle</a></li>
+<li>La aplicación móvil se basa en un <a href="https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android">ejemplo de tensorflow lite</a></li>
+<li>La implementación de YOLO V3 es un fork de <a href="https://github.com/experiencor/keras-yolo3">este repositorio</a> y la implementación de YOLO V3 Lite está basada en <a href="https://github.com/qqwweee/keras-yolo3">este repositorio</a>. Se han unificado ambas implementaciones en una única, se han añadido más opciones de configuración de los modelos y se soportan más formatos de etiquetas de las imágenes</li>
 </ul>
 
     </div>
@@ -890,7 +888,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -955,7 +953,7 @@
     
     
     
-    <script src="/js/academic.min.0e040a4c8b8532fc173c2fe4328906d0.js"></script>
+    <script src="/js/academic.min.600a2e440c16093e23e26e90951c4d4b.js"></script>
 
     
 
@@ -976,8 +974,6 @@
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-    Site icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a>.
 
     
     <span class="float-right" aria-hidden="true">
