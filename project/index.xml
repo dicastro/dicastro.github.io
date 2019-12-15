@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Diego Castro | Pandora Box</title>
-    <link>https://dicastro.github.io/project/</link>
-      <atom:link href="https://dicastro.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.diegocastroviadero.com/project/</link>
+      <atom:link href="https://www.diegocastroviadero.com/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sun, 29 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://dicastro.github.io/img/logo.png</url>
+      <url>https://www.diegocastroviadero.com/img/logo.png</url>
       <title>Projects</title>
-      <link>https://dicastro.github.io/project/</link>
+      <link>https://www.diegocastroviadero.com/project/</link>
     </image>
     
     <item>
       <title>Sistema de detección automática de baches en el asfalto a partir de imágenes</title>
-      <link>https://dicastro.github.io/project/sistema-de-deteccion-de-baches-en-el-asfalto/</link>
+      <link>https://www.diegocastroviadero.com/project/sistema-de-deteccion-de-baches-en-el-asfalto/</link>
       <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://dicastro.github.io/project/sistema-de-deteccion-de-baches-en-el-asfalto/</guid>
+      <guid>https://www.diegocastroviadero.com/project/sistema-de-deteccion-de-baches-en-el-asfalto/</guid>
       <description>&lt;p&gt;Este proyecto ha sido realizado como &lt;strong&gt;trabajo final del &lt;a href=&#34;https://www.u-tad.com/estudios/master-en-data-science-big-data/&#34;&gt;máster en Data Science &amp;amp; Big Data&lt;/a&gt;&lt;/strong&gt; de la &lt;a href=&#34;https://www.u-tad.com/&#34;&gt;U-TAD&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para el desarrollo del proyecto se han realizado las siguientes tareas:&lt;/p&gt;
 &lt;ul&gt;
@@ -61,9 +61,9 @@
     
     <item>
       <title></title>
-      <link>https://dicastro.github.io/projects/</link>
+      <link>https://www.diegocastroviadero.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://dicastro.github.io/projects/</guid>
+      <guid>https://www.diegocastroviadero.com/projects/</guid>
       <description></description>
     </item>
     
