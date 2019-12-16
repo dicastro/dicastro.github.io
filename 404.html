@@ -91,6 +91,42 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154684128-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           document.location = url;
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target);  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-154684128-1', { 'anonymize_ip': true });
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -439,7 +475,7 @@
   <h2>Recientes</h2>
   <ul>
     
-      <li><a href="/post/how-to-create-a-site-with-gohugo/">Hola Mundo!</a></li>
+      <li><a href="/post/hola-mundo/">Hola Mundo!</a></li>
     
       <li><a href="/project/sistema-de-deteccion-de-baches-en-el-asfalto/">Sistema de detección automática de baches en el asfalto a partir de imágenes</a></li>
     
