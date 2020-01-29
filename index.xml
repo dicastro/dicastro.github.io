@@ -5,7 +5,7 @@
     <link>https://www.diegocastroviadero.com/</link>
       <atom:link href="https://www.diegocastroviadero.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Diego Castro | Pandora Box</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sat, 14 Dec 2019 15:39:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Tue, 28 Jan 2020 18:34:00 +0000</lastBuildDate>
     <image>
       <url>https://www.diegocastroviadero.com/img/logo.png</url>
       <title>Diego Castro | Pandora Box</title>
@@ -13,12 +13,143 @@
     </image>
     
     <item>
+      <title>Cómo configurar un dominio propio de Google Domains en GitHub Pages y con HTTPS activado</title>
+      <link>https://www.diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</link>
+      <pubDate>Tue, 28 Jan 2020 18:34:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</guid>
+      <description>&lt;h2 id=&#34;prerequisitos&#34;&gt;Prerequisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tener un dominio en &lt;a href=&#34;https://domains.google.com/&#34;&gt;Google Domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tener un repositorio en &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; (ej: &lt;a href=&#34;https://github.com/dicastro/dicastro.github.io&#34;&gt;https://github.com/dicastro/dicastro.github.io&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Este repositorio no tiene por qué ser público, en mi caso se trata de un repositorio privado.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;pasos&#34;&gt;Pasos&lt;/h2&gt;
+&lt;h4 id=&#34;1---activa--github-pages-&#34;&gt;1 - Activa &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Para ello en la configuración del repositorio de &lt;em&gt;GitHub&lt;/em&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Activa &lt;em&gt;GitHub Pages&lt;/em&gt; seleccionando una rama desde la cuál se va a servir el contenido&lt;/li&gt;
+&lt;li&gt;Configura un &lt;em&gt;Custom Domain&lt;/em&gt; (ej: diegocastroviadero.com)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2---apunta-el-dominio-diegocastroviaderocom-a--github-pages-&#34;&gt;2 - Apunta el dominio (diegocastroviadero.com) a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;A&lt;/code&gt; apuntando a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;Datos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1h&lt;/td&gt;
+&lt;td&gt;185.199.108.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;185.199.109.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;185.199.110.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;185.199.111.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Si las IPs anteriores se han quedado desfasadas, podrás encontrar los valores actualizados &lt;a href=&#34;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3---apunta-el-subdominio-www-a--github-pages-&#34;&gt;3 - Apunta el subdominio &lt;code&gt;www&lt;/code&gt; a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;CNAME&lt;/code&gt; apuntando a la url de &lt;em&gt;GitHub Pages&lt;/em&gt; correspondiente al repositorio en cuestión (ej: dicastro.github.io)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;Datos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CNAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1h&lt;/td&gt;
+&lt;td&gt;dicastro.github.io&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;4---configura-https&#34;&gt;4 - Configura HTTPS&lt;/h4&gt;
+&lt;p&gt;Para ello en la configuración del repositorio de &lt;em&gt;GitHub&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fuerza el uso de HTTPS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Y en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;CAA&lt;/code&gt; permitiendo la emisión de certificados para el dominio (ej: diegocastroviadero.com) a la entidad emisora de certificados, que en el caso de &lt;em&gt;GitHub&lt;/em&gt; es &lt;em&gt;letsencrypt&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;Datos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CAA&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1h&lt;/td&gt;
+&lt;td&gt;0 issue &amp;ldquo;letsencrypt.org&amp;rdquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Para obtener el valor de la columna &lt;em&gt;Datos&lt;/em&gt; de la entrada de tipo &lt;code&gt;CAA&lt;/code&gt; se puede hacer uso de &lt;a href=&#34;https://sslmate.com/caa/&#34;&gt;esta utilidad&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;referencias&#34;&gt;Referencias&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&#34;&gt;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&#34;&gt;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hola Mundo!</title>
       <link>https://www.diegocastroviadero.com/post/hola-mundo/</link>
       <pubDate>Sat, 14 Dec 2019 15:39:00 +0000</pubDate>
       <guid>https://www.diegocastroviadero.com/post/hola-mundo/</guid>
       <description>&lt;p&gt;Este es mi primer post de prueba.&lt;/p&gt;
-&lt;p&gt;La idea es utilizar este blog para escribir artículos sobre programación a modo de base de datos para posteriores consultas. Serán artículos sobre algún tema nuevo que esté investigando o artículos sobre cómo resolver problemas a los que me haya enfrentado.&lt;/p&gt;
+&lt;p&gt;La idea es utilizar este blog para escribir artículos relacionados con algunos de mis intereses a modo de base de datos para posteriores consultas. Serán artículos sobre algún tema nuevo que esté investigando o artículos sobre cómo resolver problemas a los que me haya enfrentado.&lt;/p&gt;
 </description>
     </item>
     

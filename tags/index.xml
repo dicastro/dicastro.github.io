@@ -5,12 +5,36 @@
     <link>https://www.diegocastroviadero.com/tags/</link>
       <atom:link href="https://www.diegocastroviadero.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sun, 29 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Tue, 28 Jan 2020 18:34:00 +0000</lastBuildDate>
     <image>
       <url>https://www.diegocastroviadero.com/img/logo.png</url>
       <title>Tags</title>
       <link>https://www.diegocastroviadero.com/tags/</link>
     </image>
+    
+    <item>
+      <title>GitHub Pages</title>
+      <link>https://www.diegocastroviadero.com/tags/github-pages/</link>
+      <pubDate>Tue, 28 Jan 2020 18:34:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Domains</title>
+      <link>https://www.diegocastroviadero.com/tags/google-domains/</link>
+      <pubDate>Tue, 28 Jan 2020 18:34:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/tags/google-domains/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s encrypt</title>
+      <link>https://www.diegocastroviadero.com/tags/lets-encrypt/</link>
+      <pubDate>Tue, 28 Jan 2020 18:34:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data Science</title>
