@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</loc>
-    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
+    <loc>https://www.diegocastroviadero.com/post/como-quiero-organizar-mi-almacenamiento/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.diegocastroviadero.com/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/unraid/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
   </url>
   
@@ -24,16 +44,6 @@
   
   <url>
     <loc>https://www.diegocastroviadero.com/tags/lets-encrypt/</loc>
-    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.diegocastroviadero.com/post/</loc>
-    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.diegocastroviadero.com/tags/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
   </url>
   
