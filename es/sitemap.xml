@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/como-quiero-organizar-mi-almacenamiento/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/unraid/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</loc>
+    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/github-pages/</loc>
+    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/google-domains/</loc>
+    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/lets-encrypt/</loc>
+    <lastmod>2020-01-29T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/hola-mundo/</loc>
+    <lastmod>2019-12-14T15:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/data-science/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/deep-learning/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/project/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/project/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tags/yolo/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/authors/admin/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/authors/admin/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/authors/admin/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/cv/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/cv/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/cv/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/experiences/admin/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/experiences/admin/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/experiences/admin/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/posts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/authors/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/experiences/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/experiences/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/experiences/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/publication_types/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.diegocastroviadero.com/en/publication_types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.diegocastroviadero.com/publication_types/"
+                />
+  </url>
+  
+</urlset>
