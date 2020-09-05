@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides | Diego Castro | Pandora Box</title>
+    <link>https://www.diegocastroviadero.com/slides/</link>
+      <atom:link href="https://www.diegocastroviadero.com/slides/index.xml" rel="self" type="application/rss+xml" />
+    <description>Slides</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Fri, 14 Aug 2020 05:50:00 +0000</lastBuildDate>
+    <item>
+      <title>TimeHammer</title>
+      <link>https://www.diegocastroviadero.com/slides/timehammer/</link>
+      <pubDate>Fri, 14 Aug 2020 05:50:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/slides/timehammer/</guid>
+      <description>&lt;h1 id=&#34;timehammer&#34;&gt;TimeHammer&lt;/h1&gt;
+&lt;h3 id=&#34;sistema-de-automatización-de-fichajes&#34;&gt;Sistema de automatización de fichajes&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
+&lt;p&gt;El principal objetivo es &lt;strong&gt;simplificar el proceso de fichajes&lt;/strong&gt; de una empresa&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Un objetivo secundario es el de utilizar tecnologías para &lt;strong&gt;seguir creciendo como profesional de la Informática&lt;/strong&gt;.&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Contexto
+    - Recordar cada una de las acciones a realizar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Para ciertas acciones hay que escribir un texto adicional &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Login requerido para realizar cada una de las acciones &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Intranet no adaptada al uso desde el móvil &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Requisitos
+    - Fichaje lo más fiel posible a la realidad &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - El usuario no tiene que recordar realizar ninguna acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Las acciones manuales por parte del usuario serán muy sencillas &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Se tendrán en cuenta los fichajes realizados directamente en la intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;solución&#34;&gt;Solución&lt;/h2&gt;
+&lt;p&gt;La solución desarrollada es un &lt;strong&gt;chatbot de telegram&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TimeHammerBot&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;https://t.me/TimeHammerBot&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Lo único necesario para podeer utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería &lt;em&gt;Telegram&lt;/em&gt;. También compatible con la versión web de &lt;em&gt;Telegram&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Funcionamiento
+    #### Trabajador
+    1. Registro en el chatbot &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Hora de inicio y final de la jornada &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Hora de inicio y final de la comida &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Lugar de trabajo &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    1. Se olvida de volver a fichar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Funcionamiento
+    ### Chatbot
+    1. Llegada la hora de una determinada acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Comprueba el estado del trabajador &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Si procede, notifica al trabajador &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    1. El trabajador recibe la notificación &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Confirma/Postpone/Cancela la acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    2. El chatbot recibe la respuesta &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Ejecuta la acción en la intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Se queda a la espera &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Ignora la acción hasta el día siguiente &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Ejemplo 1
+    Trabajador &gt;&gt; lunes | comienzo jornada | 8:00
+    - A las 8:00 recibirá un mensaje preguntándole si ya ha comenzado a trabajar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Debajo del mensaje aparecerán una serie de botones: Sí, +5m, +10m, +15m, +20m, No &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Con solo pulsar un botón el chatbot actuará en consecuencia &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Ejemplo 2
+    Trabajador &gt;&gt; vienes | comienzo jornada | 8:00
+    - Comienza a trabajar antes de lo normal &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Fichaje manual en la intranet a las 7:30 &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - A las 8:00 el chatbot comprobará el estado y verá que no tiene nada que notificar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;extra-i&#34;&gt;Extra I&lt;/h2&gt;
+&lt;p&gt;El chatbot busca &lt;strong&gt;molestar lo menos posible&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fines de semana&lt;/li&gt;
+&lt;li&gt;Festivos
+&lt;ul&gt;
+&lt;li&gt;Ciudad de trabajo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Vacaciones&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;extra-ii&#34;&gt;Extra II&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;No se persiste la contraseña&lt;/strong&gt; de los usuarios, se guardan en memoria.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Si se reinicia el contenedor que tiene en memoria las contraseñas, se enviará un mensaje a los trabajadores para que vuelvan a introducir su contraseña.&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;demo&#34;&gt;DEMO&lt;/h1&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Objetivos cumplidos
+    - Todos los fichajes requerirán de una confirmación y serán fieles a la realidad &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - El usuario ya no tiene que recordar realizar una determinada acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - La única acción manual del usuario consiste en pulsar un botón&lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - El usuario ya no tiene que conectarse a una intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Al recuperar siempre el estado del usuario de la intranet, se posibilita combinar el uso de ambos sistemas para situaciones excepcionales &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;stack-tecnológico&#34;&gt;Stack tecnológico&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Quarkus&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;li&gt;Telegram Bots&lt;/li&gt;
+&lt;li&gt;EDA&lt;/li&gt;
+&lt;li&gt;Kafka&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Chatbots I
+    - Los chatbots son una herramienta muy potente que permite aplicar un nuevo enfoque para resolver ciertos problemas &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Los usuarios están cada vez más acostumbrados a las aplicaciones de mensajería &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Tienen peor fama de la que se merecen porque muchos de los que se hacen llamar chatbots, hacen un mal (o nulo) procesamiento del lenguaje natural y realmente se trata de una sucesión de condiciones lógicas que ejecutan ciertas acciones &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Chatbots II
+    - Con este proyecto se muestra otro enfoque de chatbot, basado en el uso de comandos. Que mediante el uso de diferentes teclados que se adaptan al tipo de respuesta que esperas del usuario, mejora mucho la usabilidad
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;caso-de-uso&#34;&gt;Caso de Uso&lt;/h2&gt;
+&lt;p&gt;Nuevo canal de comunicación para la realización de guardias&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

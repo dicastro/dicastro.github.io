@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science | Diego Castro | Pandora Box</title>
+    <link>https://www.diegocastroviadero.com/tag/data-science/</link>
+      <atom:link href="https://www.diegocastroviadero.com/tag/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data Science</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sun, 29 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Data Science</title>
+      <link>https://www.diegocastroviadero.com/tag/data-science/</link>
+    </image>
+    
+    <item>
+      <title>Sistema de detección automática de baches en el asfalto a partir de imágenes</title>
+      <link>https://www.diegocastroviadero.com/project/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes/</link>
+      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/project/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes/</guid>
+      <description>&lt;p&gt;Este proyecto ha sido realizado como &lt;strong&gt;trabajo final del 
+&lt;a href=&#34;https://www.u-tad.com/estudios/master-en-data-science-big-data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;máster en Data Science &amp;amp; Big Data&lt;/a&gt;&lt;/strong&gt; de la 
+&lt;a href=&#34;https://www.u-tad.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;U-TAD&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para el desarrollo del proyecto se han realizado las siguientes tareas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Estudio del estado del arte en lo que a la detección de objetos se refiere&lt;/li&gt;
+&lt;li&gt;Desarrollo de una implementación de &lt;em&gt;YOLO V3&lt;/em&gt; y de &lt;em&gt;YOLO V3 Lite&lt;/em&gt; en python&lt;/li&gt;
+&lt;li&gt;Búsqueda y preparación de un conjunto de imágenes&lt;/li&gt;
+&lt;li&gt;Entrenamiento de varios modelos &lt;em&gt;YOLO&lt;/em&gt; con distintas configuraciones y realización de estudio comparativo de los resultados obtenidos&lt;/li&gt;
+&lt;li&gt;Transformación del modelo entrenado para ser explotado en un dispositivo móvil&lt;/li&gt;
+&lt;li&gt;Desarrollo de aplicación android para la explotación del modelo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El proyecto se compone de los siguientes repositorios:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Repositorio&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://github.com/dicastro/tfm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tfm&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contiene una implementación en python de YOLO V3 y YOLO V3 Lite&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://github.com/dicastro/tfm-android&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tfm-android&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contiene una aplicación móvil android para la explotación del modelo entrenado mediante el uso de 
+&lt;a href=&#34;https://www.tensorflow.org/lite&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tensor Flow Lite&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://github.com/dicastro/tfm-doc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tfm-doc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contiene la 
+&lt;a href=&#34;https://github.com/dicastro/tfm-doc/raw/master/memoria.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;memoria del TFM&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Referencias:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Las imágenes utilizadas para entrenar los modelos han sido obtenidas de 
+&lt;a href=&#34;https://www.kaggle.com/felipemuller5/nienaber-potholes-2-complex&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;kaggle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La aplicación móvil se basa en un 
+&lt;a href=&#34;https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ejemplo de tensorflow lite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La implementación de YOLO V3 es un fork de 
+&lt;a href=&#34;https://github.com/experiencor/keras-yolo3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este repositorio&lt;/a&gt; y la implementación de YOLO V3 Lite está basada en 
+&lt;a href=&#34;https://github.com/qqwweee/keras-yolo3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este repositorio&lt;/a&gt;. Se han unificado ambas implementaciones en una única, se han añadido más opciones de configuración de los modelos y se soportan más formatos de etiquetas de las imágenes&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

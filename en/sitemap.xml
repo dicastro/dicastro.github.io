@@ -3,16 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.diegocastroviadero.com/en/authors/admin/</loc>
+    <loc>https://www.diegocastroviadero.com/en/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.diegocastroviadero.com/authors/admin/"
+                href="https://www.diegocastroviadero.com/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.diegocastroviadero.com/en/authors/admin/"
+                href="https://www.diegocastroviadero.com/en/author/"
                 />
   </url>
   

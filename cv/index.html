@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="es-es">
+<!DOCTYPE html><html lang="es-es" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.3">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
 
+  
+
+  
   
 
   
@@ -21,7 +23,7 @@
   
   
 
-  <meta name="author" content="Diego Castro">
+  
 
   
   
@@ -46,11 +48,14 @@
 
   
   
+
+  
+  
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -62,8 +67,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -74,12 +79,135 @@
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
   
 
   
@@ -102,13 +230,15 @@
       dataLayer.push(arguments);
   }
 
-  function trackOutboundLink(url) {
+  function trackOutboundLink(url, target) {
     gtag('event', 'click', {
          'event_category': 'outbound',
          'event_label': url,
          'transport_type': 'beacon',
          'event_callback': function () {
-           document.location = url;
+           if (target !== '_blank') {
+             document.location = url;
+           }
          }
     });
     console.debug("Outbound link clicked: " + url);
@@ -118,7 +248,7 @@
     if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
       return;
     }
-    trackOutboundLink(event.target);  
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
   }
 
   gtag('js', new Date());
@@ -133,13 +263,19 @@
 
 
   
+  
+
+  
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://www.diegocastroviadero.com/cv/">
 
+  
+  
+  
   
   
   
@@ -153,8 +289,8 @@
   <meta property="og:site_name" content="Diego Castro | Pandora Box">
   <meta property="og:url" content="https://www.diegocastroviadero.com/cv/">
   <meta property="og:title" content=" | Diego Castro | Pandora Box">
-  <meta property="og:description" content=""><meta property="og:image" content="https://www.diegocastroviadero.com/img/logo.png">
-  <meta property="twitter:image" content="https://www.diegocastroviadero.com/img/logo.png"><meta property="og:locale" content="es-es">
+  <meta property="og:description" content=""><meta property="og:image" content="https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="es-es">
   
     
     
@@ -168,10 +304,14 @@
 
 
   
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
   window.addEventListener("load", function(){
     window.cookieconsent.initialise({
       "palette": {
@@ -189,10 +329,10 @@
         "message": "Este sitio web utiliza cookies para garantizarle una mejor experiencia.",
         "dismiss": "Entendido!",
         "link": "Más información",
-        "href": "https://cookies.insites.com"
+        "href": "https://www.cookiesandyou.com"
       }
     })});
-</script>
+  </script>
 
 
 
@@ -206,7 +346,8 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -224,7 +365,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -242,12 +383,23 @@
 
   
 
+
+
+
+
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Diego Castro | Pandora Box"></a>
+      <a class="navbar-brand" href="/">Diego Castro | Pandora Box</a>
     </div>
     
 
@@ -260,7 +412,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Diego Castro | Pandora Box"></a>
+      <a class="navbar-brand" href="/">Diego Castro | Pandora Box</a>
     </div>
     
 
@@ -461,27 +613,39 @@
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
       </li>
       
 
       
       <li class="nav-item dropdown i18n-dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">Español</span>
-        </a>
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">Español</span></a>
         <div class="dropdown-menu">
-          <div class="dropdown-item i18n-active font-weight-bold">
+          <div class="dropdown-item dropdown-item-active">
             <span>Español</span>
           </div>
           
-          <a class="dropdown-item" href="/en/cv/">
+          <a class="dropdown-item" href="https://www.diegocastroviadero.com/en/cv/">
             <span>English</span>
           </a>
           
@@ -495,20 +659,22 @@
 </nav>
 
 
+
   
 <span class="js-widget-page d-none"></span>
 
 
 
 
+
+  
+  
+  
   
 
 
 
 
-
-
-
   
   
   
@@ -519,6 +685,9 @@
 
   
 
+  
+
+  
   
 
   
@@ -558,7 +727,7 @@
 
       
       
-      <img class="portrait" src="/authors/admin/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="avatar avatar-circle" src="/author/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
       
 
       <div class="portrait-title">
@@ -726,6 +895,7 @@
 <li>Machine learning avanzado: <em>Sistemas de recomendación</em>, <em>NLP</em>, <em>Topic Modeling</em>, <em>Algoritmos aproximados</em>, <em>Sentiment Analysis</em></li>
 <li>Visualización de datos: <code>Tableau</code>, <code>ggplot2</code>, <code>Bokeh</code>, <code>d3.js</code>, <code>CartoDB</code></li>
 </ul>
+
           </div>
 
           
@@ -741,11 +911,11 @@
 
 <div class="row">
   <div class="col-12 col-lg-12">
+
     
     
     
-    
-    
+
     
     
     
@@ -798,7 +968,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -811,62 +981,62 @@
                   <code>Java 8</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>PostgreSQL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Microservicios</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>REST</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Boot</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Docker</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Swarm</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>GlusterFS</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Python</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>NodeJS</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Git</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Scrum</code>
                 
@@ -878,7 +1048,7 @@
         </div>
       </div>
     </div>
-    
+
     
       <div class="page-break"></div>
     
@@ -904,7 +1074,7 @@
             </div>
             
             <div class="card-text">
-              <em>Locken</em> es una empresa de producto con un departamento de IT pequeño y en constante evolución. Al tratarse de un departamento de IT pequeño, mi rol en la empresa no ha sido fijo, ha ido cambiando a lo largo del tiempo según las necesidades. Las principales funciones que he desempeñado son:</p>
+              <p><em>Locken</em> es una empresa de producto con un departamento de IT pequeño y en constante evolución. Al tratarse de un departamento de IT pequeño, mi rol en la empresa no ha sido fijo, ha ido cambiando a lo largo del tiempo según las necesidades. Las principales funciones que he desempeñado son:</p>
 <ul>
 <li>Desarrollo de especificaciones técnicas</li>
 <li>Revisión de especificaciones funcionales</li>
@@ -914,6 +1084,7 @@
 <li>Revisión de código</li>
 <li>Referente técnico</li>
 </ul>
+
             
               
                 
@@ -934,32 +1105,32 @@
                       <code>Java 8</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring Boot</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>JUnit</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Selenium</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Jenkins</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Rancher</code>
                     
@@ -990,27 +1161,27 @@
                       <code>Java 8</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring Boot</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring Cloud</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Consul</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Rancher</code>
                     
@@ -1041,12 +1212,12 @@
                       <code>WSO2 Identity Server</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Rancher</code>
                     
@@ -1077,82 +1248,82 @@
                       <code>Microsoft Bot Framework</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Node.js</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Restify</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>IA</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>NLP</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Dialogflow</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Azure Bot Service</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Twilio</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>SMS</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>API REST</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring Boot</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring MVC</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring State Machine</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Redis</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker Compose</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Git</code>
                     
@@ -1183,27 +1354,27 @@
                       <code>Pentaho</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>PDI</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>ETL</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Pentaho BA</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>PostgreSQL</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Git</code>
                     
@@ -1234,22 +1405,22 @@
                       <code>Spring Boot</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Apache Camel</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>XML/RPC</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>API REST</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Git</code>
                     
@@ -1280,47 +1451,47 @@
                       <code>Spring Boot</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Java 8</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Spring MVC</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>JQuery</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Websockets</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Zuul</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Eureka</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Docker Compose</code>
                     
                       
-                        , 
+                        ,
                       
                       <code>Git</code>
                     
@@ -1355,7 +1526,7 @@
               
 
               
-              
+
               
             
             </div>
@@ -1364,7 +1535,7 @@
         </div>
       </div>
     </div>
-    
+
     
       <div class="page-break"></div>
     
@@ -1418,7 +1589,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -1431,57 +1602,57 @@
                   <code>Java 8</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spark</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Cassandra</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>REST</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Apache Camel</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Activiti</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Boot</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>DB2</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Git</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Scrum</code>
                 
@@ -1493,7 +1664,7 @@
         </div>
       </div>
     </div>
-    
+
     
     
     <div class="row cv">
@@ -1547,7 +1718,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -1560,67 +1731,67 @@
                   <code>Java 8</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>REST</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>AngularJS 1.5</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Angular Material</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Angular UI Router</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Gulp</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Bower</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Karma</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Jasmine</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Protractor</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Arquillian</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Git</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
@@ -1632,7 +1803,7 @@
         </div>
       </div>
     </div>
-    
+
     
     
     <div class="row cv">
@@ -1684,7 +1855,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -1697,72 +1868,72 @@
                   <code>Java 7</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JQuery</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Thymeleaf</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring MVC</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Security</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>LDAP</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Weblogic</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Hibernate</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SQL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Oracle</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Web Services</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SVN</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Jenkins</code>
                 
@@ -1774,7 +1945,7 @@
         </div>
       </div>
     </div>
-    
+
     
     
     <div class="row cv">
@@ -1828,7 +1999,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -1841,82 +2012,82 @@
                   <code>Java 6</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JQuery</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JSP</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Struts</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Batch</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Weblogic</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Hibernate</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SQL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Oracle</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>REST</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Web Services</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>DBUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SVN</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Jenkins</code>
                 
@@ -1928,7 +2099,7 @@
         </div>
       </div>
     </div>
-    
+
     
     
     <div class="row cv">
@@ -1978,7 +2149,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -1991,97 +2162,97 @@
                   <code>Java 6</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring MVC</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>REST</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Integración con Paypal</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Social</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Security</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Batch</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Apache Camel</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JSP</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>HTML</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JQuery</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>AngularJS</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Elasticsearch</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Spring Data</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JPA</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Hibernate</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>MySQL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Tomcat</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Git</code>
                 
@@ -2093,7 +2264,7 @@
         </div>
       </div>
     </div>
-    
+
     
       <div class="page-break"></div>
     
@@ -2147,7 +2318,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -2160,77 +2331,77 @@
                   <code>J2EE</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Struts</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JSP</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JSTL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Servlet</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JavaScript</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>CSS</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>EJB</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Web Services</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SVN</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Weblogic</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SQL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Oracle</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Hudson</code>
                 
@@ -2242,7 +2413,7 @@
         </div>
       </div>
     </div>
-    
+
     
     
     <div class="row cv">
@@ -2290,7 +2461,7 @@
                 </ul>
                 
               
-              
+
               
                 
 
@@ -2303,92 +2474,92 @@
                   <code>J2EE</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Struts</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Documentum</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JSP</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JSTL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Servlet</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JavaScript</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>CSS</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>EJB</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>MDB</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Web Services</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>JUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>DBUnit</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SVN</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Weblogic</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>SQL</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Oracle</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Maven</code>
                 
                   
-                    , 
+                    ,
                   
                   <code>Hudson</code>
                 
@@ -2400,12 +2571,13 @@
         </div>
       </div>
     </div>
-    
+
     
     
     
   </div>
 </div>
+
     </div>
   </section>
 
@@ -2415,29 +2587,25 @@
 
     
     
-
     
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.3/mermaid.min.js" integrity="" crossorigin="anonymous" title="mermaid"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
         
       
 
-      
-      
     
 
     
@@ -2448,6 +2616,11 @@
     
     
     <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
     
 
     
@@ -2463,7 +2636,8 @@
         'post': "Posts",
         'project': "Proyectos",
         'publication' : "Publicaciones",
-        'talk' : "Charlas"
+        'talk' : "Charlas",
+        'slides' : "Diapositivas"
         };
     </script>
     
@@ -2500,6 +2674,9 @@
 
     
     
+
+    
+    
     
     
     
@@ -2512,7 +2689,7 @@
     
     
     
-    <script src="/js/academic.min.600a2e440c16093e23e26e90951c4d4b.js"></script>
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
 
     
 
@@ -2526,14 +2703,25 @@
   <div class="container">
     <footer class="site-footer non-printable">
     
-  
+
     <p class="powered-by">
       
-  
-      Powered by the
-      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-  
+    </p>
+
+    
+    
+
+
+
+
+
+
+    <p class="powered-by">
+      
+      Published with
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+      
+
       Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>,  <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a>, <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>, <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a>, <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a>
 
       
@@ -2547,7 +2735,7 @@
       
     </p>
   </footer>
-  
+
   </div>
   
 

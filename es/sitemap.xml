@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.diegocastroviadero.com/post/como-quiero-organizar-mi-almacenamiento/</loc>
-    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.diegocastroviadero.com/</loc>
-    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+    <lastmod>2020-09-05T07:22:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -23,13 +18,48 @@
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/post/</loc>
-    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+    <loc>https://www.diegocastroviadero.com/slides/</loc>
+    <lastmod>2020-09-05T07:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/slides/timehammer/</loc>
+    <lastmod>2020-09-05T07:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tag/docker/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tag/eda/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tag/java/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tag/kafka/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/project/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tag/quarkus/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.diegocastroviadero.com/tags/</loc>
-    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -43,7 +73,27 @@
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/unraid/</loc>
+    <loc>https://www.diegocastroviadero.com/project/timehammer/</loc>
+    <lastmod>2020-09-05T07:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/como-automatizar-los-fichajes-de-mi-empresa/</loc>
+    <lastmod>2020-09-05T06:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/</loc>
+    <lastmod>2020-09-05T06:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/como-quiero-organizar-mi-almacenamiento/</loc>
+    <lastmod>2020-02-01T08:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/tag/unraid/</loc>
     <lastmod>2020-02-01T08:41:00+00:00</lastmod>
   </url>
   
@@ -53,17 +103,17 @@
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/github-pages/</loc>
+    <loc>https://www.diegocastroviadero.com/tag/github-pages/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/google-domains/</loc>
+    <loc>https://www.diegocastroviadero.com/tag/google-domains/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/lets-encrypt/</loc>
+    <loc>https://www.diegocastroviadero.com/tag/lets-encrypt/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
   </url>
   
@@ -73,17 +123,12 @@
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/data-science/</loc>
+    <loc>https://www.diegocastroviadero.com/tag/data-science/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/deep-learning/</loc>
-    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.diegocastroviadero.com/project/</loc>
+    <loc>https://www.diegocastroviadero.com/tag/deep-learning/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -93,21 +138,21 @@
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/tags/yolo/</loc>
+    <loc>https://www.diegocastroviadero.com/tag/yolo/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.diegocastroviadero.com/authors/admin/</loc>
+    <loc>https://www.diegocastroviadero.com/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.diegocastroviadero.com/en/authors/admin/"
+                href="https://www.diegocastroviadero.com/en/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.diegocastroviadero.com/authors/admin/"
+                href="https://www.diegocastroviadero.com/author/"
                 />
   </url>
   

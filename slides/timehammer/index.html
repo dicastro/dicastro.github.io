@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+  
+  
+
+  
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://www.diegocastroviadero.com/slides/timehammer/">
+
+  <title>TimeHammer | Diego Castro | Pandora Box</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous">
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/reveal_custom.min.css">
+
+  
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/css/print/pdf.css' : 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+</head>
+<body>
+
+  
+<div class="reveal">
+  <div class="slides">
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    <section>
+    
+      <h1 id="timehammer">TimeHammer</h1>
+<h3 id="sistema-de-automatización-de-fichajes">Sistema de automatización de fichajes</h3>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="objetivo">Objetivo</h2>
+<p>El principal objetivo es <strong>simplificar el proceso de fichajes</strong> de una empresa</p>
+<p><small>Un objetivo secundario es el de utilizar tecnologías para <strong>seguir creciendo como profesional de la Informática</strong>.</small></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Contexto
+    - Recordar cada una de las acciones a realizar <!-- .element: class="fragment" -->
+    - Para ciertas acciones hay que escribir un texto adicional <!-- .element: class="fragment" -->
+    - Login requerido para realizar cada una de las acciones <!-- .element: class="fragment" -->
+    - Intranet no adaptada al uso desde el móvil <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Requisitos
+    - Fichaje lo más fiel posible a la realidad <!-- .element: class="fragment" -->
+    - El usuario no tiene que recordar realizar ninguna acción <!-- .element: class="fragment" -->
+    - Las acciones manuales por parte del usuario serán muy sencillas <!-- .element: class="fragment" -->
+    - Se tendrán en cuenta los fichajes realizados directamente en la intranet <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="solución">Solución</h2>
+<p>La solución desarrollada es un <strong>chatbot de telegram</strong>:</p>
+<p><strong>TimeHammerBot</strong></p>
+<p>https://t.me/TimeHammerBot</p>
+<p><small>Lo único necesario para podeer utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería <em>Telegram</em>. También compatible con la versión web de <em>Telegram</em></small></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Funcionamiento
+    #### Trabajador
+    1. Registro en el chatbot <!-- .element: class="fragment" -->
+      - Hora de inicio y final de la jornada <!-- .element: class="fragment" -->
+      - Hora de inicio y final de la comida <!-- .element: class="fragment" -->
+      - Lugar de trabajo <!-- .element: class="fragment" -->
+    1. Se olvida de volver a fichar <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Funcionamiento
+    ### Chatbot
+    1. Llegada la hora de una determinada acción <!-- .element: class="fragment" -->
+      - Comprueba el estado del trabajador <!-- .element: class="fragment" -->
+      - Si procede, notifica al trabajador <!-- .element: class="fragment" -->
+    1. El trabajador recibe la notificación <!-- .element: class="fragment" -->
+      - Confirma/Postpone/Cancela la acción <!-- .element: class="fragment" -->
+    2. El chatbot recibe la respuesta <!-- .element: class="fragment" -->
+      - Ejecuta la acción en la intranet <!-- .element: class="fragment" -->
+      - Se queda a la espera <!-- .element: class="fragment" -->
+      - Ignora la acción hasta el día siguiente <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Ejemplo 1
+    Trabajador >> lunes | comienzo jornada | 8:00
+    - A las 8:00 recibirá un mensaje preguntándole si ya ha comenzado a trabajar <!-- .element: class="fragment" -->
+    - Debajo del mensaje aparecerán una serie de botones: Sí, +5m, +10m, +15m, +20m, No <!-- .element: class="fragment" -->
+    - Con solo pulsar un botón el chatbot actuará en consecuencia <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Ejemplo 2
+    Trabajador >> vienes | comienzo jornada | 8:00
+    - Comienza a trabajar antes de lo normal <!-- .element: class="fragment" -->
+    - Fichaje manual en la intranet a las 7:30 <!-- .element: class="fragment" -->
+    - A las 8:00 el chatbot comprobará el estado y verá que no tiene nada que notificar <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="extra-i">Extra I</h2>
+<p>El chatbot busca <strong>molestar lo menos posible</strong></p>
+<ul>
+<li>Fines de semana</li>
+<li>Festivos
+<ul>
+<li>Ciudad de trabajo</li>
+</ul>
+</li>
+<li>Vacaciones</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="extra-ii">Extra II</h2>
+<p><strong>No se persiste la contraseña</strong> de los usuarios, se guardan en memoria.</p>
+<p><small>Si se reinicia el contenedor que tiene en memoria las contraseñas, se enviará un mensaje a los trabajadores para que vuelvan a introducir su contraseña.</small></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="demo">DEMO</h1>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Objetivos cumplidos
+    - Todos los fichajes requerirán de una confirmación y serán fieles a la realidad <!-- .element: class="fragment" -->
+    - El usuario ya no tiene que recordar realizar una determinada acción <!-- .element: class="fragment" -->
+    - La única acción manual del usuario consiste en pulsar un botón<!-- .element: class="fragment" -->
+    - El usuario ya no tiene que conectarse a una intranet <!-- .element: class="fragment" -->
+    - Al recuperar siempre el estado del usuario de la intranet, se posibilita combinar el uso de ambos sistemas para situaciones excepcionales <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="stack-tecnológico">Stack tecnológico</h2>
+<ul>
+<li>Java</li>
+<li>Quarkus</li>
+<li>Docker</li>
+<li>Telegram Bots</li>
+<li>EDA</li>
+<li>Kafka</li>
+<li>PostgreSQL</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Chatbots I
+    - Los chatbots son una herramienta muy potente que permite aplicar un nuevo enfoque para resolver ciertos problemas <!-- .element: class="fragment" -->
+    - Los usuarios están cada vez más acostumbrados a las aplicaciones de mensajería <!-- .element: class="fragment" -->
+    - Tienen peor fama de la que se merecen porque muchos de los que se hacen llamar chatbots, hacen un mal (o nulo) procesamiento del lenguaje natural y realmente se trata de una sucesión de condiciones lógicas que ejecutan ciertas acciones <!-- .element: class="fragment" -->
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<section data-markdown>
+  <script type="text/template">
+    ## Chatbots II
+    - Con este proyecto se muestra otro enfoque de chatbot, basado en el uso de comandos. Que mediante el uso de diferentes teclados que se adaptan al tipo de respuesta que esperas del usuario, mejora mucho la usabilidad
+  </script>
+</section>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="caso-de-uso">Caso de Uso</h2>
+<p>Nuevo canal de comunicación para la realización de guardias</p>
+
+    </section>
+    
+
+    
+    
+  </div>
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+
+  <script>
+    window.revealPlugins = { dependencies: [
+      
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/zoom-js/zoom.js', async: true },
+      
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/math/math.js', async: true },
+      
+      { src: 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.8.0/plugin/print-pdf/print-pdf.js', async: true },
+      
+      { src: '\/js\/vendor\/reveal.js\/plugin\/notes\/notes.js', async: true }
+    ]};
+
+    let revealDefaults = { center: true, controls: true, history: true, progress: true, transition: 'slide', mouseWheel: true };
+    let revealOptions = Object.assign({}, revealDefaults, revealPlugins);
+    Reveal.initialize(revealOptions);
+  </script>
+
+</body>
+</html>

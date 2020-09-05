@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="es-es">
+<!DOCTYPE html><html lang="es-es" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.3">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
 
+  
+
+  
   
 
   
@@ -21,7 +23,7 @@
   
   
 
-  <meta name="author" content="Diego Castro">
+  
 
   
   
@@ -44,11 +46,14 @@
 
   
   
+
+  
+  
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -60,8 +65,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -72,12 +77,135 @@
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
   
 
   
@@ -100,13 +228,15 @@
       dataLayer.push(arguments);
   }
 
-  function trackOutboundLink(url) {
+  function trackOutboundLink(url, target) {
     gtag('event', 'click', {
          'event_category': 'outbound',
          'event_label': url,
          'transport_type': 'beacon',
          'event_callback': function () {
-           document.location = url;
+           if (target !== '_blank') {
+             document.location = url;
+           }
          }
     });
     console.debug("Outbound link clicked: " + url);
@@ -116,7 +246,7 @@
     if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
       return;
     }
-    trackOutboundLink(event.target);  
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
   }
 
   gtag('js', new Date());
@@ -131,13 +261,19 @@
 
 
   
+  
+
+  
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://www.diegocastroviadero.com/post/como-quiero-organizar-mi-almacenamiento/">
 
+  
+  
+  
   
   
   
@@ -174,8 +310,6 @@
 
 
 
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -193,17 +327,12 @@
   "datePublished": "2020-01-30T19:16:00Z",
   "dateModified": "2020-02-01T08:41:00Z",
   
-  "author": {
-    "@type": "Person",
-    "name": "Diego Castro"
-  },
-  
   "publisher": {
     "@type": "Organization",
     "name": "Diego Castro | Pandora Box",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.diegocastroviadero.com/img/logo.png"
+      "url": "https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Llevo ya un tiempo queriendo hacer una renovación de los equipos que tengo y ya de paso reorganizar mi solución para el almacenamiento. En este post plasmaré cómo me gustaría reorganizarlo todo."
@@ -216,10 +345,14 @@
 
 
   
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
   window.addEventListener("load", function(){
     window.cookieconsent.initialise({
       "palette": {
@@ -237,10 +370,10 @@
         "message": "Este sitio web utiliza cookies para garantizarle una mejor experiencia.",
         "dismiss": "Entendido!",
         "link": "Más información",
-        "href": "https://cookies.insites.com"
+        "href": "https://www.cookiesandyou.com"
       }
     })});
-</script>
+  </script>
 
 
 
@@ -254,7 +387,8 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -272,7 +406,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -290,12 +424,23 @@
 
   
 
+
+
+
+
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Diego Castro | Pandora Box"></a>
+      <a class="navbar-brand" href="/">Diego Castro | Pandora Box</a>
     </div>
     
 
@@ -308,7 +453,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Diego Castro | Pandora Box"></a>
+      <a class="navbar-brand" href="/">Diego Castro | Pandora Box</a>
     </div>
     
 
@@ -509,13 +654,26 @@
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
       </li>
       
 
@@ -525,6 +683,7 @@
 
   </div>
 </nav>
+
 
 
   <article class="article">
@@ -651,7 +810,7 @@
 <p>Quien realmente cumple con la función de <em>centro multimedia</em> es Plex Media Server, que está instalado en el NAS, y es quien me permite visualizar el contenido multimedia a través de la Smart TV y de los dispositivos móviles.</p>
 <p>Para la realización de <em>descargas</em> utilizo un cliente BitTorrent instalado en el NAS, que me permite controlarlo desde los dispositivos móviles.</p>
 <p>Lo que me gustaría es retirar algunos de los portátiles que tengo junto con el iMac y en su lugar comprarme un buen PC que sea potente y que me permita realizar proyectos personales de Data Science.</p>
-<h2 id="motivacin">Motivación</h2>
+<h2 id="motivación">Motivación</h2>
 <p>Una renovación del hardware no tendría por qué llevarme a un replanteamiento de la organización en lo que respecta al almacenamiento. Sin embargo, existen una serie de inconvenientes/mejoras pendientes que llevo arrastrando desde hace un tiempo y que son los verdaderos motivadores del cambio:</p>
 <ul>
 <li>En el iMac tengo configurado el TimeMachine para hacer los backups contra el NAS. Parece que no funciona muy bien, porque desde que lo configuré sale un aviso en el NAS indicando que hay datos erróneos en alguno de los volúmenes. Además, el iMac apenas lo utilizo y es uno de los equipos que quiero jubilar</li>
@@ -661,7 +820,7 @@
 <li>El QNAP funciona muy lento, las opciones de ampliación de sus recursos hardware son muy limitadas y además quiero ampliar sus funcionalidades (ej: añadirle un repositorio de código, poder hacer seguimiento de series y películas con couchpotato o alternativas similares, etc.)</li>
 </ul>
 <p>Así que aprovechando que voy a hacer cambios en el hardware y teniendo en cuenta todos los puntos anteriores he decidido hacer un cambio radical.</p>
-<h2 id="qu-me-gustara-tener">Qué me gustaría tener</h2>
+<h2 id="qué-me-gustaría-tener">Qué me gustaría tener</h2>
 <p>Me gustaría tener lo siguiente:</p>
 <ul>
 <li>Tener backups de las Raspberry PI de forma periódica y automática</li>
@@ -685,7 +844,9 @@
 <h2 id="alternativas">Alternativas</h2>
 <p>La primera disyuntiva a la que me enfrento es si comprar otro NAS ya montado (al estilo del QNAP) o montármelo yo mismo. La ventaja de comprar uno ya montado es que es &ldquo;enchufar y listo&rdquo;, con el inconveniente de que este tipo de NAS no son demasiado flexibles. La venjata de montarse un NAS es que son totalmente customizables y extensibles, la pega es que requieren de mucho tiempo de investigación, selección de componentes, montaje, configuración y selección de software.</p>
 <h3 id="nas-ya-montado">NAS ya montado</h3>
-<p>He descubierto que Synology tiene mejor integración con linux. He encontrado dos modelos que se ajustan a los requisitos: <a href="https://www.synology.com/es-es/products/DS918+">DS918+</a> y <a href="https://www.synology.com/es-es/products/DS1618+">DS1618+</a>.</p>
+<p>He descubierto que Synology tiene mejor integración con linux. He encontrado dos modelos que se ajustan a los requisitos: 
+<a href="https://www.synology.com/es-es/products/DS918&#43;" target="_blank" rel="noopener">DS918+</a> y 
+<a href="https://www.synology.com/es-es/products/DS1618&#43;" target="_blank" rel="noopener">DS1618+</a>.</p>
 <h4 id="ds918">DS918+</h4>
 <p>Cumple con casi todos los requisitos, la única excepción es la ampliación de recursos. Tiene 4 bahías y la posibilidad de comprar una extensión que permitiría añadir más discos. De serie viene con 4GB de RAM ampliables a 8GB, aunque en algún foro he leído que se le pueden meter 16GB (aunque esto está por comprobar). El procesador tiene 4 cores a 2.1GHz. Tiene una <em>app store</em> de aplicaciones que permite ampliar las funcionalidades del NAS y en caso de no encontrar alguna se podría usar Docker.</p>
 <p>Contras:</p>
@@ -705,7 +866,9 @@
 <li>lo veo justo de procesador para las funcionalidades que quiero que ofrezca</li>
 </ul>
 <h3 id="nas-diy">NAS DIY</h3>
-<p>He estado investigado diferentes alternativas de SO orientados a montar un NAS, y he encontrado que el más usado es <a href="https://www.freenas.org/">FreeNas</a>. También he encontrado otra alternativa que me gusta más: <a href="https://unraid.net/">unRaid</a>.</p>
+<p>He estado investigado diferentes alternativas de SO orientados a montar un NAS, y he encontrado que el más usado es 
+<a href="https://www.freenas.org/" target="_blank" rel="noopener">FreeNas</a>. También he encontrado otra alternativa que me gusta más: 
+<a href="https://unraid.net/" target="_blank" rel="noopener">unRaid</a>.</p>
 <p>Muchas de las funcionalidades que quiero cubrir no son ofrecidas directamente por esos SOs, sino que hay que instalar algunos plugins/aplicaciones/contenedores para cubrirlas.</p>
 <h4 id="freenas">FreeNas</h4>
 <p>Está basado en <em>FreeBSD</em> y soporta el sistema de ficheros <em>ZFS</em>, que por lo que he leído debe de ser muy bueno y solventa los inconvenientes de RAID.</p>
@@ -838,7 +1001,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="conclusin">Conclusión</h2>
+<h2 id="conclusión">Conclusión</h2>
 <p>Me da miedo de que me pase lo mismo que lo que me ha pasado con el QNAP: que me quede corto de recursos con el paso del tiempo y tener poco margen de maniobra. Se trata de dispositios con un coste elevado, como para tener que verse obligado a cambiarlo por el mero hecho de necesitar más RAM (con la inversión de tiempo que hay que realizar para hacer el cambio).</p>
 <p>Decididamente voy a optar por un <strong>NAS DIY</strong>, y concretamente por uno con <strong>unRaid</strong>. He visto unos cuantos análisis y videos de su funcionamiento y me ha gustado bastante. Creo que me convence más la idea de array de discos que la de montar un RAID.</p>
 <p>Además que creo que con un mismo equipo puedo cubrir las 2 necesidades: disponer de un PC potente y tener un NAS con más funcionalidades que el actual. En primer lugar compraré el PC que quería comprarme y le instalaré unRaid. Sin me gusta como funciona, le haré una ampliación de hardware. Si por lo que fuera no quedo contento con el resultado, el equipo me vale como PC y volveré a valorar qué hacer para el NAS.</p>
@@ -875,9 +1038,10 @@
 
 
 
+
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/unraid/">unRaid</a>
+  <a class="badge badge-light" href="/tag/unraid/">unRaid</a>
   
 </div>
 
@@ -940,29 +1104,31 @@
 
 
   
-
-
-
-
-
-
   
-  
+
+
+
+
+
   
     
-  
-  
-  <div class="media author-card content-widget-hr">
+    
     
       
-      <img class="portrait mr-3" src="/authors/admin/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
     
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_270x270_fill_q90_lanczos_center.jpg" alt="">
+      
 
-    <div class="media-body">
-      <h5 class="card-title"><a href="https://www.diegocastroviadero.com/">Diego Castro</a></h5>
-      <h6 class="card-subtitle">Ingeniero en Informática</h6>
-      <p class="card-text">Apasionado de la programación</p>
-      <ul class="network-icon" aria-hidden="true">
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://www.diegocastroviadero.com/"></a></h5>
+        <h6 class="card-subtitle">Ingeniero en Informática</h6>
+        <p class="card-text">Apasionado de la programación</p>
+        <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -1017,8 +1183,14 @@
   
 </ul>
 
+      </div>
     </div>
-  </div>
+  
+
+
+
+
+
 
 
 
@@ -1030,6 +1202,8 @@
 
   
   
+
+
 
 
 
@@ -1040,29 +1214,25 @@
 
     
     
-
     
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.3/mermaid.min.js" integrity="" crossorigin="anonymous" title="mermaid"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
         
       
 
-      
-      
     
 
     
@@ -1073,6 +1243,11 @@
     
     
     <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
     
 
     
@@ -1088,7 +1263,8 @@
         'post': "Posts",
         'project': "Proyectos",
         'publication' : "Publicaciones",
-        'talk' : "Charlas"
+        'talk' : "Charlas",
+        'slides' : "Diapositivas"
         };
     </script>
     
@@ -1125,6 +1301,9 @@
 
     
     
+
+    
+    
     
     
     
@@ -1137,7 +1316,7 @@
     
     
     
-    <script src="/js/academic.min.600a2e440c16093e23e26e90951c4d4b.js"></script>
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
 
     
 
@@ -1151,14 +1330,25 @@
   <div class="container">
     <footer class="site-footer non-printable">
     
-  
+
     <p class="powered-by">
       
-  
-      Powered by the
-      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-  
+    </p>
+
+    
+    
+
+
+
+
+
+
+    <p class="powered-by">
+      
+      Published with
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+      
+
       Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>,  <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a>, <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>, <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a>, <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a>
 
       
@@ -1172,7 +1362,7 @@
       
     </p>
   </footer>
-  
+
   </div>
   
 

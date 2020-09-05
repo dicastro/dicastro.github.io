@@ -5,12 +5,248 @@
     <link>https://www.diegocastroviadero.com/</link>
       <atom:link href="https://www.diegocastroviadero.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Diego Castro | Pandora Box</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Thu, 30 Jan 2020 19:16:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Fri, 14 Aug 2020 05:50:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.diegocastroviadero.com/img/logo.png</url>
+      <url>https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Diego Castro | Pandora Box</title>
       <link>https://www.diegocastroviadero.com/</link>
     </image>
+    
+    <item>
+      <title>TimeHammer</title>
+      <link>https://www.diegocastroviadero.com/slides/timehammer/</link>
+      <pubDate>Fri, 14 Aug 2020 05:50:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/slides/timehammer/</guid>
+      <description>&lt;h1 id=&#34;timehammer&#34;&gt;TimeHammer&lt;/h1&gt;
+&lt;h3 id=&#34;sistema-de-automatización-de-fichajes&#34;&gt;Sistema de automatización de fichajes&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
+&lt;p&gt;El principal objetivo es &lt;strong&gt;simplificar el proceso de fichajes&lt;/strong&gt; de una empresa&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Un objetivo secundario es el de utilizar tecnologías para &lt;strong&gt;seguir creciendo como profesional de la Informática&lt;/strong&gt;.&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Contexto
+    - Recordar cada una de las acciones a realizar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Para ciertas acciones hay que escribir un texto adicional &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Login requerido para realizar cada una de las acciones &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Intranet no adaptada al uso desde el móvil &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Requisitos
+    - Fichaje lo más fiel posible a la realidad &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - El usuario no tiene que recordar realizar ninguna acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Las acciones manuales por parte del usuario serán muy sencillas &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Se tendrán en cuenta los fichajes realizados directamente en la intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;solución&#34;&gt;Solución&lt;/h2&gt;
+&lt;p&gt;La solución desarrollada es un &lt;strong&gt;chatbot de telegram&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TimeHammerBot&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;https://t.me/TimeHammerBot&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Lo único necesario para podeer utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería &lt;em&gt;Telegram&lt;/em&gt;. También compatible con la versión web de &lt;em&gt;Telegram&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Funcionamiento
+    #### Trabajador
+    1. Registro en el chatbot &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Hora de inicio y final de la jornada &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Hora de inicio y final de la comida &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Lugar de trabajo &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    1. Se olvida de volver a fichar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Funcionamiento
+    ### Chatbot
+    1. Llegada la hora de una determinada acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Comprueba el estado del trabajador &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Si procede, notifica al trabajador &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    1. El trabajador recibe la notificación &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Confirma/Postpone/Cancela la acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    2. El chatbot recibe la respuesta &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Ejecuta la acción en la intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Se queda a la espera &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+      - Ignora la acción hasta el día siguiente &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Ejemplo 1
+    Trabajador &gt;&gt; lunes | comienzo jornada | 8:00
+    - A las 8:00 recibirá un mensaje preguntándole si ya ha comenzado a trabajar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Debajo del mensaje aparecerán una serie de botones: Sí, +5m, +10m, +15m, +20m, No &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Con solo pulsar un botón el chatbot actuará en consecuencia &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Ejemplo 2
+    Trabajador &gt;&gt; vienes | comienzo jornada | 8:00
+    - Comienza a trabajar antes de lo normal &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Fichaje manual en la intranet a las 7:30 &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - A las 8:00 el chatbot comprobará el estado y verá que no tiene nada que notificar &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;extra-i&#34;&gt;Extra I&lt;/h2&gt;
+&lt;p&gt;El chatbot busca &lt;strong&gt;molestar lo menos posible&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fines de semana&lt;/li&gt;
+&lt;li&gt;Festivos
+&lt;ul&gt;
+&lt;li&gt;Ciudad de trabajo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Vacaciones&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;extra-ii&#34;&gt;Extra II&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;No se persiste la contraseña&lt;/strong&gt; de los usuarios, se guardan en memoria.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Si se reinicia el contenedor que tiene en memoria las contraseñas, se enviará un mensaje a los trabajadores para que vuelvan a introducir su contraseña.&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;demo&#34;&gt;DEMO&lt;/h1&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Objetivos cumplidos
+    - Todos los fichajes requerirán de una confirmación y serán fieles a la realidad &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - El usuario ya no tiene que recordar realizar una determinada acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - La única acción manual del usuario consiste en pulsar un botón&lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - El usuario ya no tiene que conectarse a una intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Al recuperar siempre el estado del usuario de la intranet, se posibilita combinar el uso de ambos sistemas para situaciones excepcionales &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;stack-tecnológico&#34;&gt;Stack tecnológico&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Quarkus&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;li&gt;Telegram Bots&lt;/li&gt;
+&lt;li&gt;EDA&lt;/li&gt;
+&lt;li&gt;Kafka&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Chatbots I
+    - Los chatbots son una herramienta muy potente que permite aplicar un nuevo enfoque para resolver ciertos problemas &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Los usuarios están cada vez más acostumbrados a las aplicaciones de mensajería &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Tienen peor fama de la que se merecen porque muchos de los que se hacen llamar chatbots, hacen un mal (o nulo) procesamiento del lenguaje natural y realmente se trata de una sucesión de condiciones lógicas que ejecutan ciertas acciones &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;section data-markdown&gt;
+  &lt;script type=&#34;text/template&#34;&gt;
+    ## Chatbots II
+    - Con este proyecto se muestra otro enfoque de chatbot, basado en el uso de comandos. Que mediante el uso de diferentes teclados que se adaptan al tipo de respuesta que esperas del usuario, mejora mucho la usabilidad
+  &lt;/script&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;caso-de-uso&#34;&gt;Caso de Uso&lt;/h2&gt;
+&lt;p&gt;Nuevo canal de comunicación para la realización de guardias&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TimeHammer</title>
+      <link>https://www.diegocastroviadero.com/project/timehammer/</link>
+      <pubDate>Thu, 13 Aug 2020 05:00:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/project/timehammer/</guid>
+      <description>&lt;p&gt;Este es un proyecto personal en el que llevo trabajando desde comienzos del 2020, poco antes del confinamiento por la COVID-19. Consiste en un &lt;strong&gt;sistema que permite recordar y simplificar la realización de los fichajes&lt;/strong&gt; en una empresa.&lt;/p&gt;
+&lt;p&gt;Se trata de 
+&lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeHammerBot&lt;/a&gt; un 
+&lt;a href=&#34;https://telegram.org/blog/bot-revolution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chatbot de Telegram&lt;/a&gt; en el cual el trabajador se registra indicando su lugar y horario habitual de trabajo. Una vez registrado, el chatbot se encargará de recordarle los momentos en los que se debe realizar un fichaje. No sólo se trata de recordatorios en los diferentes momentos de fichaje, sino que el chatbot propone una serie de botones integrados en los mensajes de recordatorio, que al ser pulsados ejecutan la acción de fichar.&lt;/p&gt;
+&lt;p&gt;Se ha desarrollado una arquitectura orientada a eventos 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Event-driven_architecture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EDA&lt;/a&gt;. El proyecto se ha dividido en diversos módulos, cada uno con una responsabilidad, que se comunican entre si mediante el envío de mensajes. Estos mensajes representan los diferentes eventos que desencadenan la lógica de negocio.&lt;/p&gt;
+&lt;p&gt;Para el desarrollo se ha utilizado 
+&lt;a href=&#34;https://quarkus.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Quarkus&lt;/a&gt;, que es un stack basado en java que posibilita la compilación a código nativo. &lt;em&gt;Quarkus&lt;/em&gt; permite tanto la programación imperativa como la 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Reactive_programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reactiva&lt;/a&gt;. En este proyecto se ha optado por la programación reactiva.&lt;/p&gt;
+&lt;p&gt;Para el envío de los mensajes se ha utilizado 
+&lt;a href=&#34;https://kafka.apache.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kafka&lt;/a&gt; puesto que la 
+&lt;a href=&#34;https://quarkus.io/guides/kafka&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;integración con Quarkus&lt;/a&gt; es muy sencilla.&lt;/p&gt;
+&lt;p&gt;Para la ejecución en producción se utiliza 
+&lt;a href=&#34;https://www.docker.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker&lt;/a&gt;. Cada uno de los módulos que componen el proyecto tiene una imagen de &lt;em&gt;Docker&lt;/em&gt; asociada. En el entorno de producción se ejecutan contenedores de dichas imágenes. Actualmente son se utiliza ningún orquestador de contenedores, directamente se están arrancando con &lt;em&gt;docker-compose&lt;/em&gt;. El siguiente paso planificado es la utilización de &lt;em&gt;kubernetes&lt;/em&gt; como orquestador de contenedores.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cómo he automatizado los fichajes de mi empresa</title>
+      <link>https://www.diegocastroviadero.com/post/como-automatizar-los-fichajes-de-mi-empresa/</link>
+      <pubDate>Fri, 31 Jan 2020 18:21:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/post/como-automatizar-los-fichajes-de-mi-empresa/</guid>
+      <description>&lt;h2 id=&#34;contexto&#34;&gt;Contexto&lt;/h2&gt;
+&lt;p&gt;En el año 2019 hubo un cambio de ley que obliga a todas las empresas de España a proporcionar información sobre la jornada laboral de sus trabajadores, lo que comunmente conocemos como &lt;em&gt;fichajes&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Mi empresa se ha adaptado al cambio de legislación añadiendo una nueva sección en la intranet para que cada empleado pueda registrar la jornada laboral. El enfoque que ha seguido mi empresa es el fichaje &amp;ldquo;en tiempo real&amp;rdquo;, es decir, se toma el momento en el que se están registrando las acciones como el momento en el que las realizas. Esto obliga a fichar en el momento real en el que empiezas a trabajar, en el que comienzas a comer, en el que terminas de comer&amp;hellip; No existe ninguna posibilidad de corrección por parte de los trabajadores, si se olvida registrar alguna de las acciones hay que escribir un email al responsable para indicarlo.&lt;/p&gt;
+&lt;p&gt;Este enfoque de &amp;ldquo;tiempo real&amp;rdquo; no es el único posible, he visto otras empresas que también proporcionan un apartado en su intranet, pero que permiten hacer el fichaje &amp;ldquo;en diferido&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Cuestiones a parte serían si estas implementaciones cumplen con la ley o qué responsabilidades tiene el trabajador o qué pasaría si se hace una inspección y los fichajes del trabajador no son correctos.&lt;/p&gt;
+&lt;h2 id=&#34;problema&#34;&gt;Problema&lt;/h2&gt;
+&lt;p&gt;La solución tomada por mi empresa no es una solución pensada para el trabajador que sea cómoda de usar, todo lo contrario:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El trabajador tiene que recordar todas las acciones que tiene que realizar&lt;/li&gt;
+&lt;li&gt;Para ciertas acciones el trabajador tiene no sólo que realizar la acción, sino que tiene que escribir un texto válido para dicha acción&lt;/li&gt;
+&lt;li&gt;Para realizar cada una de las acciones el trabajador tiene que acceder a la intranet, teniendo que introducir sus credenciales&lt;/li&gt;
+&lt;li&gt;Algunas de las acciones se realizan desde sitios donde no hay un ordenador, por lo que hay que acceder a la intranet desde el móvil cuando la intranet no está adaptada para ello. Los menús son muy pequeños y es difícil llegar a la zona de fichajes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
+&lt;p&gt;Me he propuesto simplificar todo este proceso de tal forma que los fichajes se realicen de una manera sencilla, y lo más fieles posible a la realidad. Además utilizaré tecnologías que me permitan seguir desarrollándome como profesional de la Informática.&lt;/p&gt;
+&lt;h2 id=&#34;requisitos&#34;&gt;Requisitos&lt;/h2&gt;
+&lt;p&gt;Estos son los requisitos funcionales que guiarán el planteamiento y desarrollo de la solución:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fichaje lo más fiel posible a la realidad&lt;/li&gt;
+&lt;li&gt;Las acciones manuales por parte del usuario serán muy sencillas&lt;/li&gt;
+&lt;li&gt;Se tendrán en cuenta los fichajes realizados directamente en la intranet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;solución&#34;&gt;Solución&lt;/h2&gt;
+&lt;p&gt;La solución desarrollada es un chatbot de telegram: 
+&lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeHammerBot&lt;/a&gt;. Lo único necesario para podeer utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería &lt;em&gt;Telegram&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;funcionamiento&#34;&gt;Funcionamiento&lt;/h2&gt;
+&lt;p&gt;El trabajador se registrará en el chatbot 
+&lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeHammerBot&lt;/a&gt; de &lt;em&gt;Telegram&lt;/em&gt;. Para ello tendrá que indicar la empresa en la que trabaja, los credenciales para acceder a la intranet donde se realiza el fichaje manual y los horarios habituales: hora de comienzo y fin de la jornada laboral y hora de comienzo y fin de la comida (para cada día de la semana). Una vez realizado el registro podrá olvidarse de volver a acceder a la intranet para realizar un fichaje. A partir de ese momento será el chatbot quien le recuerde a las horas configuradas, la realización de las acciones pertinentes. Además junto con cada recordatorio, se proporcionarán una serie de botones que permitirán confirmar la realización de dichas acciones.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, si el trabajador ha indicado que los lunes suele comenzar la jornada laboral a las 8:00, a esa hora recibirá un mensaje en &lt;em&gt;Telegram&lt;/em&gt; preguntándole si ya ha comenzado a trabajar. Debajo del mensaje aparecerán una serie de botones: &amp;ldquo;Sí&amp;rdquo;, &amp;ldquo;+5m&amp;rdquo;, &amp;ldquo;+10m&amp;rdquo;, &amp;ldquo;+15m&amp;rdquo;, &amp;ldquo;+20m&amp;rdquo;, &amp;ldquo;No&amp;rdquo;. Al pulsar el botón &amp;ldquo;Sí&amp;rdquo;, el chatbot se encargará de registrar el inicio de la jornada en la intranet. Al pulsar los botones &amp;ldquo;+Xm&amp;rdquo;, se le pedirá al chatbot que se espere X minutos antes de volver a preguntar. Al pulsar el botón &amp;ldquo;No&amp;rdquo;, se le indicará al chatbot que ese día no se trabaja y hasta el día siguiente no volverá a preguntar nada.&lt;/p&gt;
+&lt;p&gt;El chatbot recuperará de la intranet las vacaciones del trabajador con el objetivo de no molestar durante ese periodo de tiempo. También tendrá en cuenta los días festivos de la ciudad de trabajo del trabajador (motivo por el cual durante el registro hay que indicar la ciudad de trabajo).&lt;/p&gt;
+&lt;p&gt;El chatbot es un mero intermediario, no guardará en ningún momento los fichajes del trabajador. Para conocer el estado de un trabajador lo recuperará de la intranet de la empresa del trabajador. De esta forma se puede combinar el uso del chatbot junto con la realización de ciertas acciones de forma manual. Por ejemplo, si el trabajador ha indicado que los viernes suele comenzar a trabajar a las 8:00, pero excepcionalmente, un viernes comienza su jornada a las 7:30, podrá acceder a la intranet y registrar su fichaje a las 7:30. Cuando sean las 8:00 el chatbot tendrá en cuenta las posibles acciones realizadas manualmente en la intranet antes de preguntar nada. Por lo que en este caso, a las 8:00 el chatbot no preguntará nada al trabajador.&lt;/p&gt;
+&lt;p&gt;Con este modelo de funcionamiento se cumplen los 3 requisitos planteados para el proyecto:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Todos los fichajes requerirán de una confirmación por parte del usuario y serán fieles a la realidad.&lt;/li&gt;
+&lt;li&gt;El usuario se olvida de tener que conectarse a una intranet y registrar una serie de acciones y en su lugar lo único que tiene que hacer es pulsar un botón cuando le llega un mensaje al &lt;em&gt;Telegram&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Al no guardar el estado de los trabajadores y recuperarlo siempre de la intranet, se posibilita combinar el uso de ambos sistemas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;detalles&#34;&gt;Detalles&lt;/h2&gt;
+&lt;p&gt;Para conocer más detalles sobre el proyecto puedes acceder 
+&lt;a href=&#34;https://www.diegocastroviadero.com/project/timehammer&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h2&gt;
+&lt;p&gt;Este proyecto ha supuesto un reto bastante interesante por diversos motivos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Llevar un proyecto adelante de principio a fin&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;El camino que hay que seguir desde que se tiene una idea hasta que esta se materializa siempre es complicado. A lo largo de este camino existen diversos momentos, en los que lo más fácil es no complicarse y ceder en el intento. Llegar a desplegar en producción una primera versión estable y funcional es motivo suficiente para sentirse orgulloso.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;- Afrontar un nuevo paradigma de programación&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Cambiar la manera de pensar no es trivial. Tareas que considerabas sencillas, de repente, se convierten en complicados rompecabezas. Ante la más mínima complicación es tentador volver a las &lt;em&gt;antiguas costumbres&lt;/em&gt; para salir del paso y seguir avanzando. Ha resultado agotador ser &lt;em&gt;fiel&lt;/em&gt; a programación reactiva.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;- Nuevas tecnologías&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En este proyecto he utilizado muchas tecnologías desconocidas para mi: Quarkus, Kafka, EDA, compilación nativa de java, imágenes distroless. Para mi siempre es motivador enfrentarme a un nuevo framework, lenguaje, herramienta&amp;hellip; me recuerda a cuando era niño y me regalaban un juguete. Lo que resulta un verdadero reto es realizar un proyecto en el que la gran mayorías de las tecnologías son desconocidas y pasas más tiempo en las páginas de documentación que programando.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;- Ponerse un objetivo y ceñirse a él&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Cuando no tienes a un jefe que te va guiando hacia una meta es complicado no desviarse del camino y resulta muy sencillo irse por las ramas. Más aún cuando tienes un montón de &lt;em&gt;&amp;ldquo;juguetitos&amp;rdquo;&lt;/em&gt; nuevos que probar e investigar. Este proyecto no ha sido una excepción, de hecho, la solución final es la tercera que se ha desarrollado desde cero. El proyecto comenzó siendo serverless, basándose en el uso de Firebase. Después se descartó la idea de serverless y pasó a ser un monolito desarrollado en Quarkus. Finalmente se ha mantenido el uso de Quarkus, pero se ha modularizado implementando una arquitectura orientada a eventos.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Se trata de una primera versión funcional con mucho margen de mejora. He incorporado una gran cantidad de novedades tecnológicas, dada mi experiencia,y hasta el momento no he podido profundizar mucho en ellas para poder tener esta primera versión funcional lo antes posible.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cómo quiero organizar mi almacenamiento</title>
@@ -39,7 +275,7 @@
 &lt;p&gt;Quien realmente cumple con la función de &lt;em&gt;centro multimedia&lt;/em&gt; es Plex Media Server, que está instalado en el NAS, y es quien me permite visualizar el contenido multimedia a través de la Smart TV y de los dispositivos móviles.&lt;/p&gt;
 &lt;p&gt;Para la realización de &lt;em&gt;descargas&lt;/em&gt; utilizo un cliente BitTorrent instalado en el NAS, que me permite controlarlo desde los dispositivos móviles.&lt;/p&gt;
 &lt;p&gt;Lo que me gustaría es retirar algunos de los portátiles que tengo junto con el iMac y en su lugar comprarme un buen PC que sea potente y que me permita realizar proyectos personales de Data Science.&lt;/p&gt;
-&lt;h2 id=&#34;motivacin&#34;&gt;Motivación&lt;/h2&gt;
+&lt;h2 id=&#34;motivación&#34;&gt;Motivación&lt;/h2&gt;
 &lt;p&gt;Una renovación del hardware no tendría por qué llevarme a un replanteamiento de la organización en lo que respecta al almacenamiento. Sin embargo, existen una serie de inconvenientes/mejoras pendientes que llevo arrastrando desde hace un tiempo y que son los verdaderos motivadores del cambio:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;En el iMac tengo configurado el TimeMachine para hacer los backups contra el NAS. Parece que no funciona muy bien, porque desde que lo configuré sale un aviso en el NAS indicando que hay datos erróneos en alguno de los volúmenes. Además, el iMac apenas lo utilizo y es uno de los equipos que quiero jubilar&lt;/li&gt;
@@ -49,7 +285,7 @@
 &lt;li&gt;El QNAP funciona muy lento, las opciones de ampliación de sus recursos hardware son muy limitadas y además quiero ampliar sus funcionalidades (ej: añadirle un repositorio de código, poder hacer seguimiento de series y películas con couchpotato o alternativas similares, etc.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Así que aprovechando que voy a hacer cambios en el hardware y teniendo en cuenta todos los puntos anteriores he decidido hacer un cambio radical.&lt;/p&gt;
-&lt;h2 id=&#34;qu-me-gustara-tener&#34;&gt;Qué me gustaría tener&lt;/h2&gt;
+&lt;h2 id=&#34;qué-me-gustaría-tener&#34;&gt;Qué me gustaría tener&lt;/h2&gt;
 &lt;p&gt;Me gustaría tener lo siguiente:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Tener backups de las Raspberry PI de forma periódica y automática&lt;/li&gt;
@@ -73,7 +309,9 @@
 &lt;h2 id=&#34;alternativas&#34;&gt;Alternativas&lt;/h2&gt;
 &lt;p&gt;La primera disyuntiva a la que me enfrento es si comprar otro NAS ya montado (al estilo del QNAP) o montármelo yo mismo. La ventaja de comprar uno ya montado es que es &amp;ldquo;enchufar y listo&amp;rdquo;, con el inconveniente de que este tipo de NAS no son demasiado flexibles. La venjata de montarse un NAS es que son totalmente customizables y extensibles, la pega es que requieren de mucho tiempo de investigación, selección de componentes, montaje, configuración y selección de software.&lt;/p&gt;
 &lt;h3 id=&#34;nas-ya-montado&#34;&gt;NAS ya montado&lt;/h3&gt;
-&lt;p&gt;He descubierto que Synology tiene mejor integración con linux. He encontrado dos modelos que se ajustan a los requisitos: &lt;a href=&#34;https://www.synology.com/es-es/products/DS918+&#34;&gt;DS918+&lt;/a&gt; y &lt;a href=&#34;https://www.synology.com/es-es/products/DS1618+&#34;&gt;DS1618+&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;He descubierto que Synology tiene mejor integración con linux. He encontrado dos modelos que se ajustan a los requisitos: 
+&lt;a href=&#34;https://www.synology.com/es-es/products/DS918&amp;#43;&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DS918+&lt;/a&gt; y 
+&lt;a href=&#34;https://www.synology.com/es-es/products/DS1618&amp;#43;&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DS1618+&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;ds918&#34;&gt;DS918+&lt;/h4&gt;
 &lt;p&gt;Cumple con casi todos los requisitos, la única excepción es la ampliación de recursos. Tiene 4 bahías y la posibilidad de comprar una extensión que permitiría añadir más discos. De serie viene con 4GB de RAM ampliables a 8GB, aunque en algún foro he leído que se le pueden meter 16GB (aunque esto está por comprobar). El procesador tiene 4 cores a 2.1GHz. Tiene una &lt;em&gt;app store&lt;/em&gt; de aplicaciones que permite ampliar las funcionalidades del NAS y en caso de no encontrar alguna se podría usar Docker.&lt;/p&gt;
 &lt;p&gt;Contras:&lt;/p&gt;
@@ -93,7 +331,9 @@
 &lt;li&gt;lo veo justo de procesador para las funcionalidades que quiero que ofrezca&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;nas-diy&#34;&gt;NAS DIY&lt;/h3&gt;
-&lt;p&gt;He estado investigado diferentes alternativas de SO orientados a montar un NAS, y he encontrado que el más usado es &lt;a href=&#34;https://www.freenas.org/&#34;&gt;FreeNas&lt;/a&gt;. También he encontrado otra alternativa que me gusta más: &lt;a href=&#34;https://unraid.net/&#34;&gt;unRaid&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;He estado investigado diferentes alternativas de SO orientados a montar un NAS, y he encontrado que el más usado es 
+&lt;a href=&#34;https://www.freenas.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FreeNas&lt;/a&gt;. También he encontrado otra alternativa que me gusta más: 
+&lt;a href=&#34;https://unraid.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;unRaid&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Muchas de las funcionalidades que quiero cubrir no son ofrecidas directamente por esos SOs, sino que hay que instalar algunos plugins/aplicaciones/contenedores para cubrirlas.&lt;/p&gt;
 &lt;h4 id=&#34;freenas&#34;&gt;FreeNas&lt;/h4&gt;
 &lt;p&gt;Está basado en &lt;em&gt;FreeBSD&lt;/em&gt; y soporta el sistema de ficheros &lt;em&gt;ZFS&lt;/em&gt;, que por lo que he leído debe de ser muy bueno y solventa los inconvenientes de RAID.&lt;/p&gt;
@@ -226,7 +466,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;conclusin&#34;&gt;Conclusión&lt;/h2&gt;
+&lt;h2 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h2&gt;
 &lt;p&gt;Me da miedo de que me pase lo mismo que lo que me ha pasado con el QNAP: que me quede corto de recursos con el paso del tiempo y tener poco margen de maniobra. Se trata de dispositios con un coste elevado, como para tener que verse obligado a cambiarlo por el mero hecho de necesitar más RAM (con la inversión de tiempo que hay que realizar para hacer el cambio).&lt;/p&gt;
 &lt;p&gt;Decididamente voy a optar por un &lt;strong&gt;NAS DIY&lt;/strong&gt;, y concretamente por uno con &lt;strong&gt;unRaid&lt;/strong&gt;. He visto unos cuantos análisis y videos de su funcionamiento y me ha gustado bastante. Creo que me convence más la idea de array de discos que la de montar un RAID.&lt;/p&gt;
 &lt;p&gt;Además que creo que con un mismo equipo puedo cubrir las 2 necesidades: disponer de un PC potente y tener un NAS con más funcionalidades que el actual. En primer lugar compraré el PC que quería comprarme y le instalaré unRaid. Sin me gusta como funciona, le haré una ampliación de hardware. Si por lo que fuera no quedo contento con el resultado, el equipo me vale como PC y volveré a valorar qué hacer para el NAS.&lt;/p&gt;
@@ -264,20 +504,22 @@
       <guid>https://www.diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</guid>
       <description>&lt;h2 id=&#34;prerequisitos&#34;&gt;Prerequisitos&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Tener un dominio en &lt;a href=&#34;https://domains.google.com/&#34;&gt;Google Domains&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Tener un repositorio en &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; (ej: &lt;a href=&#34;https://github.com/dicastro/dicastro.github.io&#34;&gt;https://github.com/dicastro/dicastro.github.io&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Tener un dominio en 
+&lt;a href=&#34;https://domains.google.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tener un repositorio en 
+&lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; (ej: &lt;a href=&#34;https://github.com/dicastro/dicastro.github.io&#34;&gt;https://github.com/dicastro/dicastro.github.io&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Este repositorio no tiene por qué ser público, en mi caso se trata de un repositorio privado.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;pasos&#34;&gt;Pasos&lt;/h2&gt;
-&lt;h4 id=&#34;1---activa--github-pages-&#34;&gt;1 - Activa &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;1---activa-_github-pages_&#34;&gt;1 - Activa &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;Para ello en la configuración del repositorio de &lt;em&gt;GitHub&lt;/em&gt;:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Activa &lt;em&gt;GitHub Pages&lt;/em&gt; seleccionando una rama desde la cuál se va a servir el contenido&lt;/li&gt;
 &lt;li&gt;Configura un &lt;em&gt;Custom Domain&lt;/em&gt; (ej: diegocastroviadero.com)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;2---apunta-el-dominio-diegocastroviaderocom-a--github-pages-&#34;&gt;2 - Apunta el dominio (diegocastroviadero.com) a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;2---apunta-el-dominio-diegocastroviaderocom-a-_github-pages_&#34;&gt;2 - Apunta el dominio (diegocastroviadero.com) a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;A&lt;/code&gt; apuntando a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/li&gt;
@@ -322,9 +564,10 @@
 &lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Si las IPs anteriores se han quedado desfasadas, podrás encontrar los valores actualizados &lt;a href=&#34;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Si las IPs anteriores se han quedado desfasadas, podrás encontrar los valores actualizados 
+&lt;a href=&#34;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&#34;3---apunta-el-subdominio-www-a--github-pages-&#34;&gt;3 - Apunta el subdominio &lt;code&gt;www&lt;/code&gt; a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;3---apunta-el-subdominio-www-a-_github-pages_&#34;&gt;3 - Apunta el subdominio &lt;code&gt;www&lt;/code&gt; a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;CNAME&lt;/code&gt; apuntando a la url de &lt;em&gt;GitHub Pages&lt;/em&gt; correspondiente al repositorio en cuestión (ej: dicastro.github.io)&lt;/li&gt;
@@ -378,7 +621,8 @@
 &lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Para obtener el valor de la columna &lt;em&gt;Datos&lt;/em&gt; de la entrada de tipo &lt;code&gt;CAA&lt;/code&gt; se puede hacer uso de &lt;a href=&#34;https://sslmate.com/caa/&#34;&gt;esta utilidad&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para obtener el valor de la columna &lt;em&gt;Datos&lt;/em&gt; de la entrada de tipo &lt;code&gt;CAA&lt;/code&gt; se puede hacer uso de 
+&lt;a href=&#34;https://sslmate.com/caa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta utilidad&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;referencias&#34;&gt;Referencias&lt;/h3&gt;
 &lt;ul&gt;
@@ -403,7 +647,9 @@
       <link>https://www.diegocastroviadero.com/project/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes/</link>
       <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
       <guid>https://www.diegocastroviadero.com/project/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes/</guid>
-      <description>&lt;p&gt;Este proyecto ha sido realizado como &lt;strong&gt;trabajo final del &lt;a href=&#34;https://www.u-tad.com/estudios/master-en-data-science-big-data/&#34;&gt;máster en Data Science &amp;amp; Big Data&lt;/a&gt;&lt;/strong&gt; de la &lt;a href=&#34;https://www.u-tad.com/&#34;&gt;U-TAD&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Este proyecto ha sido realizado como &lt;strong&gt;trabajo final del 
+&lt;a href=&#34;https://www.u-tad.com/estudios/master-en-data-science-big-data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;máster en Data Science &amp;amp; Big Data&lt;/a&gt;&lt;/strong&gt; de la 
+&lt;a href=&#34;https://www.u-tad.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;U-TAD&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para el desarrollo del proyecto se han realizado las siguientes tareas:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Estudio del estado del arte en lo que a la detección de objetos se refiere&lt;/li&gt;
@@ -423,24 +669,33 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/dicastro/tfm&#34;&gt;tfm&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://github.com/dicastro/tfm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tfm&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Contiene una implementación en python de YOLO V3 y YOLO V3 Lite&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/dicastro/tfm-android&#34;&gt;tfm-android&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Contiene una aplicación móvil android para la explotación del modelo entrenado mediante el uso de &lt;a href=&#34;https://www.tensorflow.org/lite&#34;&gt;Tensor Flow Lite&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://github.com/dicastro/tfm-android&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tfm-android&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contiene una aplicación móvil android para la explotación del modelo entrenado mediante el uso de 
+&lt;a href=&#34;https://www.tensorflow.org/lite&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tensor Flow Lite&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://github.com/dicastro/tfm-doc&#34;&gt;tfm-doc&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Contiene la &lt;a href=&#34;https://github.com/dicastro/tfm-doc/raw/master/memoria.pdf&#34;&gt;memoria del TFM&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://github.com/dicastro/tfm-doc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tfm-doc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contiene la 
+&lt;a href=&#34;https://github.com/dicastro/tfm-doc/raw/master/memoria.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;memoria del TFM&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Referencias:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Las imágenes utilizadas para entrenar los modelos han sido obtenidas de &lt;a href=&#34;https://www.kaggle.com/felipemuller5/nienaber-potholes-2-complex&#34;&gt;kaggle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;La aplicación móvil se basa en un &lt;a href=&#34;https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android&#34;&gt;ejemplo de tensorflow lite&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;La implementación de YOLO V3 es un fork de &lt;a href=&#34;https://github.com/experiencor/keras-yolo3&#34;&gt;este repositorio&lt;/a&gt; y la implementación de YOLO V3 Lite está basada en &lt;a href=&#34;https://github.com/qqwweee/keras-yolo3&#34;&gt;este repositorio&lt;/a&gt;. Se han unificado ambas implementaciones en una única, se han añadido más opciones de configuración de los modelos y se soportan más formatos de etiquetas de las imágenes&lt;/li&gt;
+&lt;li&gt;Las imágenes utilizadas para entrenar los modelos han sido obtenidas de 
+&lt;a href=&#34;https://www.kaggle.com/felipemuller5/nienaber-potholes-2-complex&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;kaggle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La aplicación móvil se basa en un 
+&lt;a href=&#34;https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ejemplo de tensorflow lite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La implementación de YOLO V3 es un fork de 
+&lt;a href=&#34;https://github.com/experiencor/keras-yolo3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este repositorio&lt;/a&gt; y la implementación de YOLO V3 Lite está basada en 
+&lt;a href=&#34;https://github.com/qqwweee/keras-yolo3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este repositorio&lt;/a&gt;. Se han unificado ambas implementaciones en una única, se han añadido más opciones de configuración de los modelos y se soportan más formatos de etiquetas de las imágenes&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
