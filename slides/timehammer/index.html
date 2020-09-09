@@ -60,7 +60,7 @@
     
     <section>
     
-      <h1 id="timehammer">TimeHammer</h1>
+      <img style="border: none; box-shadow: none; margin-bottom: 30px" data-src="./timehammer_title_revealjs.png" width="800">
 <h3 id="sistema-de-automatización-de-fichajes">Sistema de automatización de fichajes</h3>
 
     </section>
@@ -127,7 +127,7 @@
 <p>La solución desarrollada es un <strong>chatbot de telegram</strong>:</p>
 <p><strong>TimeHammerBot</strong></p>
 <p>https://t.me/TimeHammerBot</p>
-<p><small>Lo único necesario para podeer utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería <em>Telegram</em>. También compatible con la versión web de <em>Telegram</em></small></p>
+<p><small>Lo único necesario para poder utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería <em>Telegram</em>. También compatible con la versión web de <em>Telegram</em></small></p>
 
     </section>
     
@@ -267,10 +267,42 @@
     <section>
     
       
+<h2 id="volumetría-i">Volumetría I</h2>
+<ul>
+<li>Cada 2 minutos 1 llamada para consultar estado</li>
+<li>Cada 9 minutos 1 llamada para renovar sesión</li>
+<li>Al menos 4 acciones al día con 1 llamada por cada acción</li>
+<li>En funcionamiento de Lunes a Viernes de 5:00 a 19:00 UTC (12 horas)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="volumetría-ii">Volumetría II</h2>
+<p>En la versión actual se realizan:</p>
+<p><small>30<em>12 + 6</em>12 + 4 = 436 llamadas/usuario/día</small></p>
+<p>Con la mejora en curso se realizarían:</p>
+<p><small>3 llamadas/acción * 4 acciones/día/usuario = 12 llamadas/usuario/día</small></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 <section data-markdown>
   <script type="text/template">
     ## Objetivos cumplidos
-    - Todos los fichajes requerirán de una confirmación y serán fieles a la realidad <!-- .element: class="fragment" -->
+    - Todos los fichajes requieren de una confirmación y son fieles a la realidad <!-- .element: class="fragment" -->
     - El usuario ya no tiene que recordar realizar una determinada acción <!-- .element: class="fragment" -->
     - La única acción manual del usuario consiste en pulsar un botón<!-- .element: class="fragment" -->
     - El usuario ya no tiene que conectarse a una intranet <!-- .element: class="fragment" -->
@@ -296,6 +328,7 @@
 <li>EDA</li>
 <li>Kafka</li>
 <li>PostgreSQL</li>
+<li><i><span style="color: red;">Kubernetes<span></i></li>
 </ul>
 
     </section>
@@ -328,7 +361,7 @@
 <section data-markdown>
   <script type="text/template">
     ## Chatbots II
-    - Con este proyecto se muestra otro enfoque de chatbot, basado en el uso de comandos. Que mediante el uso de diferentes teclados que se adaptan al tipo de respuesta que esperas del usuario, mejora mucho la usabilidad
+    - Con este proyecto se muestra un **enfoque diferente** de chatbot, basado en el uso de **comandos**. Que mediante el uso de diferentes **teclados** que se **adaptan** al tipo de respuesta que esperas del usuario, **mejora** mucho la **usabilidad**
   </script>
 </section>
 

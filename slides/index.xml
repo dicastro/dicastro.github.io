@@ -11,7 +11,7 @@
       <link>https://www.diegocastroviadero.com/slides/timehammer/</link>
       <pubDate>Fri, 14 Aug 2020 05:50:00 +0000</pubDate>
       <guid>https://www.diegocastroviadero.com/slides/timehammer/</guid>
-      <description>&lt;h1 id=&#34;timehammer&#34;&gt;TimeHammer&lt;/h1&gt;
+      <description>&lt;img style=&#34;border: none; box-shadow: none; margin-bottom: 30px&#34; data-src=&#34;./timehammer_title_revealjs.png&#34; width=&#34;800&#34;&gt;
 &lt;h3 id=&#34;sistema-de-automatización-de-fichajes&#34;&gt;Sistema de automatización de fichajes&lt;/h3&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
@@ -42,7 +42,7 @@
 &lt;p&gt;La solución desarrollada es un &lt;strong&gt;chatbot de telegram&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TimeHammerBot&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;https://t.me/TimeHammerBot&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Lo único necesario para podeer utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería &lt;em&gt;Telegram&lt;/em&gt;. También compatible con la versión web de &lt;em&gt;Telegram&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Lo único necesario para poder utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería &lt;em&gt;Telegram&lt;/em&gt;. También compatible con la versión web de &lt;em&gt;Telegram&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;section data-markdown&gt;
   &lt;script type=&#34;text/template&#34;&gt;
@@ -110,10 +110,24 @@
 &lt;hr&gt;
 &lt;h1 id=&#34;demo&#34;&gt;DEMO&lt;/h1&gt;
 &lt;hr&gt;
+&lt;h2 id=&#34;volumetría-i&#34;&gt;Volumetría I&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cada 2 minutos 1 llamada para consultar estado&lt;/li&gt;
+&lt;li&gt;Cada 9 minutos 1 llamada para renovar sesión&lt;/li&gt;
+&lt;li&gt;Al menos 4 acciones al día con 1 llamada por cada acción&lt;/li&gt;
+&lt;li&gt;En funcionamiento de Lunes a Viernes de 5:00 a 19:00 UTC (12 horas)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;volumetría-ii&#34;&gt;Volumetría II&lt;/h2&gt;
+&lt;p&gt;En la versión actual se realizan:&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;30&lt;em&gt;12 + 6&lt;/em&gt;12 + 4 = 436 llamadas/usuario/día&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;Con la mejora en curso se realizarían:&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;3 llamadas/acción * 4 acciones/día/usuario = 12 llamadas/usuario/día&lt;/small&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;section data-markdown&gt;
   &lt;script type=&#34;text/template&#34;&gt;
     ## Objetivos cumplidos
-    - Todos los fichajes requerirán de una confirmación y serán fieles a la realidad &lt;!-- .element: class=&#34;fragment&#34; --&gt;
+    - Todos los fichajes requieren de una confirmación y son fieles a la realidad &lt;!-- .element: class=&#34;fragment&#34; --&gt;
     - El usuario ya no tiene que recordar realizar una determinada acción &lt;!-- .element: class=&#34;fragment&#34; --&gt;
     - La única acción manual del usuario consiste en pulsar un botón&lt;!-- .element: class=&#34;fragment&#34; --&gt;
     - El usuario ya no tiene que conectarse a una intranet &lt;!-- .element: class=&#34;fragment&#34; --&gt;
@@ -130,6 +144,7 @@
 &lt;li&gt;EDA&lt;/li&gt;
 &lt;li&gt;Kafka&lt;/li&gt;
 &lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;&lt;span style=&#34;color: red;&#34;&gt;Kubernetes&lt;span&gt;&lt;/i&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;section data-markdown&gt;
@@ -144,7 +159,7 @@
 &lt;section data-markdown&gt;
   &lt;script type=&#34;text/template&#34;&gt;
     ## Chatbots II
-    - Con este proyecto se muestra otro enfoque de chatbot, basado en el uso de comandos. Que mediante el uso de diferentes teclados que se adaptan al tipo de respuesta que esperas del usuario, mejora mucho la usabilidad
+    - Con este proyecto se muestra un **enfoque diferente** de chatbot, basado en el uso de **comandos**. Que mediante el uso de diferentes **teclados** que se **adaptan** al tipo de respuesta que esperas del usuario, **mejora** mucho la **usabilidad**
   &lt;/script&gt;
 &lt;/section&gt;
 &lt;hr&gt;
