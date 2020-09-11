@@ -141,11 +141,14 @@
 &lt;li&gt;Quarkus&lt;/li&gt;
 &lt;li&gt;Docker&lt;/li&gt;
 &lt;li&gt;Telegram Bots&lt;/li&gt;
-&lt;li&gt;EDA&lt;/li&gt;
 &lt;li&gt;Kafka&lt;/li&gt;
 &lt;li&gt;PostgreSQL&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;&lt;span style=&#34;color: red;&#34;&gt;Kubernetes&lt;span&gt;&lt;/i&gt;&lt;/li&gt;
+&lt;li class=&#34;fragment&#34;&gt;&lt;i&gt;&lt;span style=&#34;color: red;&#34;&gt;Kubernetes&lt;span&gt;&lt;/i&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;event-driven-architecture&#34;&gt;Event Driven Architecture&lt;/h2&gt;
+&lt;p&gt;&lt;small&gt;Ejemplo: Flujo de actualización de estado de los trabajadores&lt;/small&gt;
+&lt;img style=&#34;border: none; box-shadow: none; margin-bottom: 30px&#34; data-src=&#34;./timehammer_event_driven-architecture_slide.png&#34; title=&#34;Actualización de estado de trabajadores&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;section data-markdown&gt;
   &lt;script type=&#34;text/template&#34;&gt;
