@@ -162,7 +162,7 @@
 <section data-markdown>
   <script type="text/template">
     ## Funcionamiento
-    ### Chatbot
+    #### Chatbot
     1. Llegada la hora de una determinada acción <!-- .element: class="fragment" -->
       - Comprueba el estado del trabajador <!-- .element: class="fragment" -->
       - Si procede, notifica al trabajador <!-- .element: class="fragment" -->
@@ -267,38 +267,6 @@
     <section>
     
       
-<h2 id="volumetría-i">Volumetría I</h2>
-<ul>
-<li>Cada 2 minutos 1 llamada para consultar estado</li>
-<li>Cada 9 minutos 1 llamada para renovar sesión</li>
-<li>Al menos 4 acciones al día con 1 llamada por cada acción</li>
-<li>En funcionamiento de Lunes a Viernes de 5:00 a 19:00 UTC (12 horas)</li>
-</ul>
-
-    </section>
-    
-
-    
-    
-    
-    <section>
-    
-      
-<h2 id="volumetría-ii">Volumetría II</h2>
-<p>En la versión actual se realizan:</p>
-<p><small>30<em>12 + 6</em>12 + 4 = 436 llamadas/usuario/día</small></p>
-<p>Con la mejora en curso se realizarían:</p>
-<p><small>3 llamadas/acción * 4 acciones/día/usuario = 12 llamadas/usuario/día</small></p>
-
-    </section>
-    
-
-    
-    
-    
-    <section>
-    
-      
 <section data-markdown>
   <script type="text/template">
     ## Objetivos cumplidos
@@ -327,7 +295,6 @@
 <li>Telegram Bots</li>
 <li>Kafka</li>
 <li>PostgreSQL</li>
-<li class="fragment"><i><span style="color: red;">Kubernetes<span></i></li>
 </ul>
 
     </section>
@@ -340,8 +307,83 @@
     
       
 <h2 id="event-driven-architecture">Event Driven Architecture</h2>
-<p><small>Ejemplo: Flujo de actualización de estado de los trabajadores</small>
-<img style="border: none; box-shadow: none; margin-bottom: 30px" data-src="./timehammer_event_driven-architecture_slide.png" title="Actualización de estado de trabajadores"></p>
+<img style="border: none; box-shadow: none; margin-bottom: 30px" data-src="./timehammer_event_driven-architecture_slide.png" title="Flujo de actualización de estado de trabajadores">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="roadmap-i">Roadmap I</h2>
+<h4 id="reducción-de-llamadas-a-comunytek">Reducción de llamadas a Comunytek</h4>
+<p>En la versión actual se realizan:</p>
+<p><small>30 * 12 + 6 * 12 + 4 = 436 llamadas/usuario/día</small></p>
+<p>Con la versión mejorada se realizarían:</p>
+<p><small>3 llamadas/acción * 4 acciones/día/usuario = 12 llamadas/usuario/día</small></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="roadmap-ii">Roadmap II</h2>
+<h4 id="kubernetes-i">Kubernetes I</h4>
+<img style="border: none; box-shadow: none;" data-src="./kubernetes_cluster_01.jpg" title="Caja cluster" width="60%">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="roadmap-ii-1">Roadmap II</h2>
+<h4 id="kubernetes-ii">Kubernetes II</h4>
+<img style="border: none; box-shadow: none;" data-src="./kubernetes_cluster_02.jpg" title="Raspberry Pi y PoE Hat" width="60%">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="roadmap-ii-2">Roadmap II</h2>
+<h4 id="kubernetes-iii">Kubernetes III</h4>
+<img style="border: none; box-shadow: none;" data-src="./kubernetes_cluster_03.jpg" title="Bandeja Raspberry Pi" width="60%">
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="roadmap-iii">Roadmap III</h2>
+<ul>
+<li>Anular el registro</li>
+<li>Modificar la configuración</li>
+<li>Mejorar validaciones en el registro</li>
+<li>Añadir tests</li>
+<li>Tunear configuración Kafka</li>
+<li>Añadir monitorización de módulos</li>
+<li>NLP</li>
+<li>Modulo de administración</li>
+</ul>
 
     </section>
     
@@ -355,7 +397,7 @@
 <section data-markdown>
   <script type="text/template">
     ## Chatbots I
-    - Los chatbots son una herramienta muy potente que permite aplicar un nuevo enfoque para resolver ciertos problemas <!-- .element: class="fragment" -->
+    - Los chatbots son una herramienta mucho potencial que permite aplicar un nuevo enfoque para resolver ciertos problemas <!-- .element: class="fragment" -->
     - Los usuarios están cada vez más acostumbrados a las aplicaciones de mensajería <!-- .element: class="fragment" -->
     - Tienen peor fama de la que se merecen porque muchos de los que se hacen llamar chatbots, hacen un mal (o nulo) procesamiento del lenguaje natural y realmente se trata de una sucesión de condiciones lógicas que ejecutan ciertas acciones <!-- .element: class="fragment" -->
   </script>
