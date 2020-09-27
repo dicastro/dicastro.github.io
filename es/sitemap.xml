@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://www.diegocastroviadero.com/</loc>
-    <lastmod>2020-09-05T07:22:00+00:00</lastmod>
+    <lastmod>2020-09-27T09:12:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,6 +15,16 @@
                 hreflang="es"
                 href="https://www.diegocastroviadero.com/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/monto-un-cluster-kuternetes-con-rpi-parte-i/</loc>
+    <lastmod>2020-09-27T09:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.diegocastroviadero.com/post/</loc>
+    <lastmod>2020-09-27T09:12:00+00:00</lastmod>
   </url>
   
   <url>
@@ -79,11 +89,6 @@
   
   <url>
     <loc>https://www.diegocastroviadero.com/post/como-automatizar-los-fichajes-de-mi-empresa/</loc>
-    <lastmod>2020-09-05T06:46:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.diegocastroviadero.com/post/</loc>
     <lastmod>2020-09-05T06:46:00+00:00</lastmod>
   </url>
   

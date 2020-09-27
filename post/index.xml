@@ -5,12 +5,100 @@
     <link>https://www.diegocastroviadero.com/post/</link>
       <atom:link href="https://www.diegocastroviadero.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Fri, 31 Jan 2020 18:21:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Fri, 18 Sep 2020 15:31:00 +0000</lastBuildDate>
     <image>
       <url>https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://www.diegocastroviadero.com/post/</link>
     </image>
+    
+    <item>
+      <title>Monto un cluster Kubernetes con Raspberry Pi (parte I)</title>
+      <link>https://www.diegocastroviadero.com/post/monto-un-cluster-kuternetes-con-rpi-parte-i/</link>
+      <pubDate>Fri, 18 Sep 2020 15:31:00 +0000</pubDate>
+      <guid>https://www.diegocastroviadero.com/post/monto-un-cluster-kuternetes-con-rpi-parte-i/</guid>
+      <description>&lt;p&gt;Esta es una serie de posts en la que voy a explicar cómo he montado un cluster de Kubernetes utilizando Raspberry Pi y algún ejemplo de uso.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Parte I - Hardware&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Parte II - (próximamente &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;introducción&#34;&gt;Introducción&lt;/h1&gt;
+&lt;p&gt;Kubernetes es una tecnología de orquestación de contenedores que lleva en el mercado ya varios años. Sin embargo, hasta la fecha, no he tenido la oportunidad de &amp;ldquo;jugar&amp;rdquo; con ella. Llevo varios años trabajando intensamente con Docker, y tenía como asignatura pendiente empezar a utilizar algún orquestador de contenedores. Como a nivel profesional no he tenido la ocasión de hacerlo, y como pienso que como mejor se aprende es practicando, nada mejor para aprender Kubernetes, que montarme un cluster Kubernetes desde cero. Quizás llegue un poco tarde, pero creo que es mejor tarde que nunca.&lt;/p&gt;
+&lt;p&gt;Finalmente me he decidido por montar un cluster &lt;em&gt;on premise&lt;/em&gt; en mi casa. Al principio pensé que lo más sencillo, rápido y barato sería hacerlo en el cloud, pero lo cierto es que me daba mucha pereza. Demasiados proveedores, cada uno con unos servicios gratuitos, con unas condiciones de pago por uso diferentes, en alguno de los cuales ya había consumido dicho uso gratuito, etc.&lt;/p&gt;
+&lt;p&gt;Aunque montar un cluster &lt;em&gt;on premise&lt;/em&gt; suponga un desembolso inicial superior y un mayor esfuerzo, frente a montarlo en el cloud, encuentro al menos dos motivos que han hecho que me decline por esta opción.&lt;/p&gt;
+&lt;p&gt;En primer lugar, considero que montando el cluster &lt;em&gt;on premise&lt;/em&gt; me puede simplificar el aprendizaje de los conceptos básicos, ya que no me veré distraído por la terminología y servicios accesorios varios ofrecidos por los proveedores cloud.&lt;/p&gt;
+&lt;p&gt;En segundo lugar, me da mucha tranquilidad saber que si lo apago no consumo nada. Sé que este argumento puede no tener mucho sentido, ya que en el cloud, uno tiene control sobre los servicios que contrata y también podría &amp;ldquo;apagarlo&amp;rdquo; en cualquier momento. La cosa es que el mundo de los proveedores cloud también es nuevo para mí, y el sistema de facturación me parece un poco complejo. Sería otra cosa desconocida adicional a la que enfrentarme. Mi objetivo inicial es aprender Kubernetes, no es conocer como montar un cluster kubernetes en Amazon, Google o Azure y cuánto me van a cobrar por ello. En el pasado ya he tenido algún susto con grandes facturas de proveedores cloud, por creer que estaba haciendo uso de los servicios gratuitos, cuando no era cierto.&lt;/p&gt;
+&lt;h1 id=&#34;componentes&#34;&gt;Componentes&lt;/h1&gt;
+&lt;p&gt;El cluster está compuesto inicialmente de 5 
+&lt;a href=&#34;https://www.tiendatec.es/raspberry-pi/placas-base/1231-raspberry-pi-4-modelo-b-8gb-765756931199.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Raspberry Pi modelo 4b con 8GB de RAM&lt;/a&gt;. Esto hace que el cluster disponga de:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;20 cores a 1&#39;5 GHz&lt;/li&gt;
+&lt;li&gt;40 GB de memoia RAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cada Raspberry tiene una tarjeta de memoria microSD 
+&lt;a href=&#34;https://www.amazon.es/gp/product/B06XFSZGCC/ref=ppx_yo_dt_b_asin_title_o03_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Samsung EVO Plus de 32GB&lt;/a&gt;. Este almacenamiento será únicamente para la ejecución del sistema operativo. Inicialmente también lo utilizaré para la persistencia de los contenedores del cluster. Más adelante cuando me adentre en el mundo de los volúmenes persistentes, montaré un mecanismo de persistencia dedicado.&lt;/p&gt;
+&lt;p&gt;Con el objetivo de facilizar el montaje del cluster y reducir el número de clables necesarios, he comprado unos módulos 
+&lt;a href=&#34;https://www.tiendatec.es/raspberry-pi/hats/757-raspberry-pi-hat-poe-r20-0652508442105.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HAT PoE&lt;/a&gt; que me permiten alimentar las Raspberry por PoE. De esta forma puedo prescindir de los transformadores y los cables USB para alimentar las Raspberry, ya que con el mismo cable ethernet alimento las Raspberry y les proporciono conexión de red.&lt;/p&gt;
+&lt;p&gt;Para poder alimentar las Raspberry por PoE he comprado un switch 
+&lt;a href=&#34;https://www.amazon.es/gp/product/B076BV421P/ref=ppx_yo_dt_b_asin_title_o04_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netgear GS108PP&lt;/a&gt; con 8 puertos y con alimentación PoE en todos. Esto me permite tener hasta 7 Raspberry alimentadas y conectadas, ya que uno de los puertos lo utilizo para conectar el switch a la red.&lt;/p&gt;
+&lt;p&gt;Para albergar todos los componentes he comprado un armario rack de 19&amp;rdquo; 
+&lt;a href=&#34;https://www.amazon.es/gp/product/B00D5T3TDS/ref=ppx_yo_dt_b_asin_title_o04_s02&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Phasak PHP 2106&lt;/a&gt;. El armario tiene 6U de espacio en total que será utilizado de la siguiente forma:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1U para una 
+&lt;a href=&#34;https://www.amazon.es/gp/product/B00X44HTY4/ref=ppx_yo_dt_b_asin_title_o04_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reglega de 8 tomas con interruptor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1U para el switch que va sobre una 
+&lt;a href=&#34;https://www.amazon.es/gp/product/B001PKPK1I/ref=ppx_yo_dt_b_asin_title_o04_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;bandeja&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2U para alojar hasta 12 Raspberry Pi&lt;/li&gt;
+&lt;li&gt;2U libres&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para colocar todas las Raspberry en fila en el armario rack, he imprimido 
+&lt;a href=&#34;https://www.thingiverse.com/thing:4078710&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este proyecto&lt;/a&gt;, disponible en Thingiverse. Ocupando 2U del rack se pueden tener 12 Raspberry. Cada Raspberry está en una bandeja extraíble, haciendo muy sencillo una sustitución. La mayoría de ejemplos que había visto para apilar Raspberry, lo hacian de tal forma que el recambio de una de ellas implicaría desmontar todo. Este es uno de los pocos que he encontrado que facilita el mantenimiento.&lt;/p&gt;
+&lt;p&gt;Antes de poner el cluster en funcionamiento de forma continuada me gustaría tener un mecanismo para medir el consumo del mismo. Tengo pendiente comprar algún dispositivo que me permita medir el consumo y tener algún tipo de histórico para calcular su coste. He hecho una búsqueda rápida y he visto un montón de enchufes baratos que miden el consumo, aunque ninguno me ha convencido. Me gustaría tener una solución que se integre con 
+&lt;a href=&#34;https://www.home-assistant.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home Assistant&lt;/a&gt;, que es la solución que tengo en casa para la domótica. Este aspecto queda fuera del ámbito de este post y no me extenderé más en ello.&lt;/p&gt;
+&lt;h1 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h1&gt;
+&lt;p&gt;La combinación de estos componentes me permite tener un cluster:&lt;/p&gt;
+&lt;h4 id=&#34;compacto&#34;&gt;Compacto&lt;/h4&gt;
+&lt;p&gt;El armario rack de 19&amp;rdquo; y 6U es un armario de reducidas dimensiones que puedo colocar en cualquier sitio de la casa.&lt;/p&gt;
+&lt;h4 id=&#34;ventilado&#34;&gt;Ventilado&lt;/h4&gt;
+&lt;p&gt;El armario rack dispone de 2 grandes ventiladores en la parte superior. Además cada Raspberry dispone de un ventilador ya que el &lt;em&gt;HAT PoE&lt;/em&gt; incluye uno. Creo que es ventilación suficiente para dejar el cluster encendido de continuo sin miedo a que se sobrecaliente.&lt;/p&gt;
+&lt;h4 id=&#34;ordenado&#34;&gt;Ordenado&lt;/h4&gt;
+&lt;p&gt;Los &lt;em&gt;HAT PoE&lt;/em&gt; han ayudado mucho a que el armario no tenga demasiados cables en su interior y a que la regleta tenga más tomas disponibles para su uso.&lt;/p&gt;
+&lt;h4 id=&#34;iluminado&#34;&gt;Iluminado&lt;/h4&gt;
+&lt;p&gt;El armario rack dispone también de iluminación led, esto me da libertad para poder situar el armario rack en cualquier punto de la casa y poder hacer un mantenimiento del mismo sin problemas de falta de luz.&lt;/p&gt;
+&lt;h4 id=&#34;extensible&#34;&gt;Extensible&lt;/h4&gt;
+&lt;p&gt;Gracias al proyecto de thingiverse puedo colocar hasta 12 Rasperry ocupando 2U del armario. Con las 2U que me quedan libres podría:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Colocar otras 12 raspberry pi&lt;/li&gt;
+&lt;li&gt;Colocar algún dispositivo SAI&lt;/li&gt;
+&lt;li&gt;Dedicarlo a almacenamiento&lt;/li&gt;
+&lt;li&gt;etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;bom&#34;&gt;BOM&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.tiendatec.es/raspberry-pi/placas-base/1231-raspberry-pi-4-modelo-b-8gb-765756931199.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Raspberry Pi modelo 4b con 8GB de RAM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B06XFSZGCC/ref=ppx_yo_dt_b_asin_title_o03_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Samsung EVO Plus de 32GB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.tiendatec.es/raspberry-pi/hats/757-raspberry-pi-hat-poe-r20-0652508442105.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HAT PoE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B076BV421P/ref=ppx_yo_dt_b_asin_title_o04_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netgear GS108PP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B00D5T3TDS/ref=ppx_yo_dt_b_asin_title_o04_s02&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Phasak PHP 2106&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B00X44HTY4/ref=ppx_yo_dt_b_asin_title_o04_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reglega de 8 tomas con interruptor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B001PKPK1I/ref=ppx_yo_dt_b_asin_title_o04_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bandeja&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B0046UCVFM/ref=ppx_yo_dt_b_asin_title_o03_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cables de red de 25cm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B073WDSPS8/ref=ppx_yo_dt_b_asin_title_o03_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tornillos y tuercas para armario rack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.amazon.es/gp/product/B081JJ2LRT/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;amp;psc=1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tornillos M2.5 para Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Varilla roscada y tuercas de M4 (&lt;em&gt;comprado en ferretería&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Cómo he automatizado los fichajes de mi empresa</title>
