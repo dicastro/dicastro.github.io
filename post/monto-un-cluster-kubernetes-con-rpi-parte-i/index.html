@@ -1,0 +1,1247 @@
+<!DOCTYPE html><html lang="es-es" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta primera parte explico cómo está configurado el cluster en cuanto a hardware se refiere.">
+
+  
+  <link rel="alternate" hreflang="es-es" href="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154684128-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-154684128-1', { 'anonymize_ip': true });
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Diego Castro | Pandora Box">
+  <meta property="og:url" content="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/">
+  <meta property="og:title" content="Monto un cluster Kubernetes con Raspberry Pi (parte I) | Diego Castro | Pandora Box">
+  <meta property="og:description" content="En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta primera parte explico cómo está configurado el cluster en cuanto a hardware se refiere."><meta property="og:image" content="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/featured.jpg">
+  <meta property="twitter:image" content="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/featured.jpg"><meta property="og:locale" content="es-es">
+  
+    
+      <meta property="article:published_time" content="2020-09-18T15:31:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-27T09:12:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/"
+  },
+  "headline": "Monto un cluster Kubernetes con Raspberry Pi (parte I)",
+  
+  "image": [
+    "https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/featured.jpg"
+  ],
+  
+  "datePublished": "2020-09-18T15:31:00Z",
+  "dateModified": "2020-09-27T09:12:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Diego Castro | Pandora Box",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta primera parte explico cómo está configurado el cluster en cuanto a hardware se refiere."
+}
+</script>
+
+  
+
+  
+
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#2962ff",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "#2962ff"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "Este sitio web utiliza cookies para garantizarle una mejor experiencia.",
+        "dismiss": "Entendido!",
+        "link": "Más información",
+        "href": "https://www.cookiesandyou.com"
+      }
+    })});
+  </script>
+
+
+
+  
+
+
+
+
+
+  <title>Monto un cluster Kubernetes con Raspberry Pi (parte I) | Diego Castro | Pandora Box</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Diego Castro | Pandora Box</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Diego Castro | Pandora Box</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre mi</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experiencia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#accomplishments"><span>Logros</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contacto</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Monto un cluster Kubernetes con Raspberry Pi (parte I)</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última actualización el
+      
+    
+    Sep 27, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min de lectura
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 540px;">
+  <div style="position: relative">
+    <img src="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/featured.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Esta es una serie de posts en la que voy a explicar cómo he montado un cluster de Kubernetes utilizando Raspberry Pi y algún ejemplo de uso.</p>
+<ul>
+<li><strong>Parte I - Hardware</strong></li>
+<li>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-ii">Parte II</a> - Sistema Operativo y Docker</li>
+<li>Parte III - (proximamente)</li>
+</ul>
+<h1 id="introducción">Introducción</h1>
+<p>Kubernetes es una tecnología de orquestación de contenedores que lleva en el mercado ya varios años. Sin embargo, hasta la fecha, no he tenido la oportunidad de &ldquo;jugar&rdquo; con ella. Llevo varios años trabajando intensamente con Docker, y tenía como asignatura pendiente empezar a utilizar algún orquestador de contenedores. Como a nivel profesional no he tenido la ocasión de hacerlo, y como pienso que como mejor se aprende es practicando, nada mejor para aprender Kubernetes, que montarme un cluster Kubernetes desde cero. Quizás llegue un poco tarde, pero creo que es mejor tarde que nunca.</p>
+<p>Finalmente me he decidido por montar un cluster <em>on premise</em> en mi casa. Al principio pensé que lo más sencillo, rápido y barato sería hacerlo en el cloud, pero lo cierto es que me daba mucha pereza. Demasiados proveedores, cada uno con unos servicios gratuitos, con unas condiciones de pago por uso diferentes, en alguno de los cuales ya había consumido dicho uso gratuito, etc.</p>
+<p>Aunque montar un cluster <em>on premise</em> suponga un desembolso inicial superior y un mayor esfuerzo, frente a montarlo en el cloud, encuentro al menos dos motivos que han hecho que me decline por esta opción.</p>
+<p>En primer lugar, considero que montando el cluster <em>on premise</em> me puede simplificar el aprendizaje de los conceptos básicos, ya que no me veré distraído por la terminología y servicios accesorios varios ofrecidos por los proveedores cloud.</p>
+<p>En segundo lugar, me da mucha tranquilidad saber que si lo apago no consumo nada. Sé que este argumento puede no tener mucho sentido, ya que en el cloud, uno tiene control sobre los servicios que contrata y también podría &ldquo;apagarlo&rdquo; en cualquier momento. La cosa es que el mundo de los proveedores cloud también es nuevo para mí, y el sistema de facturación me parece un poco complejo. Sería otra cosa desconocida adicional a la que enfrentarme. Mi objetivo inicial es aprender Kubernetes, no es conocer como montar un cluster kubernetes en Amazon, Google o Azure y cuánto me van a cobrar por ello. En el pasado ya he tenido algún susto con grandes facturas de proveedores cloud, por creer que estaba haciendo uso de los servicios gratuitos, cuando no era cierto.</p>
+<h1 id="componentes">Componentes</h1>
+<p>El cluster está compuesto inicialmente de 5 
+<a href="https://www.tiendatec.es/raspberry-pi/placas-base/1231-raspberry-pi-4-modelo-b-8gb-765756931199.html" target="_blank" rel="noopener">Raspberry Pi modelo 4b con 8GB de RAM</a>. Esto hace que el cluster disponga de:</p>
+<ul>
+<li>20 cores a 1'5 GHz</li>
+<li>40 GB de memoia RAM</li>
+</ul>
+<p>Cada Raspberry tiene una tarjeta de memoria microSD 
+<a href="https://www.amazon.es/gp/product/B06XFSZGCC/ref=ppx_yo_dt_b_asin_title_o03_s00" target="_blank" rel="noopener">Samsung EVO Plus de 32GB</a>. Este almacenamiento será únicamente para la ejecución del sistema operativo. Inicialmente también lo utilizaré para la persistencia de los contenedores del cluster. Más adelante cuando me adentre en el mundo de los volúmenes persistentes, montaré un mecanismo de persistencia dedicado.</p>
+<p>Con el objetivo de facilizar el montaje del cluster y reducir el número de clables necesarios, he comprado unos módulos 
+<a href="https://www.tiendatec.es/raspberry-pi/hats/757-raspberry-pi-hat-poe-r20-0652508442105.html" target="_blank" rel="noopener">HAT PoE</a> que me permiten alimentar las Raspberry por PoE. De esta forma puedo prescindir de los transformadores y los cables USB para alimentar las Raspberry, ya que con el mismo cable ethernet alimento las Raspberry y les proporciono conexión de red.</p>
+<p>Para poder alimentar las Raspberry por PoE he comprado un switch 
+<a href="https://www.amazon.es/gp/product/B076BV421P/ref=ppx_yo_dt_b_asin_title_o04_s00" target="_blank" rel="noopener">Netgear GS108PP</a> con 8 puertos y con alimentación PoE en todos. Esto me permite tener hasta 7 Raspberry alimentadas y conectadas, ya que uno de los puertos lo utilizo para conectar el switch a la red.</p>
+<p>Para albergar todos los componentes he comprado un armario rack de 19&rdquo; 
+<a href="https://www.amazon.es/gp/product/B00D5T3TDS/ref=ppx_yo_dt_b_asin_title_o04_s02" target="_blank" rel="noopener">Phasak PHP 2106</a>. El armario tiene 6U de espacio en total que será utilizado de la siguiente forma:</p>
+<ul>
+<li>1U para una 
+<a href="https://www.amazon.es/gp/product/B00X44HTY4/ref=ppx_yo_dt_b_asin_title_o04_s01" target="_blank" rel="noopener">reglega de 8 tomas con interruptor</a></li>
+<li>1U para el switch que va sobre una 
+<a href="https://www.amazon.es/gp/product/B001PKPK1I/ref=ppx_yo_dt_b_asin_title_o04_s01" target="_blank" rel="noopener">bandeja</a></li>
+<li>2U para alojar hasta 12 Raspberry Pi</li>
+<li>2U libres</li>
+</ul>
+<p>Para colocar todas las Raspberry en fila en el armario rack, he imprimido 
+<a href="https://www.thingiverse.com/thing:4078710" target="_blank" rel="noopener">este proyecto</a>, disponible en Thingiverse. Ocupando 2U del rack se pueden tener 12 Raspberry. Cada Raspberry está en una bandeja extraíble, haciendo muy sencillo una sustitución. La mayoría de ejemplos que había visto para apilar Raspberry, lo hacian de tal forma que el recambio de una de ellas implicaría desmontar todo. Este es uno de los pocos que he encontrado que facilita el mantenimiento.</p>
+<p>Antes de poner el cluster en funcionamiento de forma continuada me gustaría tener un mecanismo para medir el consumo del mismo. Tengo pendiente comprar algún dispositivo que me permita medir el consumo y tener algún tipo de histórico para calcular su coste. He hecho una búsqueda rápida y he visto un montón de enchufes baratos que miden el consumo, aunque ninguno me ha convencido. Me gustaría tener una solución que se integre con 
+<a href="https://www.home-assistant.io/" target="_blank" rel="noopener">Home Assistant</a>, que es la solución que tengo en casa para la domótica. Este aspecto queda fuera del ámbito de este post y no me extenderé más en ello.</p>
+<h1 id="conclusión">Conclusión</h1>
+<p>La combinación de estos componentes me permite tener un cluster:</p>
+<h4 id="compacto">Compacto</h4>
+<p>El armario rack de 19&rdquo; y 6U es un armario de reducidas dimensiones que puedo colocar en cualquier sitio de la casa.</p>
+<h4 id="ventilado">Ventilado</h4>
+<p>El armario rack dispone de 2 grandes ventiladores en la parte superior. Además cada Raspberry dispone de un ventilador ya que el <em>HAT PoE</em> incluye uno. Creo que es ventilación suficiente para dejar el cluster encendido de continuo sin miedo a que se sobrecaliente.</p>
+<h4 id="ordenado">Ordenado</h4>
+<p>Los <em>HAT PoE</em> han ayudado mucho a que el armario no tenga demasiados cables en su interior y a que la regleta tenga más tomas disponibles para su uso.</p>
+<h4 id="iluminado">Iluminado</h4>
+<p>El armario rack dispone también de iluminación led, esto me da libertad para poder situar el armario rack en cualquier punto de la casa y poder hacer un mantenimiento del mismo sin problemas de falta de luz.</p>
+<h4 id="extensible">Extensible</h4>
+<p>Gracias al proyecto de thingiverse puedo colocar hasta 12 Rasperry ocupando 2U del armario. Con las 2U que me quedan libres podría:</p>
+<ul>
+<li>Colocar otras 12 raspberry pi</li>
+<li>Colocar algún dispositivo SAI</li>
+<li>Dedicarlo a almacenamiento</li>
+<li>etc</li>
+</ul>
+<h1 id="bom">BOM</h1>
+<ul>
+<li>5x 
+<a href="https://www.tiendatec.es/raspberry-pi/placas-base/1231-raspberry-pi-4-modelo-b-8gb-765756931199.html" target="_blank" rel="noopener">Raspberry Pi modelo 4b con 8GB de RAM</a></li>
+<li>5x 
+<a href="https://www.amazon.es/gp/product/B06XFSZGCC/ref=ppx_yo_dt_b_asin_title_o03_s00" target="_blank" rel="noopener">Samsung EVO Plus de 32GB</a></li>
+<li>5x 
+<a href="https://www.tiendatec.es/raspberry-pi/hats/757-raspberry-pi-hat-poe-r20-0652508442105.html" target="_blank" rel="noopener">HAT PoE</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B076BV421P/ref=ppx_yo_dt_b_asin_title_o04_s00" target="_blank" rel="noopener">Netgear GS108PP</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B00D5T3TDS/ref=ppx_yo_dt_b_asin_title_o04_s02" target="_blank" rel="noopener">Phasak PHP 2106</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B00X44HTY4/ref=ppx_yo_dt_b_asin_title_o04_s01" target="_blank" rel="noopener">Reglega de 8 tomas con interruptor</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B001PKPK1I/ref=ppx_yo_dt_b_asin_title_o04_s01" target="_blank" rel="noopener">Bandeja</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B0046UCVFM/ref=ppx_yo_dt_b_asin_title_o03_s01" target="_blank" rel="noopener">Cables de red de 25cm</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B073WDSPS8/ref=ppx_yo_dt_b_asin_title_o03_s01" target="_blank" rel="noopener">Tornillos y tuercas para armario rack</a></li>
+<li>1x 
+<a href="https://www.amazon.es/gp/product/B081JJ2LRT/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1" target="_blank" rel="noopener">Tornillos M2.5 para Raspberry Pi</a></li>
+<li>2x Varilla roscada M4 de 1m (<em>comprado en ferretería</em>)</li>
+<li>8x Tuercas M4 (<em>comprado en ferretería</em>)</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/cluster/">cluster</a>
+  
+  <a class="badge badge-light" href="/tag/raspberry/">raspberry</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/&amp;text=Monto%20un%20cluster%20Kubernetes%20con%20Raspberry%20Pi%20%28parte%20I%29" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Monto%20un%20cluster%20Kubernetes%20con%20Raspberry%20Pi%20%28parte%20I%29&amp;body=https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/&amp;title=Monto%20un%20cluster%20Kubernetes%20con%20Raspberry%20Pi%20%28parte%20I%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_270x270_fill_q90_lanczos_center.jpg" alt="">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://diegocastroviadero.com/"></a></h5>
+        <h6 class="card-subtitle">Ingeniero en Informática</h6>
+        <p class="card-text">Apasionado de la programación</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/diego-castro-viadero-9192a278" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/dicastro" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://bitbucket.org/qopuir" target="_blank" rel="noopener">
+        <i class="fab fa-bitbucket"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionado</h3>
+    <ul>
+      
+      <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/">Monto un cluster Kubernetes con Raspberry Pi (parte II)</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Charlas",
+        'slides' : "Diapositivas"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer non-printable">
+    
+
+    <p class="powered-by">
+      
+    </p>
+
+    
+    
+
+
+
+
+
+
+    <p class="powered-by">
+      
+      Published with
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+      
+
+      Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>,  <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a>, <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>, <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a>, <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a>
+
+      
+      <span class="float-right" aria-hidden="true">
+        <a href="#" class="back-to-top">
+          <span class="button_icon">
+            <i class="fas fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+      
+    </p>
+  </footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

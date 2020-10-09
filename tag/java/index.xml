@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java | Diego Castro | Pandora Box</title>
-    <link>https://www.diegocastroviadero.com/tag/java/</link>
-      <atom:link href="https://www.diegocastroviadero.com/tag/java/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://diegocastroviadero.com/tag/java/</link>
+      <atom:link href="https://diegocastroviadero.com/tag/java/index.xml" rel="self" type="application/rss+xml" />
     <description>Java</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Thu, 13 Aug 2020 05:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
       <title>Java</title>
-      <link>https://www.diegocastroviadero.com/tag/java/</link>
+      <link>https://diegocastroviadero.com/tag/java/</link>
     </image>
     
     <item>
       <title>TimeHammer</title>
-      <link>https://www.diegocastroviadero.com/project/timehammer/</link>
+      <link>https://diegocastroviadero.com/project/timehammer/</link>
       <pubDate>Thu, 13 Aug 2020 05:00:00 +0000</pubDate>
-      <guid>https://www.diegocastroviadero.com/project/timehammer/</guid>
+      <guid>https://diegocastroviadero.com/project/timehammer/</guid>
       <description>&lt;p&gt;Este es un proyecto personal en el que llevo trabajando desde comienzos del 2020, poco antes del confinamiento por la COVID-19. Consiste en un &lt;strong&gt;sistema que permite recordar y simplificar la realización de los fichajes&lt;/strong&gt; en una empresa.&lt;/p&gt;
 &lt;p&gt;Se trata de 
 &lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeHammerBot&lt;/a&gt; un 

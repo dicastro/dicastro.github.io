@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diego Castro | Pandora Box</title>
-    <link>https://www.diegocastroviadero.com/author/</link>
-      <atom:link href="https://www.diegocastroviadero.com/author/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://diegocastroviadero.com/author/</link>
+      <atom:link href="https://diegocastroviadero.com/author/index.xml" rel="self" type="application/rss+xml" />
     <description>Diego Castro | Pandora Box</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language>
     <image>
-      <url>https://www.diegocastroviadero.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
       <title>Diego Castro | Pandora Box</title>
-      <link>https://www.diegocastroviadero.com/author/</link>
+      <link>https://diegocastroviadero.com/author/</link>
     </image>
     
   </channel>

@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Slides | Diego Castro | Pandora Box</title>
-    <link>https://www.diegocastroviadero.com/slides/</link>
-      <atom:link href="https://www.diegocastroviadero.com/slides/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://diegocastroviadero.com/slides/</link>
+      <atom:link href="https://diegocastroviadero.com/slides/index.xml" rel="self" type="application/rss+xml" />
     <description>Slides</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Fri, 14 Aug 2020 05:50:00 +0000</lastBuildDate>
     <item>
       <title>TimeHammer</title>
-      <link>https://www.diegocastroviadero.com/slides/timehammer/</link>
+      <link>https://diegocastroviadero.com/slides/timehammer/</link>
       <pubDate>Fri, 14 Aug 2020 05:50:00 +0000</pubDate>
-      <guid>https://www.diegocastroviadero.com/slides/timehammer/</guid>
+      <guid>https://diegocastroviadero.com/slides/timehammer/</guid>
       <description>&lt;img style=&#34;border: none; box-shadow: none; margin-bottom: 30px&#34; data-src=&#34;./timehammer_title_revealjs.png&#34; width=&#34;800&#34;&gt;
 &lt;h3 id=&#34;sistema-de-automatización-de-fichajes&#34;&gt;Sistema de automatización de fichajes&lt;/h3&gt;
 &lt;hr&gt;
