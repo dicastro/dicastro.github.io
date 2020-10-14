@@ -5,12 +5,81 @@
     <link>https://diegocastroviadero.com/tag/raspberry/</link>
       <atom:link href="https://diegocastroviadero.com/tag/raspberry/index.xml" rel="self" type="application/rss+xml" />
     <description>raspberry</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sun, 27 Sep 2020 11:19:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Wed, 14 Oct 2020 05:00:00 +0000</lastBuildDate>
     <image>
       <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
       <title>raspberry</title>
       <link>https://diegocastroviadero.com/tag/raspberry/</link>
     </image>
+    
+    <item>
+      <title>Monto un cluster Kubernetes con Raspberry Pi (parte III)</title>
+      <link>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/</link>
+      <pubDate>Wed, 14 Oct 2020 05:00:00 +0000</pubDate>
+      <guid>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/</guid>
+      <description>&lt;p&gt;Esta es una serie de posts en la que voy a explicar cómo he montado un cluster de Kubernetes utilizando Raspberry Pi y algún ejemplo de uso.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;Parte I&lt;/a&gt; - Hardware&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-ii&#34;&gt;Parte II&lt;/a&gt; - Sistema Operativo y Docker&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parte III - Cluster K3S&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Parte IV - (proximamente)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;k3s&#34;&gt;K3s&lt;/h1&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://k3s.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K3s&lt;/a&gt; es una distribución de kubernetes certificada que ha sido concebida para el mundo &lt;em&gt;IoT&lt;/em&gt; y &lt;em&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Edge_computing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Edge Computing&lt;/a&gt;&lt;/em&gt;. K3s ha sido optimizada para ARM (ARM64 y ARMv7) y esto es lo que ha hecho decidirme por esta distribución para instalar kubernetes en el cluster de raspberry pi. En K3s se han reducido las dependencias al máximo, haciendo posible que se distribuya como un único binario de menos de 40 MB. La reducción de dependencias también ha supuesto una simplificación del proceso de instalación.&lt;/p&gt;
+&lt;h1 id=&#34;instalación&#34;&gt;Instalación&lt;/h1&gt;
+&lt;p&gt;La instalación es muy sencilla, ya que el equipo de K3s ha creado un &lt;em&gt;playbook&lt;/em&gt; de Ansible para realizarla. Yo me he basado en dicho playbook y he realizado alguna pequeña adaptación/mejora.&lt;/p&gt;
+&lt;p&gt;Lo primero que he realizado ha sido adaptar el fichero de inventario a las necesidades del playbook, para ello he definido los grupos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;k3s_master&lt;/code&gt;: que incluye el nodo maestro&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;k3s_node&lt;/code&gt;: que incluye los nodos esclavos&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;k3s_cluster&lt;/code&gt;: que incluye todos los miembros del cluster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;[k3s_master:children]
+rpicluster01
+
+[k3s_node:children]
+rpicluster02
+rpicluster03
+rpicluster04
+rpicluster05
+
+[k3s_cluster:children]
+k3s_master
+k3s_node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(se puede ver el fichero completo 
+&lt;a href=&#34;https://github.com/dicastro/rpicluster/blob/master/playbooks/inventory&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;A continuación se muestra el playbook de instalación:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;- hosts: k3s_cluster
+  gather_facts: true
+  become: true
+  roles:
+    - role: prereq
+    - role: download
+    - role: ubuntu
+
+- hosts: k3s_master
+  become: true
+  roles:
+    - role: k3s/master
+
+- hosts: k3s_node
+  become: true
+  roles:
+    - role: k3s/node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Como se puede observar, se basa en el uso de &lt;em&gt;roles&lt;/em&gt;. Existen 3 roles de preparación (&lt;code&gt;prereq&lt;/code&gt;, &lt;code&gt;download&lt;/code&gt; y &lt;code&gt;ubuntu&lt;/code&gt;) que se ejecutarán sobre todos los miembros del cluster. Estos roles se encargan de activar algunas configuraciones necesarias en el sistema operativo, así como de realizar la descarga del binario en función de la arquitectura sobre la que se esté realizando la instalación.&lt;/p&gt;
+&lt;p&gt;Además existe un role que se ejecutará sobre el nodo maestro y otro que se ejecutará sobre los nodos esclavos. Estos roles son los que crean el cluster K3s propiamente dicho.&lt;/p&gt;
+&lt;p&gt;(se puede ver el playbook completo 
+&lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/03_cluster_k3s_cluster&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;h1 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h1&gt;
+&lt;p&gt;Gracias al equipo de desarrollo de K3s, que nos proporciona un playbook de Ansible, se puede crear un cluster de kubernetes de una manera muy sencilla.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Monto un cluster Kubernetes con Raspberry Pi (parte II)</title>
@@ -22,7 +91,9 @@
 &lt;li&gt;
 &lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;Parte I&lt;/a&gt; - Hardware&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Parte II - Sistema Operativo y Docker&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Parte III - (proximamente)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;Parte III&lt;/a&gt; - Cluster K3S&lt;/li&gt;
+&lt;li&gt;Parte IV - (proximamente)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;sistema-operativo&#34;&gt;Sistema Operativo&lt;/h1&gt;
 &lt;p&gt;Una vez que todo el hardware está montado la siguiente decisión a tomar es qué sistema operativo instalar en las Raspberry. En el momento de tomar la decisión barajaba 3 opciones:&lt;/p&gt;
@@ -140,6 +211,9 @@ ethernets:
 &lt;p&gt;Para flashear la imagen del sistema operativo en la tarjeta SD utilizo 
 &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rpiimager&lt;/a&gt;. Esta herramienta te provee de una interfaz gráfica muy sencilla en la que en primer lugar se selecciona la imagen que quieres flashear, en segundo lugar se elige dónde la quieres flashear y por último se inicia la grabación. Esta herramienta te evita tener que descargar la imagen del sistema operativo ya que es la propia herramienta quien se encarga de descargarla.&lt;/p&gt;
 &lt;p&gt;Al arrancar la raspberry por primera vez cloud-init se activará y ejecutará las acciones anteriores, lo único que hay que hacer es esperar unos minutos. Alguien perspicaz, se habrá dado cuenta que hay dos acciones en la lista anterior que no son iguales para todas las raspberry del cluster: establecer el nombre de la instancia y configurar una ip fija. Esto hace que haya que tener para cada instancia del cluster un fichero de configuración diferente. Y en este punto es donde entra en acción &lt;em&gt;Ansible&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Aunque se le asigne una ip fija a las raspberry, en el router habrá que reservarla igualmente, ya que podría darse el caso de que mientras está apagado el cluster, se conecte algún dispositivo a la red y se le asigne una de las ips del cluster.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;ansible&#34;&gt;Ansible&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Ansible&lt;/em&gt;, resumiéndolo mucho, es una herramienta de automatización de tareas. Dado un fichero de inventario, en el que se definen una serie de máquinas; y un fichero de tareas (&lt;em&gt;playbook&lt;/em&gt;), en el que se definen una serie de tareas; Ansible se encargará de ejecutar cada una de las tareas en cada una de las máquinas. Con el añadido de que la ejecución de dichas tareas es &lt;em&gt;idempotente&lt;/em&gt;, es decir, que si alguna de las tareas ya se ha ejecutado en alguna de dichas máquinas, no la volverá a ejecutar. Esto es una simplificación muy grande de todo el universo de Ansible, pero en este post no quiero entrar en detalles sobre Ansible, sino en explicar lo mínimo para que se entienda de qué forma se ha utilizado esta herramienta para montar el cluster.&lt;/p&gt;
 &lt;p&gt;Como he mencionado anteriormente, he utilizado Ansible para la generación de los ficheros de configuración de cloud-init. Y este es un caso de uso un poco especial, puesto que no se ajusta a la descripción anterior sobre el funcionamiento básico de Ansible. Sí que disponemos de un fichero de inventario, pero no utilizamos Ansible para ejecutar ninguna tarea sobre las máquinas del inventario, sino para obtener unos datos sobre dichas máquinas y utilizarlos para generar unos ficheros de configuración en el puesto local.&lt;/p&gt;
@@ -251,7 +325,9 @@ rpicluster05
 &lt;li&gt;&lt;strong&gt;Parte I - Hardware&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-ii&#34;&gt;Parte II&lt;/a&gt; - Sistema Operativo y Docker&lt;/li&gt;
-&lt;li&gt;Parte III - (proximamente)&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;Parte III&lt;/a&gt; - Cluster K3S&lt;/li&gt;
+&lt;li&gt;Parte IV - (proximamente)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;introducción&#34;&gt;Introducción&lt;/h1&gt;
 &lt;p&gt;Kubernetes es una tecnología de orquestación de contenedores que lleva en el mercado ya varios años. Sin embargo, hasta la fecha, no he tenido la oportunidad de &amp;ldquo;jugar&amp;rdquo; con ella. Llevo varios años trabajando intensamente con Docker, y tenía como asignatura pendiente empezar a utilizar algún orquestador de contenedores. Como a nivel profesional no he tenido la ocasión de hacerlo, y como pienso que como mejor se aprende es practicando, nada mejor para aprender Kubernetes, que montarme un cluster Kubernetes desde cero. Quizás llegue un poco tarde, pero creo que es mejor tarde que nunca.&lt;/p&gt;

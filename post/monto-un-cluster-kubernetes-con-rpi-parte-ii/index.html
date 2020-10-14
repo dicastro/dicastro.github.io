@@ -791,7 +791,9 @@
 <li>
 <a href="../monto-un-cluster-kubernetes-con-rpi-parte-i">Parte I</a> - Hardware</li>
 <li><strong>Parte II - Sistema Operativo y Docker</strong></li>
-<li>Parte III - (proximamente)</li>
+<li>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-iii">Parte III</a> - Cluster K3S</li>
+<li>Parte IV - (proximamente)</li>
 </ul>
 <h1 id="sistema-operativo">Sistema Operativo</h1>
 <p>Una vez que todo el hardware está montado la siguiente decisión a tomar es qué sistema operativo instalar en las Raspberry. En el momento de tomar la decisión barajaba 3 opciones:</p>
@@ -909,6 +911,9 @@ ethernets:
 <p>Para flashear la imagen del sistema operativo en la tarjeta SD utilizo 
 <a href="https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility" target="_blank" rel="noopener">rpiimager</a>. Esta herramienta te provee de una interfaz gráfica muy sencilla en la que en primer lugar se selecciona la imagen que quieres flashear, en segundo lugar se elige dónde la quieres flashear y por último se inicia la grabación. Esta herramienta te evita tener que descargar la imagen del sistema operativo ya que es la propia herramienta quien se encarga de descargarla.</p>
 <p>Al arrancar la raspberry por primera vez cloud-init se activará y ejecutará las acciones anteriores, lo único que hay que hacer es esperar unos minutos. Alguien perspicaz, se habrá dado cuenta que hay dos acciones en la lista anterior que no son iguales para todas las raspberry del cluster: establecer el nombre de la instancia y configurar una ip fija. Esto hace que haya que tener para cada instancia del cluster un fichero de configuración diferente. Y en este punto es donde entra en acción <em>Ansible</em>.</p>
+<blockquote>
+<p>Aunque se le asigne una ip fija a las raspberry, en el router habrá que reservarla igualmente, ya que podría darse el caso de que mientras está apagado el cluster, se conecte algún dispositivo a la red y se le asigne una de las ips del cluster.</p>
+</blockquote>
 <h2 id="ansible">Ansible</h2>
 <p><em>Ansible</em>, resumiéndolo mucho, es una herramienta de automatización de tareas. Dado un fichero de inventario, en el que se definen una serie de máquinas; y un fichero de tareas (<em>playbook</em>), en el que se definen una serie de tareas; Ansible se encargará de ejecutar cada una de las tareas en cada una de las máquinas. Con el añadido de que la ejecución de dichas tareas es <em>idempotente</em>, es decir, que si alguna de las tareas ya se ha ejecutado en alguna de dichas máquinas, no la volverá a ejecutar. Esto es una simplificación muy grande de todo el universo de Ansible, pero en este post no quiero entrar en detalles sobre Ansible, sino en explicar lo mínimo para que se entienda de qué forma se ha utilizado esta herramienta para montar el cluster.</p>
 <p>Como he mencionado anteriormente, he utilizado Ansible para la generación de los ficheros de configuración de cloud-init. Y este es un caso de uso un poco especial, puesto que no se ajusta a la descripción anterior sobre el funcionamiento básico de Ansible. Sí que disponemos de un fichero de inventario, pero no utilizamos Ansible para ejecutar ninguna tarea sobre las máquinas del inventario, sino para obtener unos datos sobre dichas máquinas y utilizarlos para generar unos ficheros de configuración en el puesto local.</p>
@@ -1193,6 +1198,8 @@ rpicluster05
   <div class="article-widget content-widget-hr">
     <h3>Relacionado</h3>
     <ul>
+      
+      <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/">Monto un cluster Kubernetes con Raspberry Pi (parte III)</a></li>
       
       <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/">Monto un cluster Kubernetes con Raspberry Pi (parte I)</a></li>
       

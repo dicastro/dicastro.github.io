@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta tercera entrega explico cómo montar un cluster k3s.">
 
   
-  <link rel="alternate" hreflang="es-es" href="https://diegocastroviadero.com/posts/">
+  <link rel="alternate" hreflang="es-es" href="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/">
 
   
 
@@ -269,7 +269,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://diegocastroviadero.com/posts/">
+  <link rel="canonical" href="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/">
 
   
   
@@ -279,24 +279,67 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Diego Castro | Pandora Box">
-  <meta property="og:url" content="https://diegocastroviadero.com/posts/">
-  <meta property="og:title" content=" | Diego Castro | Pandora Box">
-  <meta property="og:description" content=""><meta property="og:image" content="https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="es-es">
+  <meta property="og:url" content="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/">
+  <meta property="og:title" content="Monto un cluster Kubernetes con Raspberry Pi (parte III) | Diego Castro | Pandora Box">
+  <meta property="og:description" content="En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta tercera entrega explico cómo montar un cluster k3s."><meta property="og:image" content="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/featured.png">
+  <meta property="twitter:image" content="https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/featured.png"><meta property="og:locale" content="es-es">
   
     
+      <meta property="article:published_time" content="2020-10-14T05:00:00&#43;00:00">
     
+    <meta property="article:modified_time" content="2020-10-14T17:00:00&#43;00:00">
   
 
   
 
 
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/"
+  },
+  "headline": "Monto un cluster Kubernetes con Raspberry Pi (parte III)",
+  
+  "image": [
+    "https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/featured.png"
+  ],
+  
+  "datePublished": "2020-10-14T05:00:00Z",
+  "dateModified": "2020-10-14T17:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Diego Castro | Pandora Box",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta tercera entrega explico cómo montar un cluster k3s."
+}
+</script>
+
+  
 
   
 
@@ -340,12 +383,12 @@
 
 
 
-  <title> | Diego Castro | Pandora Box</title>
+  <title>Monto un cluster Kubernetes con Raspberry Pi (parte III) | Diego Castro | Pandora Box</title>
 
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -547,7 +590,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/posts" data-target="[]"><span>Blog</span></a>
+          <a class="nav-link " href="/posts"><span>Blog</span></a>
         </li>
 
         
@@ -643,64 +686,7 @@
 
 
 
-  
-<span class="js-widget-page d-none"></span>
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="posts" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
+  <article class="article">
 
   
 
@@ -723,67 +709,16 @@
 
 
 
-
-
-
-
+  
   
 
 
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Blog</h1>
-    
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
+<div class="article-container pt-3">
+  <h1>Monto un cluster Kubernetes con Raspberry Pi (parte III)</h1>
 
   
 
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/" >Monto un cluster Kubernetes con Raspberry Pi (parte III)</a>
-    </h3>
-
-    
-    <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/" class="summary-link">
-      <div class="article-style">
-        En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta tercera entrega explico cómo montar un cluster k3s.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
+  
 
 
 <div class="article-metadata">
@@ -821,27 +756,165 @@
 
 </div>
 
-      
-    </div>
+  
 
-    
 
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/" >
-      <img src="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/featured_hud353aacd245ae1d8f439a7ebe68065bf_15810_150x0_resize_lanczos_2.png" alt="Monto un cluster Kubernetes con Raspberry Pi (parte III)">
-    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 540px;">
+  <div style="position: relative">
+    <img src="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/featured.png" alt="" class="featured-image">
     
   </div>
 </div>
 
-      
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Esta es una serie de posts en la que voy a explicar cómo he montado un cluster de Kubernetes utilizando Raspberry Pi y algún ejemplo de uso.</p>
+<ul>
+<li>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-i">Parte I</a> - Hardware</li>
+<li>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-ii">Parte II</a> - Sistema Operativo y Docker</li>
+<li><strong>Parte III - Cluster K3S</strong></li>
+<li>Parte IV - (proximamente)</li>
+</ul>
+<h1 id="k3s">K3s</h1>
+<p>
+<a href="https://k3s.io/" target="_blank" rel="noopener">K3s</a> es una distribución de kubernetes certificada que ha sido concebida para el mundo <em>IoT</em> y <em>
+<a href="https://en.wikipedia.org/wiki/Edge_computing" target="_blank" rel="noopener">Edge Computing</a></em>. K3s ha sido optimizada para ARM (ARM64 y ARMv7) y esto es lo que ha hecho decidirme por esta distribución para instalar kubernetes en el cluster de raspberry pi. En K3s se han reducido las dependencias al máximo, haciendo posible que se distribuya como un único binario de menos de 40 MB. La reducción de dependencias también ha supuesto una simplificación del proceso de instalación.</p>
+<h1 id="instalación">Instalación</h1>
+<p>La instalación es muy sencilla, ya que el equipo de K3s ha creado un <em>playbook</em> de Ansible para realizarla. Yo me he basado en dicho playbook y he realizado alguna pequeña adaptación/mejora.</p>
+<p>Lo primero que he realizado ha sido adaptar el fichero de inventario a las necesidades del playbook, para ello he definido los grupos:</p>
+<ul>
+<li><code>k3s_master</code>: que incluye el nodo maestro</li>
+<li><code>k3s_node</code>: que incluye los nodos esclavos</li>
+<li><code>k3s_cluster</code>: que incluye todos los miembros del cluster</li>
+</ul>
+<pre><code class="language-ini">[k3s_master:children]
+rpicluster01
+
+[k3s_node:children]
+rpicluster02
+rpicluster03
+rpicluster04
+rpicluster05
+
+[k3s_cluster:children]
+k3s_master
+k3s_node
+</code></pre>
+<p>(se puede ver el fichero completo 
+<a href="https://github.com/dicastro/rpicluster/blob/master/playbooks/inventory" target="_blank" rel="noopener">aquí</a>)</p>
+<p>A continuación se muestra el playbook de instalación:</p>
+<pre><code class="language-yaml">- hosts: k3s_cluster
+  gather_facts: true
+  become: true
+  roles:
+    - role: prereq
+    - role: download
+    - role: ubuntu
+
+- hosts: k3s_master
+  become: true
+  roles:
+    - role: k3s/master
+
+- hosts: k3s_node
+  become: true
+  roles:
+    - role: k3s/node
+</code></pre>
+<p>Como se puede observar, se basa en el uso de <em>roles</em>. Existen 3 roles de preparación (<code>prereq</code>, <code>download</code> y <code>ubuntu</code>) que se ejecutarán sobre todos los miembros del cluster. Estos roles se encargan de activar algunas configuraciones necesarias en el sistema operativo, así como de realizar la descarga del binario en función de la arquitectura sobre la que se esté realizando la instalación.</p>
+<p>Además existe un role que se ejecutará sobre el nodo maestro y otro que se ejecutará sobre los nodos esclavos. Estos roles son los que crean el cluster K3s propiamente dicho.</p>
+<p>(se puede ver el playbook completo 
+<a href="https://github.com/dicastro/rpicluster/tree/master/playbooks/03_cluster_k3s_cluster" target="_blank" rel="noopener">aquí</a>)</p>
+<h1 id="conclusión">Conclusión</h1>
+<p>Gracias al equipo de desarrollo de K3s, que nos proporciona un playbook de Ansible, se puede crear un cluster de kubernetes de una manera muy sencilla.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/cluster/">cluster</a>
+  
+  <a class="badge badge-light" href="/tag/raspberry/">raspberry</a>
+  
+  <a class="badge badge-light" href="/tag/docker/">docker</a>
+  
+  <a class="badge badge-light" href="/tag/k3s/">k3s</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
     
       
+      
+      
         
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/&amp;text=Monto%20un%20cluster%20Kubernetes%20con%20Raspberry%20Pi%20%28parte%20III%29" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Monto%20un%20cluster%20Kubernetes%20con%20Raspberry%20Pi%20%28parte%20III%29&amp;body=https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/&amp;title=Monto%20un%20cluster%20Kubernetes%20con%20Raspberry%20Pi%20%28parte%20III%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -855,563 +928,124 @@
 
 
   
+  
 
 
-<div class="media stream-item">
-  <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/" >Monto un cluster Kubernetes con Raspberry Pi (parte II)</a>
-    </h3>
 
+
+  
     
-    <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/" class="summary-link">
-      <div class="article-style">
-        En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta segunda parte explico qué sistema operativo he decidido instalar en los nodos del cluster y cómo instalar Docker en los mismos.
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_270x270_fill_q90_lanczos_center.jpg" alt="">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://diegocastroviadero.com/"></a></h5>
+        <h6 class="card-subtitle">Ingeniero en Informática</h6>
+        <p class="card-text">Apasionado de la programación</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/diego-castro-viadero-9192a278" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/dicastro" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://bitbucket.org/qopuir" target="_blank" rel="noopener">
+        <i class="fab fa-bitbucket"></i>
+      </a>
+    </li>
+  
+</ul>
+
       </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Última actualización el
-      
-    
-    Oct 9, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    9 min de lectura
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
     </div>
+  
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionado</h3>
+    <ul>
+      
+      <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/">Monto un cluster Kubernetes con Raspberry Pi (parte II)</a></li>
+      
+      <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/">Monto un cluster Kubernetes con Raspberry Pi (parte I)</a></li>
+      
+      <li><a href="/project/timehammer/">TimeHammer</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
 
   </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/" >
-      <img src="/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/featured_hu8d66f9520fb5dca32279d0be632ef930_34354_150x0_resize_lanczos_2.png" alt="Monto un cluster Kubernetes con Raspberry Pi (parte II)">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/" >Monto un cluster Kubernetes con Raspberry Pi (parte I)</a>
-    </h3>
-
-    
-    <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/" class="summary-link">
-      <div class="article-style">
-        En esta serie de posts explicaré cómo he montado un cluster de Kubernetes con Raspberry Pi. En esta primera parte explico cómo está configurado el cluster en cuanto a hardware se refiere.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Última actualización el
-      
-    
-    Sep 27, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    6 min de lectura
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/" >
-      <img src="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/featured_huc75b98857a766852b33f1b342bff9bd8_113269_150x0_resize_q90_lanczos.jpg" alt="Monto un cluster Kubernetes con Raspberry Pi (parte I)">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/como-automatizar-los-fichajes-de-mi-empresa/" >Cómo he automatizado los fichajes de mi empresa</a>
-    </h3>
-
-    
-    <a href="/post/como-automatizar-los-fichajes-de-mi-empresa/" class="summary-link">
-      <div class="article-style">
-        En este post explicaré el proyecto que he desarrollado para automatizar los fichajes de mi empresa
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Última actualización el
-      
-    
-    Sep 5, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    7 min de lectura
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/como-automatizar-los-fichajes-de-mi-empresa/" >
-      <img src="/post/como-automatizar-los-fichajes-de-mi-empresa/featured_hu10caba6f049f20c6ddc5c9e557e8bec7_10186_150x0_resize_lanczos_2.png" alt="Cómo he automatizado los fichajes de mi empresa">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/como-quiero-organizar-mi-almacenamiento/" >Cómo quiero organizar mi almacenamiento</a>
-    </h3>
-
-    
-    <a href="/post/como-quiero-organizar-mi-almacenamiento/" class="summary-link">
-      <div class="article-style">
-        Llevo ya un tiempo queriendo hacer una renovación de los equipos que tengo y ya de paso reorganizar mi solución para el almacenamiento. En este post plasmaré cómo me gustaría reorganizarlo todo.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Última actualización el
-      
-    
-    Feb 1, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    9 min de lectura
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/como-quiero-organizar-mi-almacenamiento/" >
-      <img src="/post/como-quiero-organizar-mi-almacenamiento/featured_hu7c96ce2990ff6639be6400b1eb65704d_83870_150x0_resize_lanczos_2.png" alt="Cómo quiero organizar mi almacenamiento">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/" >Cómo configurar un dominio propio de Google Domains en GitHub Pages y con HTTPS activado</a>
-    </h3>
-
-    
-    <a href="/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/" class="summary-link">
-      <div class="article-style">
-        En este post se va a explicar cómo configurar un dominio propio, comprado en Google Domains, en GitHub Pages y cómo activar HTTPS
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Última actualización el
-      
-    
-    Jan 29, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min de lectura
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/" >
-      <img src="/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/featured_huc4956b706f8f1f152ec3fb8a3e221cb2_34206_150x0_resize_lanczos_2.png" alt="Cómo configurar un dominio propio de Google Domains en GitHub Pages y con HTTPS activado">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/hola-mundo/" >Hola Mundo!</a>
-    </h3>
-
-    
-    <a href="/post/hola-mundo/" class="summary-link">
-      <div class="article-style">
-        Este es mi primer post
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Dec 14, 2019
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min de lectura
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/hola-mundo/" >
-      <img src="/post/hola-mundo/featured_hufa5a5110989e017e1b1b4e2348fd26d8_6806_150x0_resize_lanczos.gif" alt="Hola Mundo!">
-    </a>
-    
-  </div>
-</div>
-
-      
-    
-
-    
-
-  </div>
-</div>
-
-    </div>
-  </section>
-
-
+</article>
 
       
 
