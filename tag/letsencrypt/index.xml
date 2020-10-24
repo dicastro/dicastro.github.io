@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>letsencrypt | Diego Castro | Pandora Box</title>
+    <link>https://diegocastroviadero.com/tag/letsencrypt/</link>
+      <atom:link href="https://diegocastroviadero.com/tag/letsencrypt/index.xml" rel="self" type="application/rss+xml" />
+    <description>letsencrypt</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Tue, 20 Oct 2020 16:44:00 +0000</lastBuildDate>
+    <image>
+      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
+      <title>letsencrypt</title>
+      <link>https://diegocastroviadero.com/tag/letsencrypt/</link>
+    </image>
+    
+    <item>
+      <title>Cómo exponer una instalación casera de Home Assistant a Internet</title>
+      <link>https://diegocastroviadero.com/post/como-exponer-homeassistant-a-internet/</link>
+      <pubDate>Tue, 20 Oct 2020 16:44:00 +0000</pubDate>
+      <guid>https://diegocastroviadero.com/post/como-exponer-homeassistant-a-internet/</guid>
+      <description>&lt;p&gt;En este post explicaré cómo expongo mi &lt;strong&gt;instalación local&lt;/strong&gt; de 
+&lt;a href=&#34;https://www.home-assistant.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home Assistant&lt;/a&gt; a Internet a través de un &lt;strong&gt;dominio propio&lt;/strong&gt; y de forma &lt;strong&gt;segura&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;La &lt;em&gt;instalación local&lt;/em&gt; de Home Assistant no es más que una raspberry pi conectada al router de mi proveedor de internet.&lt;/p&gt;
+&lt;p&gt;El &lt;em&gt;dominio propio&lt;/em&gt; es un dominio adquirido en 
+&lt;a href=&#34;https://domains.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;google domains&lt;/a&gt;, concretamente se trata del dominio &lt;code&gt;popishome.com&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;El acceso al Home Assistant es &lt;em&gt;seguro&lt;/em&gt; porque se va a realizar utilizando el protocolo HTTPs. Se cifrará la conexión con un certificado de 
+&lt;a href=&#34;https://letsencrypt.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Con estos mimbres se plantean varias cuestiones:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;La raspberry pi está conectada al router del proveedor a internet por lo que la manera de llegar a la raspberry será utilizando la IP que el provedor de internet me haya asignado. En mi caso, dicha dirección IP puede variar al antojo del proveedor ya que no tengo contratada una IP fija. La cuestión que se plantea es ¿Cómo conseguir que el dominio apunte contínuamente a la IP que tengo asignada en cada momento? ¿Qué pasa cuando el proveedor de internet me cambia la IP?&lt;/li&gt;
+&lt;li&gt;Let&amp;rsquo;s Encrypt lanza un desafío para obtener un certificado, que normalmente requiere de un acceso por http al puerto 80 de quien inicia el desafío, que en este caso sería la raspberry. Sin embargo, algunos proveedores de internet tienen el puerto 80 reservado y no dejan abrirlo ¿Cómo solventar dicho inconveniente?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;La primera cuestión la podríamos resolver creando en Google Domains un &lt;code&gt;Dynamic DNS&lt;/code&gt; para nuestro dominio y obteniendo unos credenciales para el mismo.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/dynamic_domain.png&#34; alt=&#34;Crear un Dynamic DNS en Google Domains&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A continuación se configuraría en el Home Assistant el módulo de Google Domains para que actualice periódicamente los registros del DNS con la IP que tengamos asignada en cada momento.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Example configuration.yaml entry
+google_domains:
+  domain: subdomain.domain.com
+  username: YOUR_USERNAME
+  password: YOUR_PASSWORD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sin embargo, de esta forma únicamente se resuelve la primera de las cuestiones. Me gustaría disponer de una misma solución para solventar ambas cuestiones: 
+&lt;a href=&#34;https://www.cloudflare.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cloudflare&lt;/a&gt; al rescate!&lt;/p&gt;
+&lt;h1 id=&#34;cloudflare&#34;&gt;Cloudflare&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Cloudflare&lt;/em&gt; es una red de entrega de contenido (CDN) que nos va a permitir resolver las dos cuestiones que se plantean al inicio. Por un lado tiene un api que permitirá a la raspberry pi notificar de forma periódica cuál es su dirección IP. Y por otro lado también expone un API que permite realizar un desafío DNS para la obtención del certificado, en lugar del habitual desafío http.&lt;/p&gt;
+&lt;p&gt;Una vez registrados en Cloudflare, se accede a la cuenta y se da de alta el dominio propio de Google Domains:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/cloudflare_new_site.png&#34; alt=&#34;Añadir nuestro dominio en Cloudflare&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Al dar de alta el nuevo sitio lo haremos con la siguiente configuración:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Acceso directo (opción &lt;code&gt;DNS Only&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Sin SSL&lt;/li&gt;
+&lt;li&gt;Sin DNSSEC&lt;/li&gt;
+&lt;li&gt;Sin ningún tipo de optimización de javascript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Una vez dado de alta el sitio, habrá que configurar en el dominio de Google Domains los nameserver que se indiquen en Cloudflare:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/cloudflare_nameservers.png&#34; alt=&#34;Nameservers en Cloudflare&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/google_domains_nameservers.png&#34; alt=&#34;Nameservers en Google Domains&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Con todo esto, pasaremos a configurar el módulo de Cloudflare en el Home Assistant:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;cloudflare:
+  email: &amp;lt;EMAIL&amp;gt;
+  api_key: !secret cloudflare_globalapikey
+  zone: popishome.com
+  records:
+    - domotic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;El &lt;code&gt;api_key&lt;/code&gt; se corresponde al &lt;code&gt;Global Api Key&lt;/code&gt; y lo obtenemos de la configuración del perfil (&lt;em&gt;My Profile&lt;/em&gt;) en Cloudflare:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/cloudflare_global_api_key.png&#34; alt=&#34;Global api key en Cloudflare&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Con esta configuración se ha resuelto la primera de las cuestiones. Home Assistant notificará periódicamente la IP a Cloudflare y actualizará los registros DNS consecuentemente.&lt;/p&gt;
+&lt;p&gt;Para resolver la segunda cuestión utilizaré un &lt;em&gt;add-on&lt;/em&gt; de Home Assistant, concretamente he utilizado &lt;code&gt;NGINX Proxy Manager&lt;/code&gt;. He seleccionado este add-on y no el oficial de NGINX, porque me resulta más sencillo de configurar y porque se integra con Cloudflare. Este add-on permite obtener fácilmente certificados de Let&amp;rsquo;s Encrypt y en lugar de pasar el habitual desafío HTTP se puede indicar que sea mediante un desafío DNS. El desafío DNS consiste simplemente en añadir de forma temporal unos registros DNS para que Let&amp;rsquo;s Encrypt pueda comprobar que estamos en posesión del dominio. Para poder añadir estos registros temporales hay que disponer de un token con permisos para editar el DNS en Cloudflare.&lt;/p&gt;
+&lt;p&gt;La generación de un token con los permisos necesarios se hará desde &lt;em&gt;My Profile&lt;/em&gt; de Cloudflare:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/cloudflare_api_token.png&#34; alt=&#34;Token con permisos para editar DNS en Cloudflare&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Una vez generado el token, desde la pantalla de administración del add-on NGINX Proxy Manager se genera un nuevo certificado:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/nginx_proxy_manager_ssl_cert.png&#34; alt=&#34;Nuevo certificado SSL en NGINX Proxy Manager&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Ya con el certificado generado, configuramos un nuevo proxy para el Home Assistant:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/nginx_proxy_manager_host_details.png&#34; alt=&#34;Nuevo Proxy Host en NGINX Proxy Manager&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Y finalmente, configuramos SSL para dicho host, utilizando el certificado que hemos generado anteriormente:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/nginx_proxy_manager_host_ssl.png&#34; alt=&#34;Configuracion SSL para el Proxy Host en NGINX Proxy Manager&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Lo último que queda por realizar, es abrir en el router del proveedor a internet el puerto configurado en el NGINX Proxy Manager para el protocolo HTTPs:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/nginx_proxy_manager_config.png&#34; alt=&#34;Configuracion de puertos de NGINX Proxy Manager&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En mi caso particular he tenido que realizar un paso extra porque estoy utilizando Google WiFi en casa y tengo creada una red interna. He tenido que mapear el puerto de la red &amp;ldquo;externa&amp;rdquo; (la del router del proveedor a internet) y la red &amp;ldquo;interna&amp;rdquo; (la creada por Google WiFi y en la que está conectada la raspberry con el Home Assistant)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Quería poner el enlace a Google WiFi pero no lo encuentro. Me he acordado de que era un producto que no se vendía en Europa y me lo trajeron de USA (parece que sigue sin venderse aquí). Sí que he encontrado 
+&lt;a href=&#34;https://store.google.com/product/nest_wifi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nest WiFi&lt;/a&gt; que tiene pinta de ser lo mismo pero comercializado bajo la marca Nest.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h1&gt;
+&lt;p&gt;Mediante el uso de Cloudflare he sido capaz de resolver las 2 cuestiones que se me planteaban al principio. Por un lado se actualiza la IP de la raspberry en los registros DNS del dominio propio. Y por otro lado se obtienen certificados de Let&amp;rsquo;s Encrypt para el dominio propio y se utilizan para establecer una conexión segura. No lo he mencionado hasta el momento, pero la funcionalidad de Cloudflare que he utilizado no tiene coste alguno.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/homeassistant_secure.png&#34; alt=&#34;Acceso seguro a Home Assistant a través de un dominio propio&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cómo configurar un dominio propio de Google Domains en GitHub Pages y con HTTPS activado</title>
+      <link>https://diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</link>
+      <pubDate>Tue, 28 Jan 2020 18:34:00 +0000</pubDate>
+      <guid>https://diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</guid>
+      <description>&lt;h2 id=&#34;prerequisitos&#34;&gt;Prerequisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tener un dominio en 
+&lt;a href=&#34;https://domains.google.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tener un repositorio en 
+&lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; (ej: &lt;a href=&#34;https://github.com/dicastro/dicastro.github.io&#34;&gt;https://github.com/dicastro/dicastro.github.io&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Este repositorio no tiene por qué ser público, en mi caso se trata de un repositorio privado.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;pasos&#34;&gt;Pasos&lt;/h2&gt;
+&lt;h4 id=&#34;1---activa-_github-pages_&#34;&gt;1 - Activa &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Para ello en la configuración del repositorio de &lt;em&gt;GitHub&lt;/em&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Activa &lt;em&gt;GitHub Pages&lt;/em&gt; seleccionando una rama desde la cuál se va a servir el contenido&lt;/li&gt;
+&lt;li&gt;Configura un &lt;em&gt;Custom Domain&lt;/em&gt; (ej: diegocastroviadero.com)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2---apunta-el-dominio-diegocastroviaderocom-a-_github-pages_&#34;&gt;2 - Apunta el dominio (diegocastroviadero.com) a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;A&lt;/code&gt; apuntando a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;Datos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1h&lt;/td&gt;
+&lt;td&gt;185.199.108.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;185.199.109.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;185.199.110.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt; &lt;/td&gt;
+&lt;td&gt;185.199.111.153&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Si las IPs anteriores se han quedado desfasadas, podrás encontrar los valores actualizados 
+&lt;a href=&#34;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3---apunta-el-subdominio-www-a-_github-pages_&#34;&gt;3 - Apunta el subdominio &lt;code&gt;www&lt;/code&gt; a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;CNAME&lt;/code&gt; apuntando a la url de &lt;em&gt;GitHub Pages&lt;/em&gt; correspondiente al repositorio en cuestión (ej: dicastro.github.io)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;Datos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CNAME&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1h&lt;/td&gt;
+&lt;td&gt;dicastro.github.io&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;4---configura-https&#34;&gt;4 - Configura HTTPS&lt;/h4&gt;
+&lt;p&gt;Para ello en la configuración del repositorio de &lt;em&gt;GitHub&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fuerza el uso de HTTPS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Y en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Añade un &lt;em&gt;Custom resource record&lt;/em&gt; de tipo &lt;code&gt;CAA&lt;/code&gt; permitiendo la emisión de certificados para el dominio (ej: diegocastroviadero.com) a la entidad emisora de certificados, que en el caso de &lt;em&gt;GitHub&lt;/em&gt; es &lt;em&gt;letsencrypt&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;Datos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;@&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CAA&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1h&lt;/td&gt;
+&lt;td&gt;0 issue &amp;ldquo;letsencrypt.org&amp;rdquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Para obtener el valor de la columna &lt;em&gt;Datos&lt;/em&gt; de la entrada de tipo &lt;code&gt;CAA&lt;/code&gt; se puede hacer uso de 
+&lt;a href=&#34;https://sslmate.com/caa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta utilidad&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;referencias&#34;&gt;Referencias&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&#34;&gt;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&#34;&gt;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

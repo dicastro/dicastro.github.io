@@ -743,7 +743,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    9 min de lectura
+    10 min de lectura
   </span>
   
 
@@ -787,14 +787,39 @@
 
     <div class="article-style">
       <p>Esta es una serie de posts en la que voy a explicar cómo he montado un cluster de Kubernetes utilizando Raspberry Pi y algún ejemplo de uso.</p>
-<ul>
-<li>
-<a href="../monto-un-cluster-kubernetes-con-rpi-parte-i">Parte I</a> - Hardware</li>
-<li><strong>Parte II - Sistema Operativo y Docker</strong></li>
-<li>
-<a href="../monto-un-cluster-kubernetes-con-rpi-parte-iii">Parte III</a> - Cluster K3S</li>
-<li>Parte IV - (proximamente)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Título</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-i">P01</a></td>
+<td>Hardware</td>
+</tr>
+<tr>
+<td><strong>P02</strong></td>
+<td><strong>Sistema Operativo y Docker</strong></td>
+</tr>
+<tr>
+<td>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-iii">P03</a></td>
+<td>Cluster K3S</td>
+</tr>
+<tr>
+<td>
+<a href="../monto-un-cluster-kubernetes-con-rpi-parte-iv">P04</a></td>
+<td>Consumo eléctrico</td>
+</tr>
+<tr>
+<td>P05</td>
+<td>(proximamente)</td>
+</tr>
+</tbody>
+</table>
 <h1 id="sistema-operativo">Sistema Operativo</h1>
 <p>Una vez que todo el hardware está montado la siguiente decisión a tomar es qué sistema operativo instalar en las Raspberry. En el momento de tomar la decisión barajaba 3 opciones:</p>
 <ul>
@@ -1006,6 +1031,26 @@ rpicluster05
 </ul>
 <p>(se puede ver el playbook completo 
 <a href="https://github.com/dicastro/rpicluster/tree/master/playbooks/00_cluster_regenerate_cloudinit_config" target="_blank" rel="noopener">aquí</a>)</p>
+<h2 id="cómo-instalar-ansible-en-windows-10">Cómo instalar Ansible en Windows 10</h2>
+<p>La manera más fácil de utilizar Ansible en Windows 10 es a través del WLS. Para instalar Ansible he utilizado <code>pip</code>, por lo que el primer paso será instalar <code>pip3</code> y algunas dependencias necesarias:</p>
+<pre><code class="language-bash">sudo apt install -y python3-pip python3-dev libffi-dev libssl-dev
+</code></pre>
+<p>A continuación se instala Ansible (a nivel del usuario):</p>
+<pre><code class="language-bash">pip3 install ansible --user
+</code></pre>
+<p>Por último se actualiza el <code>PATH</code>:</p>
+<pre><code class="language-bash">echo 'PATH=$HOME/.local/bin:$PATH' &gt;&gt; ~/.bashrc
+</code></pre>
+<p>Estas son algunas utilidades interesantes que recomiendo tener instaladas para trabajar con Ansible:</p>
+<pre><code class="language-bash">pip3 install yamllint ansible-lint molecule
+</code></pre>
+<h4 id="actualizar-ansible-29-a-210">Actualizar Ansible 2.9 a 2.10</h4>
+<p>Recientemente se ha lanzado la versión 2.10 de Ansible y en esta versión ha habido una reestructuración importante de módulos. Debido a esta reestructuración la actualización no se puede hacer ejecutando un <em>upgrade</em> del paquete ya instalado, sino que hay que desinstalar la versión instalada (la versión 2.9):</p>
+<pre><code class="language-bash">pip3 uninstall ansible ansible-base
+</code></pre>
+<p>Y a continuación instalar de nuevo (la última versión, 2.10):</p>
+<pre><code class="language-bash">pip3 install ansible --user
+</code></pre>
 <h1 id="docker">Docker</h1>
 <p>Gracias a Ansible, la instalación de Docker en todas las máquinas se ha simplificado al máximo. He encontrado un playbook, que he utilizado casi tal cual, que se encarga de instalar Docker en sistemas debian. Se puede encontrar la versión que he utilizado 
 <a href="https://github.com/dicastro/rpicluster/tree/master/playbooks/02_cluster_install_docker" target="_blank" rel="noopener">aquí</a>.</p>
@@ -1200,6 +1245,8 @@ rpicluster05
     <ul>
       
       <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/">Monto un cluster Kubernetes con Raspberry Pi (parte III)</a></li>
+      
+      <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-iv/">Monto un cluster Kubernetes con Raspberry Pi (parte IV)</a></li>
       
       <li><a href="/post/monto-un-cluster-kubernetes-con-rpi-parte-i/">Monto un cluster Kubernetes con Raspberry Pi (parte I)</a></li>
       

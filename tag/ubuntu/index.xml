@@ -18,14 +18,39 @@
       <pubDate>Sun, 27 Sep 2020 11:19:00 +0000</pubDate>
       <guid>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/</guid>
       <description>&lt;p&gt;Esta es una serie de posts en la que voy a explicar cómo he montado un cluster de Kubernetes utilizando Raspberry Pi y algún ejemplo de uso.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;Parte I&lt;/a&gt; - Hardware&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Parte II - Sistema Operativo y Docker&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;Parte III&lt;/a&gt; - Cluster K3S&lt;/li&gt;
-&lt;li&gt;Parte IV - (proximamente)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parte&lt;/th&gt;
+&lt;th&gt;Título&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Hardware&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;P02&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Sistema Operativo y Docker&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;P03&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Cluster K3S&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;P04&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Consumo eléctrico&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P05&lt;/td&gt;
+&lt;td&gt;(proximamente)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h1 id=&#34;sistema-operativo&#34;&gt;Sistema Operativo&lt;/h1&gt;
 &lt;p&gt;Una vez que todo el hardware está montado la siguiente decisión a tomar es qué sistema operativo instalar en las Raspberry. En el momento de tomar la decisión barajaba 3 opciones:&lt;/p&gt;
 &lt;ul&gt;
@@ -237,6 +262,26 @@ rpicluster05
 &lt;/ul&gt;
 &lt;p&gt;(se puede ver el playbook completo 
 &lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/00_cluster_regenerate_cloudinit_config&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&#34;cómo-instalar-ansible-en-windows-10&#34;&gt;Cómo instalar Ansible en Windows 10&lt;/h2&gt;
+&lt;p&gt;La manera más fácil de utilizar Ansible en Windows 10 es a través del WLS. Para instalar Ansible he utilizado &lt;code&gt;pip&lt;/code&gt;, por lo que el primer paso será instalar &lt;code&gt;pip3&lt;/code&gt; y algunas dependencias necesarias:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt install -y python3-pip python3-dev libffi-dev libssl-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A continuación se instala Ansible (a nivel del usuario):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install ansible --user
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Por último se actualiza el &lt;code&gt;PATH&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &#39;PATH=$HOME/.local/bin:$PATH&#39; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Estas son algunas utilidades interesantes que recomiendo tener instaladas para trabajar con Ansible:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install yamllint ansible-lint molecule
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;actualizar-ansible-29-a-210&#34;&gt;Actualizar Ansible 2.9 a 2.10&lt;/h4&gt;
+&lt;p&gt;Recientemente se ha lanzado la versión 2.10 de Ansible y en esta versión ha habido una reestructuración importante de módulos. Debido a esta reestructuración la actualización no se puede hacer ejecutando un &lt;em&gt;upgrade&lt;/em&gt; del paquete ya instalado, sino que hay que desinstalar la versión instalada (la versión 2.9):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 uninstall ansible ansible-base
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Y a continuación instalar de nuevo (la última versión, 2.10):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install ansible --user
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;docker&#34;&gt;Docker&lt;/h1&gt;
 &lt;p&gt;Gracias a Ansible, la instalación de Docker en todas las máquinas se ha simplificado al máximo. He encontrado un playbook, que he utilizado casi tal cual, que se encarga de instalar Docker en sistemas debian. Se puede encontrar la versión que he utilizado 
 &lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/02_cluster_install_docker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;

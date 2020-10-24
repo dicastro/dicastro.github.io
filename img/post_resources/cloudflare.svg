@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="cloudflare.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg938"
+   version="1.1"
+   viewBox="0 0 49.459087 24.94227"
+   height="24.94227mm"
+   width="49.459087mm">
+  <defs
+     id="defs932">
+    <style
+       id="style1501">.cls-1,.cls-2{fill:none;}.cls-1{clip-rule:evenodd;}.cls-3{fill:#fff;}.cls-4{clip-path:url(#clip-path);}.cls-5{clip-path:url(#clip-path-2);}.cls-6{fill:#f28021;}.cls-7{clip-path:url(#clip-path-3);}.cls-8{fill:#faae41;}.cls-9{clip-path:url(#clip-path-5);}.cls-10{fill:#414142;}.cls-11{clip-path:url(#clip-path-7);}.cls-12{clip-path:url(#clip-path-9);}.cls-13{clip-path:url(#clip-path-11);}.cls-14{clip-path:url(#clip-path-13);}.cls-15{clip-path:url(#clip-path-15);}.cls-16{clip-path:url(#clip-path-17);}.cls-17{clip-path:url(#clip-path-19);}.cls-18{clip-path:url(#clip-path-21);}.cls-19{clip-path:url(#clip-path-23);}.cls-20{isolation:isolate;}.cls-21{clip-path:url(#clip-path-25);}.cls-22{clip-path:url(#clip-path-26);}</style>
+    <clipPath
+       id="clip-path"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 326.67,80.19 c 1.14,-3.94 0.72,-7.58 -1.2,-10.26 a 10.39,10.39 0 0 0 -8.25,-4.09 L 249.8,65 a 1.34,1.34 0 0 1 -1.06,-0.57 1.38,1.38 0 0 1 -0.14,-1.22 1.8,1.8 0 0 1 1.57,-1.2 l 68.05,-0.86 c 8.07,-0.37 16.81,-6.93 19.87,-14.93 L 342,36 a 2.33,2.33 0 0 0 0.11,-1.34 44.3,44.3 0 0 0 -85.22,-4.59 19.93,19.93 0 0 0 -31.79,14 20.14,20.14 0 0 0 0.52,7 28.38,28.38 0 0 0 -27.22,32.49 1.32,1.32 0 0 0 1.3,1.14 h 124.48 a 1.64,1.64 0 0 0 1.57,-1.18 z"
+         id="path1503" />
+    </clipPath>
+    <clipPath
+       id="clip-path-2"
+       transform="translate(9.58 9.58)">
+      <rect
+         class="cls-2"
+         x="-109.25"
+         y="-72.839996"
+         width="5458.8701"
+         height="642.10999"
+         id="rect1506" />
+    </clipPath>
+    <clipPath
+       id="clip-path-3"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 348.18,36.78 c -0.62,0 -1.25,0 -1.87,0 a 1.07,1.07 0 0 0 -1,0.78 l -2.65,9.17 c -1.14,3.94 -0.72,7.58 1.2,10.26 a 10.38,10.38 0 0 0 8.25,4.09 l 14.37,0.87 a 1.3,1.3 0 0 1 1,0.56 1.37,1.37 0 0 1 0.15,1.23 1.8,1.8 0 0 1 -1.56,1.2 l -14.93,0.86 c -8.11,0.37 -16.85,6.93 -19.91,14.93 l -1.03,2.87 a 0.8,0.8 0 0 0 0.75,1.09 h 51.39 a 1.37,1.37 0 0 0 1.32,-1 36.94,36.94 0 0 0 -35.48,-46.91"
+         id="path1509" />
+    </clipPath>
+    <clipPath
+       id="clip-path-5"
+       transform="translate(9.58 9.58)">
+      <polygon
+         class="cls-1"
+         points="50.76,99.49 50.76,122.78 65.63,122.78 65.63,130.24 42.25,130.24 42.25,99.49 "
+         id="polygon1512" />
+    </clipPath>
+    <clipPath
+       id="clip-path-7"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 74.44,115 v -0.09 c 0,-8.83 7.11,-16 16.58,-16 9.47,0 16.49,7.08 16.49,15.91 v 0.09 c 0,8.83 -7.11,16 -16.58,16 -9.47,0 -16.5,-7.07 -16.5,-15.9 m 24.39,0 v -0.09 c 0,-4.44 -3.2,-8.31 -7.89,-8.31 -4.69,0 -7.77,3.78 -7.77,8.22 v 0.09 c 0,4.44 3.2,8.3 7.85,8.3 4.65,0 7.81,-3.78 7.81,-8.22"
+         id="path1515" />
+    </clipPath>
+    <clipPath
+       id="clip-path-9"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="M 117.94,116.75 V 99.48 h 8.64 v 17.09 c 0,4.44 2.24,6.55 5.66,6.55 3.42,0 5.66,-2 5.66,-6.33 V 99.48 h 8.64 v 17.05 c 0,9.93 -5.66,14.28 -14.39,14.28 -8.73,0 -14.22,-4.44 -14.22,-14.06"
+         id="path1518" />
+    </clipPath>
+    <clipPath
+       id="clip-path-11"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 159.56,99.49 h 11.85 c 11,0 17.33,6.33 17.33,15.2 v 0.09 c 0,8.87 -6.45,15.46 -17.5,15.46 h -11.68 z m 12,23.2 c 5.09,0 8.47,-2.81 8.47,-7.78 v -0.09 c 0,-4.92 -3.38,-7.78 -8.47,-7.78 h -3.47 v 15.64 z"
+         id="path1521" />
+    </clipPath>
+    <clipPath
+       id="clip-path-13"
+       transform="translate(9.58 9.58)">
+      <polygon
+         class="cls-1"
+         points="225.67,99.49 225.67,106.96 209.62,106.96 209.62,112.19 224.14,112.19 224.14,119.26 209.62,119.26 209.62,130.24 201.11,130.24 201.11,99.49 "
+         id="polygon1524" />
+    </clipPath>
+    <clipPath
+       id="clip-path-15"
+       transform="translate(9.58 9.58)">
+      <polygon
+         class="cls-1"
+         points="246.02,99.49 246.02,122.78 260.9,122.78 260.9,130.24 237.51,130.24 237.51,99.49 "
+         id="polygon1527" />
+    </clipPath>
+    <clipPath
+       id="clip-path-17"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 283.14,99.27 h 8.2 l 13.07,31 h -9.13 L 293,124.75 h -11.8 l -2.2,5.49 h -9 z m 7.46,18.85 -3.42,-8.74 -3.47,8.74 z"
+         id="path1530" />
+    </clipPath>
+    <clipPath
+       id="clip-path-19"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 315.37,99.48 h 14.53 c 4.7,0 7.94,1.23 10,3.34 a 9.54,9.54 0 0 1 2.72,7.16 v 0.09 a 9.73,9.73 0 0 1 -6.31,9.45 l 7.33,10.72 h -9.84 l -6.18,-9.32 h -3.73 v 9.32 h -8.51 z m 14.13,14.76 c 2.9,0 4.56,-1.41 4.56,-3.65 v -0.09 c 0,-2.42 -1.75,-3.65 -4.61,-3.65 h -5.57 v 7.38 z"
+         id="path1533" />
+    </clipPath>
+    <clipPath
+       id="clip-path-21"
+       transform="translate(9.58 9.58)">
+      <polygon
+         class="cls-1"
+         points="379.6,99.49 379.6,106.74 363.32,106.74 363.32,111.39 378.06,111.39 378.06,118.11 363.32,118.11 363.32,122.99 379.81,122.99 379.81,130.24 354.9,130.24 354.9,99.49 "
+         id="polygon1536" />
+    </clipPath>
+    <clipPath
+       id="clip-path-23"
+       transform="translate(9.58 9.58)">
+      <rect
+         x="0"
+         class="cls-2"
+         y="98.870003"
+         width="32.77"
+         height="31.99"
+         id="rect1539" />
+    </clipPath>
+    <clipPath
+       id="clip-path-25"
+       transform="translate(9.58 9.58)">
+      <rect
+         x="0"
+         class="cls-2"
+         y="97.75"
+         width="34.5"
+         height="34.5"
+         id="rect1542" />
+    </clipPath>
+    <clipPath
+       id="clip-path-26"
+       transform="translate(9.58 9.58)">
+      <path
+         class="cls-1"
+         d="m 23.61,118.56 a 7.52,7.52 0 0 1 -7,4.61 c -4.65,0 -7.85,-3.87 -7.85,-8.31 v -0.09 c 0,-4.44 3.12,-8.22 7.77,-8.22 a 7.71,7.71 0 0 1 7.3,5.1 h 9 C 31.39,104.33 24.97,98.86 16.64,98.86 7.1,98.87 0,106 0,114.86 V 115 c 0,8.83 7,15.91 16.49,15.91 a 16.18,16.18 0 0 0 16.11,-12.3 z"
+         id="path1545" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="29.463953"
+     inkscape:cx="31.822215"
+     inkscape:zoom="1.979899"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata935">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-110.33443,-105.90194)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       id="g1761">
+      <polygon
+         class="cls-3"
+         points="263.67,94.27 261.95,64.57 351.7,44.95 355.28,46.66 358.63,52.49 381.07,70.9 381.07,88.74 381.07,94.04 "
+         id="polygon1552"
+         transform="matrix(0.26458333,0,0,0.26458333,57.920763,105.90194)" />
+      <g
+         class="cls-4"
+         clip-path="url(#clip-path)"
+         id="g1558"
+         transform="matrix(0.26458333,0,0,0.26458333,57.920763,105.90194)">
+        <g
+           class="cls-5"
+           clip-path="url(#clip-path-2)"
+           id="g1556">
+          <rect
+             y="0"
+             class="cls-6"
+             x="198.06"
+             width="163.23"
+             height="103.85"
+             id="rect1554" />
+        </g>
+      </g>
+      <g
+         class="cls-7"
+         clip-path="url(#clip-path-3)"
+         id="g1564"
+         transform="matrix(0.26458333,0,0,0.26458333,57.920763,105.90194)">
+        <g
+           class="cls-5"
+           clip-path="url(#clip-path-2)"
+           id="g1562">
+          <rect
+             class="cls-8"
+             x="330.14001"
+             y="36.779999"
+             width="74.050003"
+             height="67.07"
+             id="rect1560" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
