@@ -5,12 +5,115 @@
     <link>https://diegocastroviadero.com/tag/sonoff/</link>
       <atom:link href="https://diegocastroviadero.com/tag/sonoff/index.xml" rel="self" type="application/rss+xml" />
     <description>sonoff</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Wed, 14 Oct 2020 17:09:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Mon, 26 Oct 2020 06:04:00 +0000</lastBuildDate>
     <image>
       <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
       <title>sonoff</title>
       <link>https://diegocastroviadero.com/tag/sonoff/</link>
     </image>
+    
+    <item>
+      <title>Cómo calibrar un Sonoff Pow R2</title>
+      <link>https://diegocastroviadero.com/post/como-calibrar-un-sonoff-pow-r2/</link>
+      <pubDate>Mon, 26 Oct 2020 06:04:00 +0000</pubDate>
+      <guid>https://diegocastroviadero.com/post/como-calibrar-un-sonoff-pow-r2/</guid>
+      <description>&lt;p&gt;En 
+&lt;a href=&#34;./../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;otro post&lt;/a&gt; ya expliqué cómo medía el consumo de un cluster de Raspberry Pi mediante el uso de un Sonoff Pow R2. Es importante calibrar este dispositivo antes de utilizarlo para que sus mediciones sean lo más precisas posibles.&lt;/p&gt;
+&lt;p&gt;En este post voy a explicar cómo calibrarlo. Para ello será necesario disponer de un medidor de corriente. Yo he utilizado un 
+&lt;a href=&#34;https://www.amazon.es/gp/product/B06VWMS7QS/ref=ppx_yo_dt_b_asin_title_o03_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ZHURUI PR10-C EU16A&lt;/a&gt; que no es muy caro y funciona bastante bien. Este dispositivo permite visualizar al mismo tiempo el voltaje, la corriente y la potencia consumidas. Esto último puede parecer una nimiedad, pero más adelante se mostrará cómo este detalle facilita mucho el proceso de calibración.&lt;/p&gt;
+&lt;p&gt;Para realizar la calibración se conecta el Zhurui a una toma de corriente y el Sonoff al primero. Este proceso consiste en ir conectado al Sonoff diversos dispositivos con diferentes consumos e ir anotando tanto las mediciones del Zhurui como las del Sonoff.&lt;/p&gt;
+&lt;p&gt;En mi caso he utilizado los siguientes dispositivos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un flexo con un halógeno (11W)&lt;/li&gt;
+&lt;li&gt;Un flexo con una bombilla incandescente (60W)&lt;/li&gt;
+&lt;li&gt;Una aspiradora (máximo 800W)&lt;/li&gt;
+&lt;li&gt;Una plancha (2000W)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;He ido conectando uno a uno cada uno de los dispositivos anteriores al Sonoff, que a su vez está conectado al medidor de consumo, y he ido anotando las mediciones de ambos. Para tomar las medidas del Sonoff, he utilizado un portátil desde el cual he accedido a la consola del ESPHome. Este portátil lo he colocado junto a la toma de corriente donde se encuentra el Zhurui, de tal forma que mediante una fotografía puedo capturar las lecturas de ambos dispositivos.&lt;/p&gt;
+&lt;p&gt;En este paso es donde se agradece que el medidor de corriente muestre en pantalla al mismo tiempo todos los valores interesantes, ya que con una única instantánea se obtiene toda la información necesaria. Aquí se puede ver un ejemplo de las lecturas obtenidas al conectar la bombilla incandescente:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./resources/ejemplo_captura_medidas.jpg&#34; alt=&#34;Ejemplo de captura de consumo de una bombilla incandescente de 60W&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Una vez se ha realizado una captura para cada uno de los dispositivos se dispone de toda la información necesaria para calibrar el Sonoff. Por cómo está diseñado ESPHome este paso es muy sencillo. Simplemente hay que configurar unos filtros en los que se anota la medida del medidor de corriente junto con la del sonoff.&lt;/p&gt;
+&lt;p&gt;Donde antes había algo como lo siguiente:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Current sensor
+current:
+  name: &amp;quot;RPI Cluster Current&amp;quot;
+  icon: mdi:current-ac
+  unit_of_measurement: A
+  accuracy_decimals: 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ahora habrá algo parecido a esto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Current sensor
+current:
+  name: &amp;quot;RPI Cluster Current&amp;quot;
+  icon: mdi:current-ac
+  unit_of_measurement: A
+  accuracy_decimals: 3
+  filters:
+    # Map from sensor -&amp;gt; measured value
+    - calibrate_linear:
+        - 0.0 -&amp;gt; 0.010
+        - 0.15855 -&amp;gt; 0.153
+        - 0.25773 -&amp;gt; 0.265
+        - 2.45250 -&amp;gt; 2.519
+        - 3.02082 -&amp;gt; 3.066
+        - 3.41044 -&amp;gt; 3.464
+        - 8.73604 -&amp;gt; 8.837
+    # Make everything below 0.01A appear as just 0A.
+    # Furthermore it corrects 0.01A for the power usage of the sonoff plus the led of the multi-socket.
+    - lambda: if (x &amp;lt; (0.01 - 0.01)) return 0; else return (x - 0.01);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;En 
+&lt;a href=&#34;./../monto-un-cluster-kubernetes-con-rpi-parte-iv#c%c3%b3mo-obtenemos-el-binario-con-el-c%c3%b3digo-a-flashear&#34;&gt;este post&lt;/a&gt; se puede ver el código completo del Sonoff&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Y algo parecido para el sensor de potencia:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Power sensor
+power:
+  name: &amp;quot;RPI Cluster Power&amp;quot;
+  icon: mdi:gauge
+  unit_of_measurement: W
+  accuracy_decimals: 0
+  id: rpiclusterpower
+  filters:
+    # Map from sensor -&amp;gt; measured value
+    - calibrate_linear:
+        - 0.0 -&amp;gt; 1.19
+        - 15.33994 -&amp;gt; 16.98
+        - 57.21655 -&amp;gt; 59.42
+        - 261.44540 -&amp;gt; 272.0
+        - 459.74557 -&amp;gt; 471.6
+        - 741.94073 -&amp;gt; 761.0
+        - 1905.09253 -&amp;gt; 1957.0
+    # Make everything below 2W appear as just 0W.
+    # Furthermore it corrects 1.19W for the power usage of the sonoff plus the led of the multi-socket.
+    - lambda: if (x &amp;lt; (2 + 1.19)) return 0; else return (x - 1.19);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Y para el de voltaje:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Voltage sensor
+voltage:
+  name: &amp;quot;RPI Cluster Voltage&amp;quot;
+  icon: mdi:flash
+  unit_of_measurement: V
+  accuracy_decimals: 1
+  filters:
+    # Map from sensor -&amp;gt; measured value
+    - calibrate_linear:
+        - 0.0 -&amp;gt; 0.0
+        - 226.84409 -&amp;gt; 225.6
+        - 225.37788 -&amp;gt; 224.9
+        - 225.54657 -&amp;gt; 224.6
+        - 224.83321 -&amp;gt; 224.5
+        - 224.59578 -&amp;gt; 224.0
+        - 224.23352 -&amp;gt; 223.9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ESPHome realiza una regresión lineal en base a los valores anteriores (utilizando una función de ajuste de mínimos cuadrados) para &amp;ldquo;corregir&amp;rdquo; las mediciones realizadas por el Sonoff.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No lo he mencionado hasta ahora, pero también hay que realizar una captura de las medidas sin ningún dispositivo conectado al Sonoff.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h1&gt;
+&lt;p&gt;Como se puede ver la calibración de un dispositivo Sonoff es muy sencilla. Cuanto más preciso sea el medidor de corriente externo utilizado, mejor será la calibración del Sonoff. Es importante utilizar dispositivos con consumos diversos que cubran todo el espectro para que la calibración se ajuste lo máximo a la realidad. En el caso de adquirir varios Sonoff, cada uno debería ser calibrado de forma independiente.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Monto un cluster Kubernetes con Raspberry Pi (parte IV)</title>
