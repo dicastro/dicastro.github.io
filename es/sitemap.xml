@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://diegocastroviadero.com/post/como-calibrar-un-sonoff-pow-r2/</loc>
-    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <loc>https://diegocastroviadero.com/tag/alermanager/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/cluster/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
     <loc>https://diegocastroviadero.com/</loc>
-    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,26 +20,27 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://diegocastroviadero.com/tag/esphome/</loc>
-    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/grafana/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/kubernetes/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-v/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/</loc>
-    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diegocastroviadero.com/tag/sonoff/</loc>
-    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/prometheus/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/raspberry/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
     <loc>https://diegocastroviadero.com/tags/</loc>
-    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -50,213 +51,126 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://diegocastroviadero.com/post/como-calibrar-un-sonoff-pow-r2/</loc>
+    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/esphome/</loc>
+    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/sonoff/</loc>
+    <lastmod>2020-10-28T17:39:00+00:00</lastmod>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/cloudflare/</loc>
     <lastmod>2020-10-24T11:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/como-exponer-homeassistant-a-internet/</loc>
     <lastmod>2020-10-24T11:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/google-domains/</loc>
     <lastmod>2020-10-24T11:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/home-assistant/</loc>
     <lastmod>2020-10-24T11:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/letsencrypt/</loc>
     <lastmod>2020-10-24T11:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/nginx/</loc>
     <lastmod>2020-10-24T11:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diegocastroviadero.com/tag/cluster/</loc>
-    <lastmod>2020-10-22T08:57:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iv/</loc>
     <lastmod>2020-10-22T08:57:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diegocastroviadero.com/tag/raspberry/</loc>
-    <lastmod>2020-10-22T08:57:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diegocastroviadero.com/tag/docker/</loc>
-    <lastmod>2020-10-14T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/k3s/</loc>
     <lastmod>2020-10-14T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-iii/</loc>
     <lastmod>2020-10-14T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/ansible/</loc>
     <lastmod>2020-10-09T15:26:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/cloud-init/</loc>
     <lastmod>2020-10-09T15:26:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/docker/</loc>
+    <lastmod>2020-10-09T15:26:00+00:00</lastmod>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-ii/</loc>
     <lastmod>2020-10-09T15:26:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/ubuntu/</loc>
     <lastmod>2020-10-09T15:26:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-i/</loc>
     <lastmod>2020-09-27T09:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/slides/</loc>
     <lastmod>2020-09-05T07:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/slides/timehammer/</loc>
     <lastmod>2020-09-05T07:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/eda/</loc>
     <lastmod>2020-09-05T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/java/</loc>
     <lastmod>2020-09-05T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/kafka/</loc>
     <lastmod>2020-09-05T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/project/</loc>
     <lastmod>2020-09-05T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/quarkus/</loc>
     <lastmod>2020-09-05T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/project/timehammer/</loc>
     <lastmod>2020-09-05T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/chatbot/</loc>
     <lastmod>2020-09-05T06:46:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/como-automatizar-los-fichajes-de-mi-empresa/</loc>
     <lastmod>2020-09-05T06:46:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/telegram/</loc>
     <lastmod>2020-09-05T06:46:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/timehammer/</loc>
     <lastmod>2020-09-05T06:46:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/como-quiero-organizar-mi-almacenamiento/</loc>
     <lastmod>2020-02-01T08:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/unraid/</loc>
     <lastmod>2020-02-01T08:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/github-pages/</loc>
     <lastmod>2020-01-29T18:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/post/hola-mundo/</loc>
     <lastmod>2019-12-14T15:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/data-science/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/deep-learning/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/project/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/yolo/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://diegocastroviadero.com/author/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://diegocastroviadero.com/en/author/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://diegocastroviadero.com/author/"
-                />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://diegocastroviadero.com/admin/</loc>
+  </url><url>
     <loc>https://diegocastroviadero.com/cv/</loc>
     <xhtml:link
                 rel="alternate"
@@ -268,9 +182,7 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/cv/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/experiences/admin/</loc>
     <xhtml:link
                 rel="alternate"
@@ -282,17 +194,11 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/experiences/admin/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/posts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/projects/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/authors/</loc>
     <xhtml:link
                 rel="alternate"
@@ -304,9 +210,7 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/authors/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -318,9 +222,19 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://diegocastroviadero.com/author/diego-castro/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://diegocastroviadero.com/en/author/diego-castro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://diegocastroviadero.com/author/diego-castro/"
+                />
+  </url><url>
     <loc>https://diegocastroviadero.com/experiences/</loc>
     <xhtml:link
                 rel="alternate"
@@ -332,9 +246,7 @@
                 hreflang="es"
                 href="https://diegocastroviadero.com/experiences/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/publication_types/</loc>
     <xhtml:link
                 rel="alternate"
@@ -347,5 +259,4 @@
                 href="https://diegocastroviadero.com/publication_types/"
                 />
   </url>
-  
 </urlset>

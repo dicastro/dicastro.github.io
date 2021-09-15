@@ -5,9 +5,9 @@
     <link>https://diegocastroviadero.com/tag/esphome/</link>
       <atom:link href="https://diegocastroviadero.com/tag/esphome/index.xml" rel="self" type="application/rss+xml" />
     <description>esphome</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Mon, 26 Oct 2020 06:04:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Mon, 26 Oct 2020 06:04:00 +0000</lastBuildDate>
     <image>
-      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/media/logo_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_300x300_fit_lanczos_3.png</url>
       <title>esphome</title>
       <link>https://diegocastroviadero.com/tag/esphome/</link>
     </image>
@@ -17,10 +17,8 @@
       <link>https://diegocastroviadero.com/post/como-calibrar-un-sonoff-pow-r2/</link>
       <pubDate>Mon, 26 Oct 2020 06:04:00 +0000</pubDate>
       <guid>https://diegocastroviadero.com/post/como-calibrar-un-sonoff-pow-r2/</guid>
-      <description>&lt;p&gt;En 
-&lt;a href=&#34;./../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;otro post&lt;/a&gt; ya expliqué cómo medía el consumo de un cluster de Raspberry Pi mediante el uso de un Sonoff Pow R2. Es importante calibrar este dispositivo antes de utilizarlo para que sus mediciones sean lo más precisas posibles.&lt;/p&gt;
-&lt;p&gt;En este post voy a explicar cómo calibrarlo. Para ello será necesario disponer de un medidor de corriente. Yo he utilizado un 
-&lt;a href=&#34;https://www.amazon.es/gp/product/B06VWMS7QS/ref=ppx_yo_dt_b_asin_title_o03_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ZHURUI PR10-C EU16A&lt;/a&gt; que no es muy caro y funciona bastante bien. Este dispositivo permite visualizar al mismo tiempo el voltaje, la corriente y la potencia consumidas. Esto último puede parecer una nimiedad, pero más adelante se mostrará cómo este detalle facilita mucho el proceso de calibración.&lt;/p&gt;
+      <description>&lt;p&gt;En &lt;a href=&#34;./../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;otro post&lt;/a&gt; ya expliqué cómo medía el consumo de un cluster de Raspberry Pi mediante el uso de un Sonoff Pow R2. Es importante calibrar este dispositivo antes de utilizarlo para que sus mediciones sean lo más precisas posibles.&lt;/p&gt;
+&lt;p&gt;En este post voy a explicar cómo calibrarlo. Para ello será necesario disponer de un medidor de corriente. Yo he utilizado un &lt;a href=&#34;https://www.amazon.es/gp/product/B06VWMS7QS/ref=ppx_yo_dt_b_asin_title_o03_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ZHURUI PR10-C EU16A&lt;/a&gt; que no es muy caro y funciona bastante bien. Este dispositivo permite visualizar al mismo tiempo el voltaje, la corriente y la potencia consumidas. Esto último puede parecer una nimiedad, pero más adelante se mostrará cómo este detalle facilita mucho el proceso de calibración.&lt;/p&gt;
 &lt;p&gt;Para realizar la calibración se conecta el Zhurui a una toma de corriente y el Sonoff al primero. Este proceso consiste en ir conectado al Sonoff diversos dispositivos con diferentes consumos e ir anotando tanto las mediciones del Zhurui como las del Sonoff.&lt;/p&gt;
 &lt;p&gt;En mi caso he utilizado los siguientes dispositivos:&lt;/p&gt;
 &lt;ul&gt;
@@ -31,7 +29,27 @@
 &lt;/ul&gt;
 &lt;p&gt;He ido conectando uno a uno cada uno de los dispositivos anteriores al Sonoff, que a su vez está conectado al medidor de consumo, y he ido anotando las mediciones de ambos. Para tomar las medidas del Sonoff, he utilizado un portátil desde el cual he accedido a la consola del ESPHome. Este portátil lo he colocado junto a la toma de corriente donde se encuentra el Zhurui, de tal forma que mediante una fotografía puedo capturar las lecturas de ambos dispositivos.&lt;/p&gt;
 &lt;p&gt;En este paso es donde se agradece que el medidor de corriente muestre en pantalla al mismo tiempo todos los valores interesantes, ya que con una única instantánea se obtiene toda la información necesaria. Aquí se puede ver un ejemplo de las lecturas obtenidas al conectar la bombilla incandescente:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./resources/ejemplo_captura_medidas.jpg&#34; alt=&#34;Ejemplo de captura de consumo de una bombilla incandescente de 60W&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/ejemplo_captura_medidas.jpg&#34; alt=&#34;Ejemplo de captura de consumo de una bombilla incandescente de 60W&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Una vez se ha realizado una captura para cada uno de los dispositivos se dispone de toda la información necesaria para calibrar el Sonoff. Por cómo está diseñado ESPHome este paso es muy sencillo. Simplemente hay que configurar unos filtros en los que se anota la medida del medidor de corriente junto con la del sonoff.&lt;/p&gt;
 &lt;p&gt;Donde antes había algo como lo siguiente:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Current sensor
@@ -63,8 +81,7 @@ current:
     - lambda: if (x &amp;lt; (0.01 - 0.01)) return 0; else return (x - 0.01);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;En 
-&lt;a href=&#34;./../monto-un-cluster-kubernetes-con-rpi-parte-iv#c%c3%b3mo-obtenemos-el-binario-con-el-c%c3%b3digo-a-flashear&#34;&gt;este post&lt;/a&gt; se puede ver el código completo del Sonoff&lt;/p&gt;
+&lt;p&gt;En &lt;a href=&#34;./../monto-un-cluster-kubernetes-con-rpi-parte-iv#c%c3%b3mo-obtenemos-el-binario-con-el-c%c3%b3digo-a-flashear&#34;&gt;este post&lt;/a&gt; se puede ver el código completo del Sonoff&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Y algo parecido para el sensor de potencia:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Power sensor
@@ -130,18 +147,15 @@ voltage:
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Hardware&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-ii&#34;&gt;P02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-ii&#34;&gt;P02&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Sistema Operativo y Docker&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;P03&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;P03&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Cluster K3S&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -149,41 +163,54 @@ voltage:
 &lt;td&gt;&lt;strong&gt;Consumo eléctrico&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;P05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-v&#34;&gt;P05&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Monitorización&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P06&lt;/td&gt;
 &lt;td&gt;(proximamente)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h1 id=&#34;introducción&#34;&gt;Introducción&lt;/h1&gt;
-&lt;p&gt;En un post anterior de esta serie ya mencioné la primera disyuntiva a la que me enfrenté: 
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i/#introducci%c3%b3n&#34;&gt;cloud vs. on premise&lt;/a&gt;. En ese momento tuve en cuenta los costes de ambas alternativas, aunque la comparativa fue poco precisa, ya que para la opción &lt;em&gt;on premise&lt;/em&gt; no tuve en cuenta el coste eléctrico para mantener el cluster encendido. Es por esto que desde entonces he buscado la manera de medir el gasto eléctrico del cluster.&lt;/p&gt;
+&lt;p&gt;En un post anterior de esta serie ya mencioné la primera disyuntiva a la que me enfrenté: &lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i/#introducci%c3%b3n&#34;&gt;cloud vs. on premise&lt;/a&gt;. En ese momento tuve en cuenta los costes de ambas alternativas, aunque la comparativa fue poco precisa, ya que para la opción &lt;em&gt;on premise&lt;/em&gt; no tuve en cuenta el coste eléctrico para mantener el cluster encendido. Es por esto que desde entonces he buscado la manera de medir el gasto eléctrico del cluster.&lt;/p&gt;
 &lt;p&gt;Desde un principio era totalmente consciente de que el proyecto del cluster me iba a llevar varios meses, y eso teniendo únicamente en cuenta únicamente el tiempo de investigación, prueba y aprendizaje. Si evoluciona como espero, el cluster se convertirá en una pieza central y tendrá un uso continuado. Mi intención es utilizarlo para ejecutar en él algunas aplicaciones que uso habitualmente y que tengo desperdigadas en varias raspberry por la casa, como por ejemplo el Home Assistant que se menciona en este post.&lt;/p&gt;
 &lt;p&gt;Teniendo en cuenta que el cluster va a estar en funcionamiento ininterrumpidamente, considero que sería muy interesante medir el consumo eléctrico y calcular su coste. De esta forma podría hacer una comparativa más precisa entre el coste de un cluster en el cloud y el coste de este cluster.&lt;/p&gt;
 &lt;h1 id=&#34;cómo-medir-el-consumo-eléctrico&#34;&gt;¿Cómo medir el consumo eléctrico?&lt;/h1&gt;
-&lt;p&gt;Para medir el consumo del cluster me he decantado por un 
-&lt;a href=&#34;https://www.amazon.es/gp/product/B07C864DSZ/ref=ppx_yo_dt_b_asin_title_o05_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sonoff Pow R2&lt;/a&gt;. Lo he colocado &amp;ldquo;antes&amp;rdquo; de la regleta que alimenta todos los elementos del cluster. De esta forma toda la corriente necesaria para hacer funcionar el cluster: luces, ventilación, raspberry, switch&amp;hellip; pasará a través del Sonoff y podrá ser contabilizada de forma global.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./resources/sonoff_en_cluster_resized.jpg&#34; alt=&#34;Sonoff Pow R2 en cluster&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Para acoplar el Sonoff a la caja del cluster he diseñado 
-&lt;a href=&#34;#piezas-para-la-caja-del-cluster&#34;&gt;unas piezas&lt;/a&gt; y las he imprimido con mi impresora 3D. He decidido inicialmente dejar el Sonoff en el exterior para tener una mejor cobertura WiFi ¿La caja del cluster actuaría como una 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Faraday_cage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;caja Faraday&lt;/a&gt;? En este caso he preferido ser pruedente y dejarlo incialmente por fuera, aunque no sea lo más estético. En un futuro quizás me anime a rediseñar las piezas para dejar el Sonoff en el interior de la caja del cluster.&lt;/p&gt;
-&lt;p&gt;De nada sirve medir el consumo si no se realiza un registro del mismo. Para realizar el registro del consumo eléctrico contabilizado por el Sonoff he aprovechado una instancia de 
-&lt;a href=&#34;https://www.home-assistant.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home Assistant&lt;/a&gt; que tengo para la domótica de mi casa. De esta forma puedo disponer fácilmente de un panel para visualizar dicho consumo. En este post no voy a explicar cómo instalar Home Assistant, aunque sí que voy a describir algunas de las configuraciones que he tenido que cambiar.&lt;/p&gt;
+&lt;p&gt;Para medir el consumo del cluster me he decantado por un &lt;a href=&#34;https://www.amazon.es/gp/product/B07C864DSZ/ref=ppx_yo_dt_b_asin_title_o05_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sonoff Pow R2&lt;/a&gt;. Lo he colocado &amp;ldquo;antes&amp;rdquo; de la regleta que alimenta todos los elementos del cluster. De esta forma toda la corriente necesaria para hacer funcionar el cluster: luces, ventilación, raspberry, switch&amp;hellip; pasará a través del Sonoff y podrá ser contabilizada de forma global.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/sonoff_en_cluster_resized.jpg&#34; alt=&#34;Sonoff Pow R2 en cluster&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Para acoplar el Sonoff a la caja del cluster he diseñado &lt;a href=&#34;#piezas-para-la-caja-del-cluster&#34;&gt;unas piezas&lt;/a&gt; y las he imprimido con mi impresora 3D. He decidido inicialmente dejar el Sonoff en el exterior para tener una mejor cobertura WiFi ¿La caja del cluster actuaría como una &lt;a href=&#34;https://en.wikipedia.org/wiki/Faraday_cage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;caja Faraday&lt;/a&gt;? En este caso he preferido ser pruedente y dejarlo incialmente por fuera, aunque no sea lo más estético. En un futuro quizás me anime a rediseñar las piezas para dejar el Sonoff en el interior de la caja del cluster.&lt;/p&gt;
+&lt;p&gt;De nada sirve medir el consumo si no se realiza un registro del mismo. Para realizar el registro del consumo eléctrico contabilizado por el Sonoff he aprovechado una instancia de &lt;a href=&#34;https://www.home-assistant.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Home Assistant&lt;/a&gt; que tengo para la domótica de mi casa. De esta forma puedo disponer fácilmente de un panel para visualizar dicho consumo. En este post no voy a explicar cómo instalar Home Assistant, aunque sí que voy a describir algunas de las configuraciones que he tenido que cambiar.&lt;/p&gt;
 &lt;h1 id=&#34;sonoff-pow-r2&#34;&gt;Sonoff Pow R2&lt;/h1&gt;
 &lt;p&gt;Este es un dispositivo barato que podría definirse como un interruptor &amp;ldquo;inteligente&amp;rdquo; que puede controlarse via WiFi y que permite medir el consumo eléctrico. En este caso no lo utilizo como interruptor, sino únicamente lo uso para medir el consumo. La forma de &amp;ldquo;anular&amp;rdquo; el interruptor (con software) es configurarlo de tal forma que esté siempre &amp;ldquo;encendido&amp;rdquo;. Otra forma más invasiva de conserguirlo sería desoldar el relay y puentearlo.&lt;/p&gt;
 &lt;p&gt;Sonoff proporciona una aplicación móvil a través de la cual se pueden controlar los diferentes dispositivos de la marca, programarlos y visualizar la información que generan. Para que todo esto sea posible, la información generada por los dispositivos viaja hasta los servidores de la empresa y desde ahí a los dispositivos móviles.&lt;/p&gt;
 &lt;p&gt;Sin embargo, ni me interesa que mis datos pasen por un servidor de un tercero, ni tengo interés en usar una aplicación móvil adicional, porque lo que quiero es integrarlo con Home Assistant. La ventaja de Home Assistant es que me permite integrar dispositivos de distintos fabricantes, tener toda la domótica centralizada y utilizar una única aplicación para controlar todo. En este caso, tiene la ventaja añadida de que los datos no pasan por ningún servidor ajeno, se quedan en casa.&lt;/p&gt;
 &lt;h1 id=&#34;cómo-integrar-sonoff-con-home-assistant&#34;&gt;¿Cómo integrar Sonoff con Home Assistant?&lt;/h1&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://esphome.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ESPHome&lt;/a&gt; es la respuesta!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://esphome.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ESPHome&lt;/a&gt; es la respuesta!&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;ESPHome&lt;/em&gt; es un sistema que permite controlar de forma remota dispositivos &lt;em&gt;ESP8266&lt;/em&gt; y &lt;em&gt;ESP32&lt;/em&gt;. Y casualmente los dispositivos Sonoff llevan un chip ESP8266. Realmente no es casualidad, esto es algo que investigué antes de decidirme a comprar el Sonoff Pow R2. Al descubrir ESPHome y lo fácil que era integrarlo con Home Assistant, la decisión estaba clara.&lt;/p&gt;
-&lt;p&gt;La integración de ESPHome con Home Assistant es muy sencilla y consiste en 
-&lt;a href=&#34;https://esphome.io/guides/getting_started_hassio.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;instalar un add-on en Home Assistant&lt;/a&gt;. La instalación del add-on es muy sencilla pero he tenido problemas de acceso a la interfaz a través de NGINX, debidos al uso de WebSockets que hace el add-on de ESPHome. Para solucionarlo he incluído la 
-&lt;a href=&#34;#configuraci%c3%b3n-nginx-para-websockets-de-esphome&#34;&gt;siguiente configuración en NGINX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La integración de ESPHome con Home Assistant es muy sencilla y consiste en &lt;a href=&#34;https://esphome.io/guides/getting_started_hassio.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;instalar un add-on en Home Assistant&lt;/a&gt;. La instalación del add-on es muy sencilla pero he tenido problemas de acceso a la interfaz a través de NGINX, debidos al uso de WebSockets que hace el add-on de ESPHome. Para solucionarlo he incluído la &lt;a href=&#34;#configuraci%c3%b3n-nginx-para-websockets-de-esphome&#34;&gt;siguiente configuración en NGINX&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;programación-del-sonoff&#34;&gt;Programación del Sonoff&lt;/h1&gt;
-&lt;p&gt;Para poder controlar un dispositivo con el chip ESP8266 mediante ESPHome hay que flashear en el chip un binario con el código de ESPHome. Para flashear dicho binario he utilizado 
-&lt;a href=&#34;https://github.com/esphome/esphome-flasher/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esphome-flasher&lt;/a&gt;. En imprescindible un &lt;em&gt;adaptador serie USB a TTL&lt;/em&gt; para poder conectar el dispositivo a un PC y flashear el código. Yo he utilizado un 
-&lt;a href=&#34;https://www.amazon.es/gp/product/B07HM7RPB7/ref=ppx_yo_dt_b_asin_title_o05_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;adaptador CH340G&lt;/a&gt;. Los drivers de los adaptadores se encuentran accesibles 
-&lt;a href=&#34;#drivers-adaptador-usb-a-ttl&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para poder controlar un dispositivo con el chip ESP8266 mediante ESPHome hay que flashear en el chip un binario con el código de ESPHome. Para flashear dicho binario he utilizado &lt;a href=&#34;https://github.com/esphome/esphome-flasher/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esphome-flasher&lt;/a&gt;. En imprescindible un &lt;em&gt;adaptador serie USB a TTL&lt;/em&gt; para poder conectar el dispositivo a un PC y flashear el código. Yo he utilizado un &lt;a href=&#34;https://www.amazon.es/gp/product/B07HM7RPB7/ref=ppx_yo_dt_b_asin_title_o05_s01&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;adaptador CH340G&lt;/a&gt;. Los drivers de los adaptadores se encuentran accesibles &lt;a href=&#34;#drivers-adaptador-usb-a-ttl&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;cómo-obtenemos-el-binario-con-el-código-a-flashear&#34;&gt;¿Cómo obtenemos el binario con el código a flashear?&lt;/h2&gt;
 &lt;p&gt;Esto es una tarea muy sencilla, gracias a ESPHome que lo simplifica al máximo. Simplemente hay que generar un fichero yaml con la configuración y comportamiento que queramos que tenga el dispositivo. ESPHome se encarga de generar un binario con el código correspondiente al contenido de dicho fichero yaml.&lt;/p&gt;
 &lt;p&gt;Este es el fichero yaml que he utilizado en este caso:&lt;/p&gt;
@@ -314,12 +341,31 @@ text_sensor:
   - platform: version
     name: &amp;quot;RPI Cluster POW Version&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;La información de los pines de entrada/salida del sonoff se encuentra en la 
-&lt;a href=&#34;https://esphome.io/devices/sonoff.html#sonoff-pow-r2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentación&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La información de los pines de entrada/salida del sonoff se encuentra en la &lt;a href=&#34;https://esphome.io/devices/sonoff.html#sonoff-pow-r2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentación&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Quiero destacar que el sonoff únicamente hay que conectarlo al pc para flashearlo la primera vez. En el yaml anterior se habilita &lt;code&gt;OTA&lt;/code&gt; (over-the-air), lo que permite actualizar el código a través de la conexión WiFi, sin necesidad de volver a abrir el dispositivo y desmontarlo de donde estuviera.&lt;/p&gt;
 &lt;h1 id=&#34;panel-de-control&#34;&gt;Panel de control&lt;/h1&gt;
 &lt;p&gt;Gracias a la integración de ESPHome con Home Assistant es muy sencillo crear un panel de control como el que se ve en la siguiente imagen:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./resources/cluster_home_assistant_dashboard.png&#34; alt=&#34;Imagen dashboard&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/cluster_home_assistant_dashboard.png&#34; alt=&#34;Imagen dashboard&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;En el panel anterior se dispone de:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Consumo actual
@@ -331,8 +377,7 @@ text_sensor:
 &lt;/li&gt;
 &lt;li&gt;Estado
 &lt;ul&gt;
-&lt;li&gt;Tiempo en marcha (
-&lt;a href=&#34;#template-para-el-tiempo-encencido&#34;&gt;ver template en anexo&lt;/a&gt; )&lt;/li&gt;
+&lt;li&gt;Tiempo en marcha (&lt;a href=&#34;#template-para-el-tiempo-encencido&#34;&gt;ver template en anexo&lt;/a&gt; )&lt;/li&gt;
 &lt;li&gt;Versión de ESPHome en el sonoff&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -372,12 +417,9 @@ text_sensor:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;drivers-adaptador-usb-a-ttl&#34;&gt;Drivers adaptador USB a TTL&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;resources/ttl_drivers/CH340G.rar&#34;&gt;CH340G&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;resources/ttl_drivers/CP210x_Universal_Windows_Driver.zip&#34;&gt;CP210X&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;resources/ttl_drivers/PL2303_Prolific_DriverInstaller_v1_8_0.zip&#34;&gt;PL2303&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;resources/ttl_drivers/CH340G.rar&#34;&gt;CH340G&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;resources/ttl_drivers/CP210x_Universal_Windows_Driver.zip&#34;&gt;CP210X&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;resources/ttl_drivers/PL2303_Prolific_DriverInstaller_v1_8_0.zip&#34;&gt;PL2303&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;template-para-el-tiempo-en-marcha&#34;&gt;Template para el tiempo en marcha&lt;/h2&gt;
 &lt;p&gt;Por defecto el tiempo que lleva encendido el sonoff se envía en segundos. Este dispositivo está pensado para estar contínuamente encendido enviando las lecturas, independientemente de si el cluster está en marcha o no. Por este motivo no tiene mucho sentido visualizar en el panel esta información en crudo. Para transformar este dato en otro que aporte más valor he creado el siguiente template en el Home Assistant:&lt;/p&gt;
@@ -401,16 +443,72 @@ text_sensor:
 &lt;p&gt;Este template podría mejorarse aún más teniendo en cuenta meses y años&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;piezas-para-la-caja-del-cluster&#34;&gt;Piezas para la caja del cluster&lt;/h2&gt;
-&lt;p&gt;Para realizar el diseño de todas las piezas he utilizado 
-&lt;a href=&#34;https://www.onshape.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OnShape&lt;/a&gt;. Todos los diseños que he realizado para la caja son públicos y encuentran disponibles 
-&lt;a href=&#34;https://cad.onshape.com/documents?nodeId=4157ec7e4f12d21ec2893ac1&amp;amp;resourceType=folder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Como se puede ver en las siguientes imágenes, las piezas para albergar el Sonoff no son las únicas que he diseñado para la caja del cluster. También he diseñado una tapa para una de las aberturas traseras y otra tapa para albergar tanto la 
-&lt;a href=&#34;https://www.amazon.es/gp/product/B07RRY5MYZ/ref=ppx_yo_dt_b_asin_title_o06_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;toma de corriente&lt;/a&gt; como la 
-&lt;a href=&#34;https://www.amazon.es/gp/product/B01MD2AYSW/ref=ppx_yo_dt_b_asin_title_o04_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;toma de red&lt;/a&gt; de todo el cluster:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./resources/cluster_trasera_exterior.jpg&#34; alt=&#34;Trasera cluster desde el exterior&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./resources/cluster_trasera_interior.jpg&#34; alt=&#34;Trasera cluster desde el interior&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para realizar el diseño de todas las piezas he utilizado &lt;a href=&#34;https://www.onshape.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OnShape&lt;/a&gt;. Todos los diseños que he realizado para la caja son públicos y encuentran disponibles &lt;a href=&#34;https://cad.onshape.com/documents?nodeId=4157ec7e4f12d21ec2893ac1&amp;amp;resourceType=folder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Como se puede ver en las siguientes imágenes, las piezas para albergar el Sonoff no son las únicas que he diseñado para la caja del cluster. También he diseñado una tapa para una de las aberturas traseras y otra tapa para albergar tanto la &lt;a href=&#34;https://www.amazon.es/gp/product/B07RRY5MYZ/ref=ppx_yo_dt_b_asin_title_o06_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;toma de corriente&lt;/a&gt; como la &lt;a href=&#34;https://www.amazon.es/gp/product/B01MD2AYSW/ref=ppx_yo_dt_b_asin_title_o04_s00&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;toma de red&lt;/a&gt; de todo el cluster:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/cluster_trasera_exterior.jpg&#34; alt=&#34;Trasera cluster desde el exterior&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/cluster_trasera_interior.jpg&#34; alt=&#34;Trasera cluster desde el interior&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Estoy muy contento con el resultado final, la verdad que ha quedado todo muy organizado y con un mínimo de cables:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./resources/cluster_final_frontal.jpg&#34; alt=&#34;Frontal del cluster&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/cluster_final_frontal.jpg&#34; alt=&#34;Frontal del cluster&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 </description>
     </item>
     

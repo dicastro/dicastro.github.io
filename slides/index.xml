@@ -5,7 +5,7 @@
     <link>https://diegocastroviadero.com/slides/</link>
       <atom:link href="https://diegocastroviadero.com/slides/index.xml" rel="self" type="application/rss+xml" />
     <description>Slides</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Fri, 14 Aug 2020 05:50:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Fri, 14 Aug 2020 05:50:00 +0000</lastBuildDate>
     <item>
       <title>TimeHammer</title>
       <link>https://diegocastroviadero.com/slides/timehammer/</link>
@@ -41,7 +41,7 @@
 &lt;h2 id=&#34;solución&#34;&gt;Solución&lt;/h2&gt;
 &lt;p&gt;La solución desarrollada es un &lt;strong&gt;chatbot de telegram&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;TimeHammerBot&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;https://t.me/TimeHammerBot&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://t.me/TimeHammerBot&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;small&gt;Lo único necesario para poder utilizarla será disponer de un smartphone y tener instalada la aplicación de mensajería &lt;em&gt;Telegram&lt;/em&gt;. También compatible con la versión web de &lt;em&gt;Telegram&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;section data-markdown&gt;

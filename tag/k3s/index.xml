@@ -5,9 +5,9 @@
     <link>https://diegocastroviadero.com/tag/k3s/</link>
       <atom:link href="https://diegocastroviadero.com/tag/k3s/index.xml" rel="self" type="application/rss+xml" />
     <description>k3s</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Wed, 14 Oct 2020 05:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Wed, 14 Oct 2020 05:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/media/logo_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_300x300_fit_lanczos_3.png</url>
       <title>k3s</title>
       <link>https://diegocastroviadero.com/tag/k3s/</link>
     </image>
@@ -27,13 +27,11 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Hardware&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-ii&#34;&gt;P02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-ii&#34;&gt;P02&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Sistema Operativo y Docker&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -41,20 +39,21 @@
 &lt;td&gt;&lt;strong&gt;Cluster K3S&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;P04&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;P04&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Consumo eléctrico&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;P05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-v&#34;&gt;P05&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Monitorización&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P06&lt;/td&gt;
 &lt;td&gt;(proximamente)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h1 id=&#34;k3s&#34;&gt;K3s&lt;/h1&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://k3s.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K3s&lt;/a&gt; es una distribución de kubernetes certificada que ha sido concebida para el mundo &lt;em&gt;IoT&lt;/em&gt; y &lt;em&gt;
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Edge_computing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Edge Computing&lt;/a&gt;&lt;/em&gt;. K3s ha sido optimizada para ARM (ARM64 y ARMv7) y esto es lo que ha hecho decidirme por esta distribución para instalar kubernetes en el cluster de raspberry pi. En K3s se han reducido las dependencias al máximo, haciendo posible que se distribuya como un único binario de menos de 40 MB. La reducción de dependencias también ha supuesto una simplificación del proceso de instalación.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K3s&lt;/a&gt; es una distribución de kubernetes certificada que ha sido concebida para el mundo &lt;em&gt;IoT&lt;/em&gt; y &lt;em&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Edge_computing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Edge Computing&lt;/a&gt;&lt;/em&gt;. K3s ha sido optimizada para ARM (ARM64 y ARMv7) y esto es lo que ha hecho decidirme por esta distribución para instalar kubernetes en el cluster de raspberry pi. En K3s se han reducido las dependencias al máximo, haciendo posible que se distribuya como un único binario de menos de 40 MB. La reducción de dependencias también ha supuesto una simplificación del proceso de instalación.&lt;/p&gt;
 &lt;h1 id=&#34;instalación&#34;&gt;Instalación&lt;/h1&gt;
 &lt;p&gt;La instalación es muy sencilla, ya que el equipo de K3s ha creado un &lt;em&gt;playbook&lt;/em&gt; de Ansible para realizarla. Yo me he basado en dicho playbook y he realizado alguna pequeña adaptación/mejora.&lt;/p&gt;
 &lt;p&gt;Lo primero que he realizado ha sido adaptar el fichero de inventario a las necesidades del playbook, para ello he definido los grupos:&lt;/p&gt;
@@ -76,8 +75,7 @@ rpicluster05
 k3s_master
 k3s_node
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;(se puede ver el fichero completo 
-&lt;a href=&#34;https://github.com/dicastro/rpicluster/blob/master/playbooks/inventory&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(se puede ver el fichero completo &lt;a href=&#34;https://github.com/dicastro/rpicluster/blob/master/playbooks/inventory&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;A continuación se muestra el playbook de instalación:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;- hosts: k3s_cluster
   gather_facts: true
@@ -99,8 +97,7 @@ k3s_node
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Como se puede observar, se basa en el uso de &lt;em&gt;roles&lt;/em&gt;. Existen 3 roles de preparación (&lt;code&gt;prereq&lt;/code&gt;, &lt;code&gt;download&lt;/code&gt; y &lt;code&gt;ubuntu&lt;/code&gt;) que se ejecutarán sobre todos los miembros del cluster. Estos roles se encargan de activar algunas configuraciones necesarias en el sistema operativo, así como de realizar la descarga del binario en función de la arquitectura sobre la que se esté realizando la instalación.&lt;/p&gt;
 &lt;p&gt;Además existe un role que se ejecutará sobre el nodo maestro y otro que se ejecutará sobre los nodos esclavos. Estos roles son los que crean el cluster K3s propiamente dicho.&lt;/p&gt;
-&lt;p&gt;(se puede ver el playbook completo 
-&lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/03_cluster_k3s_cluster&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(se puede ver el playbook completo &lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/03_cluster_k3s_cluster&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
 &lt;h1 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h1&gt;
 &lt;p&gt;Gracias al equipo de desarrollo de K3s, que nos proporciona un playbook de Ansible, se puede crear un cluster de kubernetes de una manera muy sencilla.&lt;/p&gt;
 </description>

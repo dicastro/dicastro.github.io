@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://diegocastroviadero.com/en/author/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://diegocastroviadero.com/author/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://diegocastroviadero.com/en/author/"
-                />
-  </url>
-  
   <url>
     <loc>https://diegocastroviadero.com/en/cv/</loc>
     <xhtml:link
@@ -28,9 +13,7 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/cv/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/en/experiences/admin/</loc>
     <xhtml:link
                 rel="alternate"
@@ -42,9 +25,7 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/experiences/admin/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/en/authors/</loc>
     <xhtml:link
                 rel="alternate"
@@ -56,9 +37,7 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/authors/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -70,9 +49,19 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://diegocastroviadero.com/en/author/diego-castro/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://diegocastroviadero.com/author/diego-castro/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://diegocastroviadero.com/en/author/diego-castro/"
+                />
+  </url><url>
     <loc>https://diegocastroviadero.com/en/</loc>
     <xhtml:link
                 rel="alternate"
@@ -84,9 +73,7 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/en/experiences/</loc>
     <xhtml:link
                 rel="alternate"
@@ -98,9 +85,7 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/experiences/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/en/publication_types/</loc>
     <xhtml:link
                 rel="alternate"
@@ -112,9 +97,7 @@
                 hreflang="en"
                 href="https://diegocastroviadero.com/en/publication_types/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://diegocastroviadero.com/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -127,5 +110,4 @@
                 href="https://diegocastroviadero.com/en/tags/"
                 />
   </url>
-  
 </urlset>

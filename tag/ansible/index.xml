@@ -5,9 +5,9 @@
     <link>https://diegocastroviadero.com/tag/ansible/</link>
       <atom:link href="https://diegocastroviadero.com/tag/ansible/index.xml" rel="self" type="application/rss+xml" />
     <description>ansible</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Sun, 27 Sep 2020 11:19:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Sun, 27 Sep 2020 11:19:00 +0000</lastBuildDate>
     <image>
-      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/media/logo_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_300x300_fit_lanczos_3.png</url>
       <title>ansible</title>
       <link>https://diegocastroviadero.com/tag/ansible/</link>
     </image>
@@ -27,8 +27,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-i&#34;&gt;P01&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Hardware&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -36,17 +35,19 @@
 &lt;td&gt;&lt;strong&gt;Sistema Operativo y Docker&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;P03&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iii&#34;&gt;P03&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Cluster K3S&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;
-&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;P04&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-iv&#34;&gt;P04&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Consumo eléctrico&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;P05&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../monto-un-cluster-kubernetes-con-rpi-parte-v&#34;&gt;P05&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Monitorización&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P06&lt;/td&gt;
 &lt;td&gt;(proximamente)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -69,9 +70,7 @@
 &lt;li&gt;instalar Docker en las 5 raspberry&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;En estos momentos me arrepentí un poco de haber comprado 5 raspberry porque todo lo que fuese a hacer lo tenía que repetir 5 veces. Si tienes claro el proceso, es cuestión de seguirlo a pies juntillas y repetirlo las veces que sea necesario. El problema viene cuando el proceso no está claramente definido, y con cada repetición se va refinando el mismo. Este &amp;ldquo;ir refinando el proceso a medida que lo vas repitiendo&amp;rdquo; no debería ser algo problemático. El problema radica en mi persona y mi obsesión con algunas cosas, y en este caso mi obsesión no me permitiría sentirme cómodo sabiendo que no he ejecutado el mismo proceso en todas las raspberry. Si cuando estoy en la última raspberry me doy cuenta de que sería mejor hacer algo de forma diferente, me vería obligado a volver a hacerlo en todas las raspberry. Aquí es donde la situación podría descontrolarse y llevarme muchísimo más tiempo del necesario con la &lt;em&gt;única ventaja&lt;/em&gt; de tener todas las rapberry exactamente iguales.&lt;/p&gt;
-&lt;p&gt;Antes de lanzarme a configurar las raspberry busqué la forma de automatizar todo el proceso de configuración, lo cual me permitiría dormir tranquilo sabiendo que todas las raspberry son &lt;em&gt;almas gemelas&lt;/em&gt; sin tener que repetir manualmente el proceso de configuración por enésima vez sobre la &lt;em&gt;oveja negra del rebaño&lt;/em&gt;. Y la búsqueda fue fructífera, me topé con 
-&lt;a href=&#34;https://cloudinit.readthedocs.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cloud-Init&lt;/a&gt; y con 
-&lt;a href=&#34;https://docs.ansible.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ansible&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Antes de lanzarme a configurar las raspberry busqué la forma de automatizar todo el proceso de configuración, lo cual me permitiría dormir tranquilo sabiendo que todas las raspberry son &lt;em&gt;almas gemelas&lt;/em&gt; sin tener que repetir manualmente el proceso de configuración por enésima vez sobre la &lt;em&gt;oveja negra del rebaño&lt;/em&gt;. Y la búsqueda fue fructífera, me topé con &lt;a href=&#34;https://cloudinit.readthedocs.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cloud-Init&lt;/a&gt; y con &lt;a href=&#34;https://docs.ansible.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ansible&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;cloud-init&#34;&gt;Cloud-Init&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Cloud-Init&lt;/em&gt; es una tecnología que permite inicializar una instancia y que viene de caja con Ubuntu. Cloud-Init detecta si es el primer arranque del sistema y si es el caso entra en acción permitiendo configurar: usuarios, claves ssh, particiones de disco, configuración de red, etc. Cloud-Init puede obtener las acciones que tiene que ejecutar del propio disco de la instacia o podría obtenerlo a través de la red.&lt;/p&gt;
 &lt;p&gt;En mi caso, las acciones a actualizar las obtiene del propio disco: una vez flasheada la tarjeta SD copio un par de ficheros en la tarjeta con las configuraciones a realizar. Concretamente utilizo cloud-init para:&lt;/p&gt;
@@ -164,8 +163,7 @@ ethernets:
 #          password: &amp;quot;passw0rd&amp;quot;
 #          ca-certificate: /etc/my_ca.pem
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Para flashear la imagen del sistema operativo en la tarjeta SD utilizo 
-&lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rpiimager&lt;/a&gt;. Esta herramienta te provee de una interfaz gráfica muy sencilla en la que en primer lugar se selecciona la imagen que quieres flashear, en segundo lugar se elige dónde la quieres flashear y por último se inicia la grabación. Esta herramienta te evita tener que descargar la imagen del sistema operativo ya que es la propia herramienta quien se encarga de descargarla.&lt;/p&gt;
+&lt;p&gt;Para flashear la imagen del sistema operativo en la tarjeta SD utilizo &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rpiimager&lt;/a&gt;. Esta herramienta te provee de una interfaz gráfica muy sencilla en la que en primer lugar se selecciona la imagen que quieres flashear, en segundo lugar se elige dónde la quieres flashear y por último se inicia la grabación. Esta herramienta te evita tener que descargar la imagen del sistema operativo ya que es la propia herramienta quien se encarga de descargarla.&lt;/p&gt;
 &lt;p&gt;Al arrancar la raspberry por primera vez cloud-init se activará y ejecutará las acciones anteriores, lo único que hay que hacer es esperar unos minutos. Alguien perspicaz, se habrá dado cuenta que hay dos acciones en la lista anterior que no son iguales para todas las raspberry del cluster: establecer el nombre de la instancia y configurar una ip fija. Esto hace que haya que tener para cada instancia del cluster un fichero de configuración diferente. Y en este punto es donde entra en acción &lt;em&gt;Ansible&lt;/em&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Aunque se le asigne una ip fija a las raspberry, en el router habrá que reservarla igualmente, ya que podría darse el caso de que mientras está apagado el cluster, se conecte algún dispositivo a la red y se le asigne una de las ips del cluster.&lt;/p&gt;
@@ -229,8 +227,7 @@ rpicluster05
 &lt;li&gt;rpicluster&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Para cada una de las máquinas se define una propiedad &lt;code&gt;custom_hostname&lt;/code&gt; que contiene el nombre de la máquina.&lt;/p&gt;
-&lt;p&gt;(se puede ver el fichero completo 
-&lt;a href=&#34;https://github.com/dicastro/rpicluster/blob/master/playbooks/inventory&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(se puede ver el fichero completo &lt;a href=&#34;https://github.com/dicastro/rpicluster/blob/master/playbooks/inventory&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;A continuación se muestra el &lt;em&gt;playbook&lt;/em&gt; de ansible que genera los ficheros de configuración de cloud-init para las máquinas del cluster:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
 - hosts: rpicluster
@@ -260,8 +257,7 @@ rpicluster05
 &lt;li&gt;La tarea 2 genera el fichero de configuración &lt;code&gt;user-data&lt;/code&gt; a partir de un template&lt;/li&gt;
 &lt;li&gt;La tarea 3 genera el fichero de configuración &lt;code&gt;network-config&lt;/code&gt; a partir de un template&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;(se puede ver el playbook completo 
-&lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/00_cluster_regenerate_cloudinit_config&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;(se puede ver el playbook completo &lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/00_cluster_regenerate_cloudinit_config&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;)&lt;/p&gt;
 &lt;h2 id=&#34;cómo-instalar-ansible-en-windows-10&#34;&gt;Cómo instalar Ansible en Windows 10&lt;/h2&gt;
 &lt;p&gt;La manera más fácil de utilizar Ansible en Windows 10 es a través del WLS. Para instalar Ansible he utilizado &lt;code&gt;pip&lt;/code&gt;, por lo que el primer paso será instalar &lt;code&gt;pip3&lt;/code&gt; y algunas dependencias necesarias:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt install -y python3-pip python3-dev libffi-dev libssl-dev
@@ -283,8 +279,7 @@ rpicluster05
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install ansible --user
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;docker&#34;&gt;Docker&lt;/h1&gt;
-&lt;p&gt;Gracias a Ansible, la instalación de Docker en todas las máquinas se ha simplificado al máximo. He encontrado un playbook, que he utilizado casi tal cual, que se encarga de instalar Docker en sistemas debian. Se puede encontrar la versión que he utilizado 
-&lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/02_cluster_install_docker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Gracias a Ansible, la instalación de Docker en todas las máquinas se ha simplificado al máximo. He encontrado un playbook, que he utilizado casi tal cual, que se encarga de instalar Docker en sistemas debian. Se puede encontrar la versión que he utilizado &lt;a href=&#34;https://github.com/dicastro/rpicluster/tree/master/playbooks/02_cluster_install_docker&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;conclusión&#34;&gt;Conclusión&lt;/h1&gt;
 &lt;p&gt;Como conclusión he de decir que tanto &lt;em&gt;cloud-init&lt;/em&gt; como &lt;em&gt;Ansible&lt;/em&gt; han sido dos grandes descubrimientos. Sobre todo Ansible, ya que veo que es una herramienta que puedo empezar a utilizar en mi día a día a nivel profesional.&lt;/p&gt;
 &lt;p&gt;La única pega que le veo a Ansible, es que algunos aspectos no son compatibles con Windows. Actualmente utilizo un Windows 10 y he podido hacer uso de Ansible sin grandes complicaciones a través de WLS. El único inconveniente que me he topado hasta el momento, ha sido a la hora de utilizar &lt;em&gt;Ansible Vault&lt;/em&gt;, ya que para ciertas situaciones es necesario modificar los permisos de algunos ficheros, lo cual no es posible en WLS a día de hoy (o al menos yo no he encontrado la manera de hacerlo).&lt;/p&gt;

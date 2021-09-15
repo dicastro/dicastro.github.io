@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diego Castro | Diego Castro | Pandora Box</title>
+    <link>https://diegocastroviadero.com/author/diego-castro/</link>
+      <atom:link href="https://diegocastroviadero.com/author/diego-castro/index.xml" rel="self" type="application/rss+xml" />
+    <description>Diego Castro</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language>
+    <image>
+      <url>https://diegocastroviadero.com/author/diego-castro/avatar_huaad83622bf9dd7db750db884366d2ecf_210837_270x270_fill_q90_lanczos_center.jpg</url>
+      <title>Diego Castro</title>
+      <link>https://diegocastroviadero.com/author/diego-castro/</link>
+    </image>
+    
+  </channel>
+</rss>

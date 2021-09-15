@@ -5,9 +5,9 @@
     <link>https://diegocastroviadero.com/tag/java/</link>
       <atom:link href="https://diegocastroviadero.com/tag/java/index.xml" rel="self" type="application/rss+xml" />
     <description>Java</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Thu, 13 Aug 2020 05:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Thu, 13 Aug 2020 05:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/media/logo_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_300x300_fit_lanczos_3.png</url>
       <title>Java</title>
       <link>https://diegocastroviadero.com/tag/java/</link>
     </image>
@@ -18,19 +18,11 @@
       <pubDate>Thu, 13 Aug 2020 05:00:00 +0000</pubDate>
       <guid>https://diegocastroviadero.com/project/timehammer/</guid>
       <description>&lt;p&gt;Este es un proyecto personal en el que llevo trabajando desde comienzos del 2020, poco antes del confinamiento por la COVID-19. Consiste en un &lt;strong&gt;sistema que permite recordar y simplificar la realización de los fichajes&lt;/strong&gt; en una empresa.&lt;/p&gt;
-&lt;p&gt;Se trata de 
-&lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeHammerBot&lt;/a&gt; un 
-&lt;a href=&#34;https://telegram.org/blog/bot-revolution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chatbot de Telegram&lt;/a&gt; en el cual el trabajador se registra indicando su lugar y horario habitual de trabajo. Una vez registrado, el chatbot se encargará de recordarle los momentos en los que se debe realizar un fichaje. No sólo se trata de recordatorios en los diferentes momentos de fichaje, sino que el chatbot propone una serie de botones integrados en los mensajes de recordatorio, que al ser pulsados ejecutan la acción de fichar.&lt;/p&gt;
-&lt;p&gt;Se ha desarrollado una arquitectura orientada a eventos 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Event-driven_architecture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EDA&lt;/a&gt;. El proyecto se ha dividido en diversos módulos, cada uno con una responsabilidad, que se comunican entre si mediante el envío de mensajes. Estos mensajes representan los diferentes eventos que desencadenan la lógica de negocio.&lt;/p&gt;
-&lt;p&gt;Para el desarrollo se ha utilizado 
-&lt;a href=&#34;https://quarkus.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Quarkus&lt;/a&gt;, que es un stack basado en java que posibilita la compilación a código nativo. &lt;em&gt;Quarkus&lt;/em&gt; permite tanto la programación imperativa como la 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Reactive_programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reactiva&lt;/a&gt;. En este proyecto se ha optado por la programación reactiva.&lt;/p&gt;
-&lt;p&gt;Para el envío de los mensajes se ha utilizado 
-&lt;a href=&#34;https://kafka.apache.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kafka&lt;/a&gt; puesto que la 
-&lt;a href=&#34;https://quarkus.io/guides/kafka&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;integración con Quarkus&lt;/a&gt; es muy sencilla.&lt;/p&gt;
-&lt;p&gt;Para la ejecución en producción se utiliza 
-&lt;a href=&#34;https://www.docker.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker&lt;/a&gt;. Cada uno de los módulos que componen el proyecto tiene una imagen de &lt;em&gt;Docker&lt;/em&gt; asociada. En el entorno de producción se ejecutan contenedores de dichas imágenes. Actualmente son se utiliza ningún orquestador de contenedores, directamente se están arrancando con &lt;em&gt;docker-compose&lt;/em&gt;. El siguiente paso planificado es la utilización de &lt;em&gt;kubernetes&lt;/em&gt; como orquestador de contenedores.&lt;/p&gt;
+&lt;p&gt;Se trata de &lt;a href=&#34;https://t.me/TimeHammerBot&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TimeHammerBot&lt;/a&gt; un &lt;a href=&#34;https://telegram.org/blog/bot-revolution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chatbot de Telegram&lt;/a&gt; en el cual el trabajador se registra indicando su lugar y horario habitual de trabajo. Una vez registrado, el chatbot se encargará de recordarle los momentos en los que se debe realizar un fichaje. No sólo se trata de recordatorios en los diferentes momentos de fichaje, sino que el chatbot propone una serie de botones integrados en los mensajes de recordatorio, que al ser pulsados ejecutan la acción de fichar.&lt;/p&gt;
+&lt;p&gt;Se ha desarrollado una arquitectura orientada a eventos &lt;a href=&#34;https://en.wikipedia.org/wiki/Event-driven_architecture&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EDA&lt;/a&gt;. El proyecto se ha dividido en diversos módulos, cada uno con una responsabilidad, que se comunican entre si mediante el envío de mensajes. Estos mensajes representan los diferentes eventos que desencadenan la lógica de negocio.&lt;/p&gt;
+&lt;p&gt;Para el desarrollo se ha utilizado &lt;a href=&#34;https://quarkus.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Quarkus&lt;/a&gt;, que es un stack basado en java que posibilita la compilación a código nativo. &lt;em&gt;Quarkus&lt;/em&gt; permite tanto la programación imperativa como la &lt;a href=&#34;https://en.wikipedia.org/wiki/Reactive_programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reactiva&lt;/a&gt;. En este proyecto se ha optado por la programación reactiva.&lt;/p&gt;
+&lt;p&gt;Para el envío de los mensajes se ha utilizado &lt;a href=&#34;https://kafka.apache.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kafka&lt;/a&gt; puesto que la &lt;a href=&#34;https://quarkus.io/guides/kafka&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;integración con Quarkus&lt;/a&gt; es muy sencilla.&lt;/p&gt;
+&lt;p&gt;Para la ejecución en producción se utiliza &lt;a href=&#34;https://www.docker.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker&lt;/a&gt;. Cada uno de los módulos que componen el proyecto tiene una imagen de &lt;em&gt;Docker&lt;/em&gt; asociada. En el entorno de producción se ejecutan contenedores de dichas imágenes. Actualmente son se utiliza ningún orquestador de contenedores, directamente se están arrancando con &lt;em&gt;docker-compose&lt;/em&gt;. El siguiente paso planificado es la utilización de &lt;em&gt;kubernetes&lt;/em&gt; como orquestador de contenedores.&lt;/p&gt;
 </description>
     </item>
     

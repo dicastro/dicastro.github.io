@@ -5,9 +5,9 @@
     <link>https://diegocastroviadero.com/tag/github-pages/</link>
       <atom:link href="https://diegocastroviadero.com/tag/github-pages/index.xml" rel="self" type="application/rss+xml" />
     <description>github pages</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>es-es</language><lastBuildDate>Tue, 28 Jan 2020 18:34:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Tue, 28 Jan 2020 18:34:00 +0000</lastBuildDate>
     <image>
-      <url>https://diegocastroviadero.com/images/icon_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_512x512_fill_lanczos_center_2.png</url>
+      <url>https://diegocastroviadero.com/media/logo_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_300x300_fit_lanczos_3.png</url>
       <title>github pages</title>
       <link>https://diegocastroviadero.com/tag/github-pages/</link>
     </image>
@@ -19,10 +19,8 @@
       <guid>https://diegocastroviadero.com/post/como-configurar-un-dominio-propio-de-google-domains-en-github-pages-y-con-https-activado/</guid>
       <description>&lt;h2 id=&#34;prerequisitos&#34;&gt;Prerequisitos&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Tener un dominio en 
-&lt;a href=&#34;https://domains.google.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Domains&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Tener un repositorio en 
-&lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; (ej: &lt;a href=&#34;https://github.com/dicastro/dicastro.github.io&#34;&gt;https://github.com/dicastro/dicastro.github.io&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Tener un dominio en &lt;a href=&#34;https://domains.google.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tener un repositorio en &lt;a href=&#34;https://github.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; (ej: &lt;a href=&#34;https://github.com/dicastro/dicastro.github.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/dicastro/dicastro.github.io&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Este repositorio no tiene por qué ser público, en mi caso se trata de un repositorio privado.&lt;/p&gt;
@@ -79,8 +77,7 @@
 &lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Si las IPs anteriores se han quedado desfasadas, podrás encontrar los valores actualizados 
-&lt;a href=&#34;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Si las IPs anteriores se han quedado desfasadas, podrás encontrar los valores actualizados &lt;a href=&#34;https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aquí&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;3---apunta-el-subdominio-www-a-_github-pages_&#34;&gt;3 - Apunta el subdominio &lt;code&gt;www&lt;/code&gt; a &lt;em&gt;GitHub Pages&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;Para ello en &lt;em&gt;Google Domains&lt;/em&gt;:&lt;/p&gt;
@@ -136,13 +133,12 @@
 &lt;p&gt;En este caso &lt;code&gt;@&lt;/code&gt; hace referencia al propio dominio (diegocastroviadero.com)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Para obtener el valor de la columna &lt;em&gt;Datos&lt;/em&gt; de la entrada de tipo &lt;code&gt;CAA&lt;/code&gt; se puede hacer uso de 
-&lt;a href=&#34;https://sslmate.com/caa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta utilidad&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para obtener el valor de la columna &lt;em&gt;Datos&lt;/em&gt; de la entrada de tipo &lt;code&gt;CAA&lt;/code&gt; se puede hacer uso de &lt;a href=&#34;https://sslmate.com/caa/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta utilidad&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;referencias&#34;&gt;Referencias&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&#34;&gt;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&#34;&gt;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.techrepublic.com/article/how-to-add-a-certificate-authority-authorization-record-in-google-domains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
