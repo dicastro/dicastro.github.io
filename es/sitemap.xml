@@ -2,14 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://diegocastroviadero.com/tag/alermanager/</loc>
-    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
-  </url><url>
-    <loc>https://diegocastroviadero.com/tag/cluster/</loc>
-    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
-  </url><url>
     <loc>https://diegocastroviadero.com/</loc>
-    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+    <lastmod>2021-04-15T18:21:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,6 +15,18 @@
                 href="https://diegocastroviadero.com/"
                 />
   </url><url>
+    <loc>https://diegocastroviadero.com/post/nuevo-proyecto/</loc>
+    <lastmod>2021-04-15T18:21:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/post/</loc>
+    <lastmod>2021-04-15T18:21:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/alermanager/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diegocastroviadero.com/tag/cluster/</loc>
+    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
+  </url><url>
     <loc>https://diegocastroviadero.com/tag/grafana/</loc>
     <lastmod>2020-10-31T18:19:00+00:00</lastmod>
   </url><url>
@@ -28,9 +34,6 @@
     <lastmod>2020-10-31T18:19:00+00:00</lastmod>
   </url><url>
     <loc>https://diegocastroviadero.com/post/monto-un-cluster-kubernetes-con-rpi-parte-v/</loc>
-    <lastmod>2020-10-31T18:19:00+00:00</lastmod>
-  </url><url>
-    <loc>https://diegocastroviadero.com/post/</loc>
     <lastmod>2020-10-31T18:19:00+00:00</lastmod>
   </url><url>
     <loc>https://diegocastroviadero.com/tag/prometheus/</loc>

@@ -5,12 +5,42 @@
     <link>https://diegocastroviadero.com/post/</link>
       <atom:link href="https://diegocastroviadero.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Sat, 31 Oct 2020 18:19:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es-es</language><lastBuildDate>Thu, 15 Apr 2021 18:21:00 +0000</lastBuildDate>
     <image>
       <url>https://diegocastroviadero.com/media/logo_hu5b71f2ac8f47c835f06dc78dd1a89e98_16136_300x300_fit_lanczos_3.png</url>
       <title>Posts</title>
       <link>https://diegocastroviadero.com/post/</link>
     </image>
+    
+    <item>
+      <title>Nuevo proyecto</title>
+      <link>https://diegocastroviadero.com/post/nuevo-proyecto/</link>
+      <pubDate>Thu, 15 Apr 2021 18:21:00 +0000</pubDate>
+      <guid>https://diegocastroviadero.com/post/nuevo-proyecto/</guid>
+      <description>&lt;p&gt;Comienza el &lt;em&gt;proyecto&lt;/em&gt; más importante de mi vida&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./resources/announcement.png&#34; alt=&#34;Announcement&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Monto un cluster Kubernetes con Raspberry Pi (parte V)</title>
