@@ -1,0 +1,1 @@
+docker build -t dicastro/pandoc-latex-cv:3.6.4.0-alpine .

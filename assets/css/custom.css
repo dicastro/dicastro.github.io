@@ -1,0 +1,59 @@
+section.custom-resume-experience-width div.max-w-prose {
+  max-width: 100% !important;  /* by default: full width */
+
+  @media (min-width: 768px) {   /* md: medium screens */
+    max-width: 60rem !important;
+  }
+
+  @media (min-width: 1024px) {  /* lg: large screens */
+    max-width: 72rem !important;
+  }
+
+  @media (min-width: 1536px) {  /* 2xl: very large screens */
+    max-width: 72rem !important;
+  }
+}
+
+section.custom-resume-awards-width div.max-w-prose {
+  max-width: 100% !important;  /* by default: full width */
+
+  @media (min-width: 768px) {   /* md: medium screens */
+    max-width: 60rem !important;
+  }
+
+  @media (min-width: 1024px) {  /* lg: large screens */
+    max-width: 72rem !important;
+  }
+
+  @media (min-width: 1536px) {  /* 2xl: very large screens */
+    max-width: 72rem !important;
+  }
+}
+
+section.custom-resume-awards-width .max-w-prose div.prose {
+  max-width: 100% !important; /* by default: full width */
+}
+
+section.custom-resume-skills-width div.max-w-prose {
+  max-width: 100% !important;  /* by default: full width */
+
+  @media (min-width: 768px) {   /* md: medium screens */
+    max-width: 60rem !important;
+  }
+
+  @media (min-width: 1024px) {  /* lg: large screens */
+    max-width: 72rem !important;
+  }
+
+  @media (min-width: 1536px) {  /* 2xl: very large screens */
+    max-width: 72rem !important;
+  }
+}
+
+section.custom-resume-biography-width .prose {
+  max-width: 100% !important;
+}
+
+section.custom-resume-biography-width .prose .bio-text {
+  max-width: 100% !important;
+}

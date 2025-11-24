@@ -1,0 +1,1 @@
+docker run --rm -v "${PWD}:/data" -w /data -it --entrypoint sh dicastro/pandoc-latex-cv:3.6.4.0-alpine
