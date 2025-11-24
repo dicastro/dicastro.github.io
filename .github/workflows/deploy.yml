@@ -38,7 +38,6 @@ jobs:
 
     - name: Generate CV pdf ES
       run: |
-        mkdir -p static/uploads
         docker run --rm -v "$PWD:/data" -w /data dicastro/pandoc-latex-cv:3.6.4.0-alpine \
           content/es/authors/admin/_index.md \
           --lua-filter cv/filters/escape-yaml.lua \
@@ -47,6 +46,12 @@ jobs:
           --from markdown+yaml_metadata_block \
           --template cv/templates/es/moderncv-template.tex \
           -o static/uploads/cv-diego-castro-viadero-es.pdf
+
+    - name: Upload CV artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-files
+        path: static/uploads/cv-*.pdf
 
   # Build website
   build:
@@ -107,6 +112,12 @@ jobs:
     - name: Setup Pages
       id: pages
       uses: actions/configure-pages@v5
+
+    - name: Download CV artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: cv-files
+        path: static/uploads
 
     - name: Build with Hugo
       env:
