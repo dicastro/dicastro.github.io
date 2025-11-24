@@ -77,12 +77,6 @@ jobs:
           pnpm install || npm install
         fi
 
-    - name: Build frontend (Tailwind, JS, etc.)
-      if: hashFiles('package.json') != ''
-      run: |
-        echo "Running frontend build..."
-        pnpm build || npm run build
-
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:

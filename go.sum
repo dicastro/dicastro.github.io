@@ -4,3 +4,5 @@ github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-reveal v1.2.4 h1:Y9moO
 github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-reveal v1.2.4/go.mod h1:rc3iv07XFylONQor5A4GdjTffe4asUSdnC1VgzmQ5+s=
 github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.9.0 h1:lZJ3xjkZQ9c+cfZ++zm/q3HAS1XD7tERvGa4gPvu5TQ=
 github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.9.0/go.mod h1:iiKLoehg9IqQd0R4jUfhl+wvJCiXPNgV88A/V8iKSLY=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.10.0 h1:LZnRHMenSA0UJqVGKS3Unk+W+y2IDiYRzdCaGueoFzc=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.10.0/go.mod h1:iiKLoehg9IqQd0R4jUfhl+wvJCiXPNgV88A/V8iKSLY=
