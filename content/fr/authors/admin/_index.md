@@ -70,7 +70,7 @@ education:
       - Visualizatión de données :
         - *Tableau*, *ggplot2*, *Bokeh*, *d3.js*, *CartoDB*
       - **Travail de fin de Master**
-        - {{<icon name="hero/link" fa-name="Link">}} [Système de détection automatique des nids-de-poule à partir d'images](/uploads/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes.pdf)
+        - {{<icon name="hero/link" fa-name="Link">}} [Système de détection automatique des nids-de-poule à partir d'images [ES]](/uploads/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes.pdf)
   - area: Diplôme d'ingénieur en informatique
     institution: Université de Deusto
     icon: ""
@@ -83,7 +83,7 @@ education:
     date_end: 2005-07-01
 
 work:
-  - position: "Ingénieur Logiciel/Analyste"
+  - position: "Ingénieur Logiciel [EN|ES]"
     company_name: "The Workshop"
     company_url: "https://theworkshop.com"
     icon: ""
@@ -117,7 +117,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Télétravail (depuis Madrid, Espagne)
 
-  - position: "Analyste-Programmeur"
+  - position: "Analyste-Programmeur [ES]"
     company_name: BBVA (via Comunytek, aujourd'hui VASS)
     company_url: "https://www.bbva.com"
     icon: ""
@@ -144,7 +144,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, Espagne
 
-  - position: "Ingénieur Logiciel/Responsable Technique"
+  - position: "Ingénieur Logiciel/Responsable Technique [ES|FR]"
     company_name: Locken (aujourd'hui Groupe ISEO)
     company_url: "https://www.iseo.com"
     icon: ""
@@ -182,7 +182,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, Espagne
 
-  - position: "Analyste-Programmeur"
+  - position: "Analyste-Programmeur [FR]"
     company_name: Edelia (aujourd'hui Datanumia, via SopraSteria)
     company_url: "https://www.datanumia.com"
     icon: ""
@@ -203,7 +203,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Nantes, France
 
-  - position: "Référent Technique"
+  - position: "Référent Technique [FR]"
     company_name: Banque de France (via SopraSteria)
     company_url: "https://www.banque-france.fr"
     icon: ""
@@ -225,7 +225,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Lille, France
 
-  - position: "Responsable Technique / Chef de Projet Technique"
+  - position: "Responsable Technique/Chef de Projet Technique [FR|ES]"
     company_name: EDF (via SopraSteria)
     company_url: "https://www.edf.fr"
     icon: ""
@@ -248,7 +248,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, Espagne
 
-  - position: "Référent Technique"
+  - position: "Référent Technique [FR|ES]"
     company_name: EDF (via SopraSteria)
     company_url: "https://www.edf.fr"
     icon: ""
@@ -270,7 +270,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, Espagne
 
-  - position: "Développeur Fullstack"
+  - position: "Développeur Fullstack [ES]"
     company_name: Sportegos (startup)
     company_url: ""
     icon: ""
@@ -291,7 +291,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, Espagne
 
-  - position: "Analyste-Programmeur"
+  - position: "Analyste-Programmeur [ES]"
     company_name: Gouvernement Basque (via Bilbomática)
     company_url: ""
     icon: ""
@@ -312,7 +312,7 @@ work:
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Bilbao, Espagne
 
-  - position: "Développeur"
+  - position: "Développeur [ES]"
     company_name: Gouvernement Basque (via Bilbomática)
     company_url: ""
     icon: ""

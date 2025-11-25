@@ -70,7 +70,7 @@ education:
       - Data visualization:
         - *Tableau*, *ggplot2*, *Bokeh*, *d3.js*, *CartoDB*
       - **Final Master's Work**
-        - {{<icon name="hero/link" fa-name="Link">}} [Automatic asphalt pothole detection system from images](/uploads/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes.pdf)
+        - {{<icon name="hero/link" fa-name="Link">}} [Automatic Pothole Detection System from Road Surface Images [ES]](/uploads/sistema-de-deteccion-automatica-de-baches-en-el-asfalto-a-partir-de-imagenes.pdf)
   - area: Computer Science Engineering
     institution: Deusto University
     icon: ""

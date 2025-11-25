@@ -9,25 +9,18 @@ type: landing
 
 # Page sections
 sections:
-  - block: markdown
-    content: 
-      title: Projets
-      text: |
-        {{<icon name="hero/clock" >}} En train d'y travailler... migration des projets de mon ancien site personnel en attente
+  - block: collection
+    content:
+      title: Projets remarquables
+      text: J’aime programmer et résoudre des problèmes. Voici quelques-uns de mes projets personnels.
+      filters:
+        folders:
+          - projects
     design:
-      columns: 1
-#  - block: collection
-#    content:
-#      title: Selected Projects
-#      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
-#      filters:
-#        folders:
-#          - projects
-#    design:
-#      view: article-grid
-#      fill_image: false
-#      columns: 3
-#      show_date: false
-#      show_read_time: false
-#      show_read_more: false
+      view: article-grid
+      fill_image: false
+      columns: 3
+      show_date: false
+      show_read_time: false
+      show_read_more: false
 ---
