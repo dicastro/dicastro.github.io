@@ -448,6 +448,13 @@ awards:
     icon: hero/trophy
     summary: |
       Desarrollo de una solución para optimizar la gestión de licencias de software de la compañía. El proyecto obtuvo el 3.º puesto en el hackathon corporativo gracias a su impacto potencial, estimado en más de 300.000€ anuales en ahorro de costes.
+  - title: Spark and Python for Big Data with PySpark
+    url: /uploads/spark_and_python_for_big_data_with_pyspark_certificate.pdf
+    date: "2022-01-22"
+    awarder: Udemy
+    icon: hero/academic-cap
+    summary: |
+      Learn how to use Spark with Python, including Spark Streaming, Machine Learning, Spark 2.0 DataFrames and more!
   - title: Istio Hands-On for Kubernetes
     url: /uploads/istio_hands_on_udemy_certificate.pdf
     date: "2020-08-01"
