@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+\usepackage{enumitem}
+
+\makeatletter
+
+\patchcmd{\makecvhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makecvhead for Homepage failed}}
+
+\patchcmd{\makecvhead}
+  {\qrcode[height=1.5cm]{\@homepage}}
+  {\qrcode[height=1.5cm]{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makecvhead for QR failed}}
+
+\makeatother
+
+\setlist[itemize]{nosep, topsep=0.30em, partopsep=0em}
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% Pandoc often emits \tightlist, define it to avoid errors
+\providecommand{\tightlist}{\setlength{\itemsep}{0em}\setlength{\parskip}{0em}}
+
+\newcommand{\headerliiii}[1]{
+  {\setlength{\parskip}{0em}
+   \addvspace{0.30em}
+   \textbf{#1}
+   \vspace{0.30em}
+  }
+}
+
+\newcommand{\faicon}[2]{
+  {\setlength{\parskip}{0em}
+    \addvspace{0.30em}
+    \csname fa#1\endcsname\space #2
+  }
+}
+
+\name{$first_name$}{$last_name$}
+\title{$role$}
+%\born{19/07/1984}%
+%\address{C/Cuesta 2, casa 4}{28400 Collado Villalba}{España}%
+\email{diegocastroviadero19@gmail.com}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com}
+\social[linkedin]{diego-castro-viadero-9192a278}
+\social[github]{dicastro}
+\photo[64pt][0pt]{cv/picture/me.jpg}
+
+\setlength{\hintscolumnwidth}{3cm}
+\setlength{\separatorcolumnwidth}{0.0125\textwidth}
+\setlength{\makecvheadnamewidth}{7.5cm}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Expériences}
+$for(work)$
+\cventry
+  {$work.date_start_my$ -- $if(work.date_end_my)$$work.date_end_my$$else$Actualm.$endif$}
+  {$work.position$}
+  {$work.company_name$}
+  {}
+  {}
+  {$work.summary$}
+$endfor$
+
+\newpage
+\section{Éducation}
+$for(education)$
+\cventry
+  {$education.date_start_y$ -- $education.date_end_y$}
+  {$education.area$}
+  {$education.institution$}
+  {}
+  {}
+  {$education.summary$}
+$endfor$
+
+\section{Compétences}
+$for(skills)$
+\cvitem{$skills.name$}{
+  $for(skills.items)$
+  $skills.items.name$, 
+  $endfor$
+}
+$endfor$
+
+\end{document}

@@ -63,7 +63,7 @@
 }
 
 \name{$first_name$}{$last_name$}
-\title{Ingeniero en Informática}
+\title{$role$}
 %\born{19/07/1984}%
 %\address{C/Cuesta 2, casa 4}{28400 Collado Villalba}{España}%
 \email{diegocastroviadero19@gmail.com}
@@ -75,13 +75,13 @@
 
 \setlength{\hintscolumnwidth}{3cm}
 \setlength{\separatorcolumnwidth}{0.0125\textwidth}
-\setlength{\makecvheadnamewidth}{7cm}
+\setlength{\makecvheadnamewidth}{7.5cm}
 
 \begin{document}
 
 \makecvtitle
 
-\section{Experiencia}
+\section{Experience}
 $for(work)$
 \cventry
   {$work.date_start_my$ -- $if(work.date_end_my)$$work.date_end_my$$else$Actualm.$endif$}
@@ -93,7 +93,7 @@ $for(work)$
 $endfor$
 
 \newpage
-\section{Formación}
+\section{Education}
 $for(education)$
 \cventry
   {$education.date_start_y$ -- $education.date_end_y$}
@@ -104,7 +104,7 @@ $for(education)$
   {$education.summary$}
 $endfor$
 
-\section{Competencias}
+\section{Skills}
 $for(skills)$
 \cvitem{$skills.name$}{
   $for(skills.items)$

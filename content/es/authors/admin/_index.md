@@ -83,44 +83,40 @@ education:
     date_end: 2005-07-01
 
 work:
-  - position: "Software Engineer Java [EN|ES]"
+  - position: "Software Engineer [EN|ES]"
     company_name: "The Workshop"
     company_url: "https://theworkshop.com"
     icon: ""
     date_start: 2022-07-01
     date_end: ""
     summary: |
-      The Workshop es una empresa de producto especializada en plataformas de games,
-      betting y fintech. La plataforma da servicio a más de 500.000 usuarios activos diarios y
-      procesa cerca de 1000 operaciones/s. El backend es multimarca y multitenant,
-      ofreciendo servicios compartidos para múltiples líneas de negocio desde un mismo
-      ecosistema técnico.
+      The Workshop es una empresa de producto especializada en plataformas de games, betting y fintech. La plataforma da servicio a más de 500.000 usuarios activos diarios y procesa cerca de 1000 operaciones/s. El backend es multimarca y multitenant, ofreciendo servicios compartidos para múltiples líneas de negocio desde un mismo ecosistema técnico.
 
-      #### Contribuciones clave
+      #### Contribuciones destacadas
 
-      - **Optimización de servicios backend:** Mejora del rendimiento y estabilidad del sistema de campañas mediante el refinamiento de la lógica de exclusiones y la centralización de la cola de tareas, evitando la sobrecarga de pods y logrando una distribución más homogénea de la carga de trabajo.  
-      - **Actualización de clúster Kubernetes:** Participación en la actualización del clúster corporativo a una nueva versión, desplegando todos los servicios del producto en un nuevo entorno de producción. Coordinación con equipos de *DevOps*, *Network* y *Third Parties* tanto integradas con nosotros como integradas por nosotros, en un proceso complejo y multi-equipo.  
-      - **Automatización de tareas de soporte:** Desarrollo de una herramienta interna para automatizar procesos relacionados con las guardias (*on-call*): redirección de teléfono, actualización de wiki y canales de mensajería, registro automático de incidencias y generación de tickets, incluyendo la rotación automática del calendario de soporte.  
-      - **Colaboración interequipos:** Participación en iniciativas de limpieza de código para eliminar dependencias específicas de cliente y mejorar la mantenibilidad de los servicios, además de desarrollar herramientas para analizar el alcance del código afectado en múltiples equipos.  
-      - **Creación de un nuevo entorno de producción:** Participación en la creación de un nuevo entorno de producción en un datacenter adicional, desplegando todos los servicios desde cero y gestionando la transición con un *downtime* controlado.  
-      - **Innovación e impacto:** Participación en un proyecto de *hackathon* orientado a la optimización de licencias de software, que obtuvo el 3.º puesto a nivel compañía.  
-      - **Optimización de almacenamiento:** Diseño y ejecución de un proceso de limpieza de base de datos en el sistema de marketing, reduciendo significativamente el almacenamiento requerido.  
-      - **Migración tecnológica:** Participación en la migración del sistema de marketing de **Cassandra** a **Elasticsearch**, mejorando la eficiencia de consultas y la mantenibilidad.  
-      - **Fiabilidad operativa:** Documentación de investigaciones técnicas complejas y estandarización de configuraciones críticas para facilitar despliegues estables y reproducibles.  
+      - **Optimización de servicios backend:** Mejora del rendimiento y estabilidad del sistema de campañas mediante el refinamiento de la lógica de exclusiones y la centralización de la cola de tareas, evitando la sobrecarga de pods y logrando una distribución más homogénea de la carga de trabajo.
+      - **Actualización de clúster Kubernetes:** Participación en la actualización del clúster corporativo a una nueva versión, desplegando todos los servicios del producto en un nuevo entorno de producción. Coordinación con equipos de *DevOps*, *Network* y *Third Parties* tanto integradas con nosotros como integradas por nosotros, en un proceso complejo y multi-equipo.
+      - **Automatización de tareas de soporte:** Desarrollo de una herramienta interna para automatizar procesos relacionados con las guardias (*on-call*): redirección de teléfono, actualización de wiki y canales de mensajería, registro automático de incidencias y generación de tickets, incluyendo la rotación automática del calendario de soporte.
+      - **Colaboración interequipos:** Participación en iniciativas de limpieza de código para eliminar dependencias específicas de cliente y mejorar la mantenibilidad de los servicios, además de desarrollar herramientas para analizar el alcance del código afectado en múltiples equipos.
+      - **Creación de un nuevo entorno de producción:** Participación en la creación de un nuevo entorno de producción en un datacenter adicional, desplegando todos los servicios desde cero y gestionando la transición con un *downtime* controlado.
+      - **Innovación e impacto:** Participación en un proyecto de *hackathon* orientado a la optimización de licencias de software, que obtuvo el 3.º puesto a nivel compañía.
+      - **Optimización de almacenamiento:** Diseño y ejecución de un proceso de limpieza de base de datos en el sistema de marketing, reduciendo significativamente el almacenamiento requerido.
+      - **Migración tecnológica:** Participación en la migración del sistema de marketing de **Cassandra** a **Elasticsearch**, mejorando la eficiencia de consultas y la mantenibilidad.
+      - **Fiabilidad operativa:** Documentación de investigaciones técnicas complejas y estandarización de configuraciones críticas para facilitar despliegues estables y reproducibles.
 
       #### Logros destacados
 
-      - Mejora del tiempo de ejecución de campañas en un **90–95 %** mediante optimización de la lógica y refactorización de flujos.  
-      - Reducción del esfuerzo manual en operaciones *on-call* mediante la automatización completa de planificación y gestión de incidencias.  
-      - Soporte a equipos externos hasta alcanzar autonomía completa, mejorando la calidad del código y la eficiencia de entregas.  
-      - Participación clave en el programa corporativo de actualización de Kubernetes, resolviendo bloqueos de dependencias y configuración entre equipos y *Third Parties*.  
-      - Reducción del espacio ocupado por el sistema de marketing en un **15 %** mediante procesos de limpieza y optimización de datos.  
-      - Contribución en un proyecto de *hackathon* con una estimación de ahorro superior a **300.000 €/año** en costes de licencias.  
+      - Mejora del tiempo de ejecución de campañas en un **90–95 %** mediante optimización de la lógica y refactorización de flujos.
+      - Reducción del esfuerzo manual en operaciones *on-call* mediante la automatización completa de planificación y gestión de incidencias.
+      - Soporte a equipos externos hasta alcanzar autonomía completa, mejorando la calidad del código y la eficiencia de entregas.
+      - Participación clave en el programa corporativo de actualización de Kubernetes, resolviendo bloqueos de dependencias y configuración entre equipos y *Third Parties*.
+      - Reducción del espacio ocupado por el sistema de marketing en un **15 %** mediante procesos de limpieza y optimización de datos.
+      - Contribución en un proyecto de *hackathon* con una estimación de ahorro superior a **300.000 €/año** en costes de licencias.
 
       {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Angular, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Jasmine, Selenium, Contract Testing, Scrum/Kanban
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Remoto (desde Madrid, España)
-  - position: "Analista-Programador Java [ES]"
+  - position: "Analista-Programador [ES]"
     company_name: BBVA (a través de Comunytek, ahora parte de VASS)
     company_url: "https://www.bbva.com"
     icon: ""
@@ -146,7 +142,7 @@ work:
       {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java 8, PostgreSQL, Microservicios, REST, Spring Boot, Docker, Swarm, GlusterFS, Python, NodeJS, Git, Maven, Scrum
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, España
-  - position: "Ingeniero de Software/Responsable Técnico [ES|FR]"
+  - position: "Software Engineer/Responsable Técnico [ES|FR]"
     company_name: Locken (ahora parte del Grupo ISEO)
     company_url: "https://www.iseo.com"
     icon: ""
@@ -159,11 +155,11 @@ work:
 
       #### Responsabilidades principales
 
-      - Desarrollo y revisión de especificaciones técnicas y funcionales.  
-      - Diseño de arquitecturas y definición de estándares de desarrollo.  
-      - Programación backend (Java, Spring Boot) y desarrollo web.  
-      - Revisión de código y soporte técnico al equipo.  
-      - Actividades de I+D y evaluación de nuevas tecnologías.  
+      - Desarrollo y revisión de especificaciones técnicas y funcionales.
+      - Diseño de arquitecturas y definición de estándares de desarrollo.
+      - Programación backend (Java, Spring Boot) y desarrollo web.
+      - Revisión de código y soporte técnico al equipo.
+      - Actividades de I+D y evaluación de nuevas tecnologías.
 
       #### Proyectos destacados
 
@@ -183,7 +179,7 @@ work:
       Además, impulsé la adopción de tecnologías emergentes como *Docker* y *Progressive Web Apps*, fomentando su incorporación en los nuevos desarrollos del departamento.
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Madrid, España
-  - position: "Analista-Programador Java [FR]"
+  - position: "Analista-Programador [FR]"
     company_name: Edelia (ahora parte de Datanumia, a través de SopraSteria)
     company_url: "https://www.datanumia.com"
     icon: ""
@@ -196,7 +192,7 @@ work:
 
       #### Responsabilidades principales
       
-      - Desarrollo de especificaciones técnicas 
+      - Desarrollo de especificaciones técnicas
       - Revisión de especificaciones funcionales
       - Programación backend en entorno de microservicios
 
@@ -237,8 +233,8 @@ work:
 
       #### Responsabilidades principales
 
-      - Diseño de componentes comunes y establecimiento de patrones de desarrollo  
-      - Definición de estructura del código y buenas prácticas para el proyecto  
+      - Diseño de componentes comunes y establecimiento de patrones de desarrollo
+      - Definición de estructura del código y buenas prácticas para el proyecto
       - Desarrollo de funcionalidades backend y frontend
       - Gestión de un pequeño equipo de trabajo
       - Coordinación y mentoría de perfiles junior
@@ -259,10 +255,10 @@ work:
 
       #### Responsabilidades principales
 
-      - Análisis técnico de requerimientos funcionales  
-      - Elaboración de presupuestos técnicos  
-      - Acompañamiento y mentoría de perfiles junior  
-      - Programación backend y frontend  
+      - Análisis técnico de requerimientos funcionales
+      - Elaboración de presupuestos técnicos
+      - Acompañamiento y mentoría de perfiles junior
+      - Programación backend y frontend
 
       {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java 6, JQuery, JSP, Struts, Spring, Spring Batch, Weblogic, Hibernate, SQL, Oracle, REST, Web Services, JUnit, DBUnit, SVN, Maven, Jenkins
 
@@ -300,9 +296,9 @@ work:
 
       #### Responsabilidades principales
 
-      - Gestión de un pequeño equipo de trabajo  
-      - Análisis técnico de requisitos funcionales  
-      - Programación backend y frontend  
+      - Gestión de un pequeño equipo de trabajo
+      - Análisis técnico de requisitos funcionales
+      - Programación backend y frontend
 
       {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} J2EE, Struts, JSP, JSTL, Servlet, JavaScript, CSS, EJB, Web Services, JUnit, SVN, Weblogic, SQL, Oracle, Maven, Hudson
 
@@ -320,7 +316,7 @@ work:
 
       #### Responsabilidades principales
 
-      - Programación backend y frontend  
+      - Programación backend y frontend
 
       {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} J2EE, Struts, Documentum, JSP, JSTL, Servlet, JavaScript, CSS, EJB, MDB, Web Services, JUnit, DBUnit, SVN, Weblogic, SQL, Oracle, Maven, Hudson
 

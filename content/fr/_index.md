@@ -16,7 +16,7 @@ sections:
       text: ""
       button:
         text: Télécharger CV
-        url: uploads/cv-diego-castro-viadero-fr.pdf
+        url: /uploads/cv-diego-castro-viadero-fr.pdf
       headings:
         about: ""
         education: ""

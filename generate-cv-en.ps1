@@ -1,0 +1,1 @@
+docker run --rm -v "${PWD}:/data" -w /data dicastro/pandoc-latex-cv:3.6.4.0-alpine content/en/authors/admin/_index.md --lua-filter cv/filters/escape-yaml.lua --columns 1000 --pdf-engine xelatex --from markdown+yaml_metadata_block --template cv/templates/moderncv-template-en.tex -o static/uploads/cv-diego-castro-viadero-en.pdf
