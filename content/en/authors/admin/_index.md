@@ -338,16 +338,16 @@ skills:
         icon: devicon/javascript
   - name: Frameworks
     items:
-      - name: Ecosistema Sprign
+      - name: Sprign Ecosystem
         description: ""
         icon: devicon/spring
-      - name: Microservicios
+      - name: Microservices
         description: ""
         icon: hero/squares-2x2
       - name: REST APIs
         description: ""
         icon: devicon/openapi
-      - name: Métricas
+      - name: Metrics
         description: ""
         icon: devicon/prometheus
       - name: Dashboards
