@@ -108,7 +108,7 @@ work:
       - Reduced marketing system storage consumption by **15%** through data cleanup and optimization processes.
       - Contributed to a hackathon project with an estimated savings of **€300,000/year** in software licensing costs.
 
-      {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Angular, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Jasmine, Selenium, Contract Testing, Scrum/Kanban
+      {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Prometheus, Micrometer, PromQL, AlertManager, Grafana, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Angular, Jasmine, Selenium, Contract Testing, Scrum/Kanban
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Remote (from Madrid, Spain)
   - position: "Software Engineer/Analyst [ES]"

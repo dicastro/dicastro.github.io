@@ -2,7 +2,7 @@ FROM pandoc/latex:3.6.4.0-alpine
 
 RUN tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2024/tlnet-final && \
     tlmgr update --self && \
-    tlmgr install moderncv qrcode xkeyval tikzmark enumitem
+    tlmgr install moderncv qrcode xkeyval tikzmark enumitem ragged2e hyphenat
 
 RUN curl -s -L https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2024/tlnet-final/archive/lm.tar.xz -o /tmp/lm.tar.xz && \
     mkdir -p /usr/share/fonts/OTF/latin-modern && \

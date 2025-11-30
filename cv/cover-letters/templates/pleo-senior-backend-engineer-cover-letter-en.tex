@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+
+% allows justifying paragraphs
+\usepackage{ragged2e}
+% disable word hyphening
+\usepackage[none]{hyphenat}
+
+% allow flexible spaces between words
+\sloppy
+
+\makeatletter
+
+\patchcmd{\makeletterhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\makeatother
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\name{$first_name$}{$last_name$}
+\email{diegocastroviadero19@gmail.com}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com/en}
+
+\begin{document}
+
+\recipient{Hiring team}{Pleo\\Madrid/London/Lisbon}
+\date{November 29, 2025}
+\subject{Senior Backend Engineer}
+\opening{Dear Hiring Team,}
+\closing{Kind regards,}
+
+\makelettertitle
+
+\begin{justify}
+I am particularly drawn to this role by the chance to contribute to a collaborative, innovative engineering culture and to help scale a product that meaningfully improves how companies manage spending. Pleo's emphasis on autonomy, trust, and innovation resonates strongly with the environment in which I thrive.
+
+In my current role, I work on distributed, cloud-native systems built on Kubernetes and microservices. My team develops core backend services that must remain reliable, secure and performant under continuous growth. I have been responsible for designing, evolving and maintaining services that support large user bases, always with a strong focus on code quality, scalability and operational robustness. Although my primary language has been Java, I work daily within the JVM ecosystem and I am fully confident in adopting Kotlin.
+
+Software quality is a key part of my work. I have extensive experience with testing at multiple levels—including unit tests, mutation testing, component tests, contract tests, system tests and end-to-end test suites, using frameworks like JUnit, Pitest, Testcontainers and others. Maintaining a strong testing culture has been essential in ensuring reliability across our microservices and in enabling safe refactoring and migrations.
+
+I also work with observability tools like Prometheus, Micrometer, Alertmanager and Grafana to monitor services, proactively detect errors through alerts and measure and guide performance improvements.
+
+Beyond my core responsibilities, I enjoy contributing to innovation initiatives. I regularly participate in company-wide innovation days and recently took part in our annual "Geek Week", developing and presenting prototype ideas alongside engineers from different teams. I appreciate environments like Pleo where experimentation and creativity are encouraged.
+
+I am also comfortable taking ownership, mentoring teammates and participating in code reviews, technical discussions and post-mortems. Collaboration and knowledge sharing have been central to every team I've been part of, and I look forward to contributing to that culture at Pleo.
+
+I appreciate that Pleo's interview process emphasizes both technical proficiency and cultural fit, that balance matches exactly how I approach engineering. I would welcome the opportunity to discuss how my experience in backend engineering, distributed systems, testing practices and collaborative problem-solving, together with my alignment with Pleo's values, can contribute to company's mission as it scales globally.
+\end{justify}
+
+\makeletterclosing
+
+
+\end{document}

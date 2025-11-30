@@ -112,8 +112,8 @@ work:
       - Contribution essentielle au programme de mise à niveau de Kubernetes, résolution de blocages liés aux dépendances et configurations inter-équipes et avec les *Third Parties*.
       - Réduction de **15 %** de l'espace de stockage utilisé par le système marketing grâce à des processus de nettoyage et d'optimisation de données.
       - Contribution à un projet de *hackathon* estimé générer plus de **300.000 €/an** d'économies en licences.
-      
-      {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Angular, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Jasmine, Selenium, Contract Testing, Scrum/Kanban
+
+      {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Prometheus, Micrometer, PromQL, AlertManager, Grafana, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Angular, Jasmine, Selenium, Contract Testing, Scrum/Kanban
 
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Télétravail (depuis Madrid, Espagne)
 

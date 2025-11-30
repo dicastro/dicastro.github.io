@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1001"
+   sodipodi:docname="adguardhome.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1005" />
+  <sodipodi:namedview
+     id="namedview1003"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="13.640625"
+     inkscape:cx="32"
+     inkscape:cy="26.09851088201604"
+     inkscape:window-width="2554"
+     inkscape:window-height="1352"
+     inkscape:window-x="1275"
+     inkscape:window-y="4"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1001" />
+  <path
+     d="M 7.999822429778756,0 C 5.499323715826633,0 2.483097132746878,0.5736894998150301 0,1.83642070336239 0,4.56357881045008 -0.0342728486999524,11.35775525493409 7.999822429778756,15.99999880953117 16.03409530699425,11.35775525493409 15.99999758453127,4.56357881045008 15.99999758453127,1.83642070336239 13.51672531929742,0.5736894998150301 10.50049874371767,0 7.999822429778756,0 Z"
+     id="Path"
+     fill="#68bc71"
+     style="stroke-width:1" />
+  <path
+     d="M 7.999999404765588,0 V 15.99989655953878 C -0.0342728486999524,11.35775525493409 0,4.56357881045008 0,1.83642070336239 2.483097132746878,0.5736894998150301 5.499323715826633,0 7.999822429778756,0 Z"
+     id="Combined-Shape"
+     fill="#67b279"
+     style="stroke-width:1" />
+  <path
+     d="M 7.929422685016803,10.28571350969861 12.57142763963164,4.135076767332479 c -0.34015669969088,-0.268038080056813 -0.63852270249116,-0.0788623441323 -0.80276979027047,0.06759629497054 l -0.005993249554,4.69399965072e-4 L 7.892167412788753,8.1614374177539 6.433867096292576,6.436167221121436 C 5.738165673055759,5.645979079914837 4.792368093427175,6.248712710068859 4.571428234866051,6.408002098217044 l 3.357994450150747,3.877711411481566"
+     id="Fill-11"
+     fill="#ffffff"
+     style="stroke-width:1" />
+</svg>

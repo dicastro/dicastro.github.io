@@ -113,8 +113,8 @@ work:
       - Reducción del espacio ocupado por el sistema de marketing en un **15 %** mediante procesos de limpieza y optimización de datos.
       - Contribución en un proyecto de *hackathon* con una estimación de ahorro superior a **300.000 €/año** en costes de licencias.
 
-      {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Angular, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Jasmine, Selenium, Contract Testing, Scrum/Kanban
-
+      {{<icon name="hero/wrench-screwdriver" fa-name="Wrench">}} Java (17+), Spring Boot, Spring Cloud, REST APIs, Kafka, RabbitMQ, Cassandra, Elasticsearch, Prometheus, Micrometer, PromQL, AlertManager, Grafana, Docker, Kubernetes, Helm, Git, CI/CD (Bamboo), JUnit, Pitest, Mockito, Angular, Jasmine, Selenium, Contract Testing, Scrum/Kanban
+      
       {{<icon name="hero/map-pin" fa-name="MapPin">}} Remoto (desde Madrid, España)
   - position: "Analista-Programador [ES]"
     company_name: BBVA (a través de Comunytek, ahora parte de VASS)

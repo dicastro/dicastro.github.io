@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   fill="none"
+   viewBox="0 0 16 16"
+   id="Z-Wave-Logo--Streamline-Logos"
+   height="16"
+   width="16"
+   version="1.1"
+   sodipodi:docname="zwave.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3437" />
+  <sodipodi:namedview
+     id="namedview3435"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="12.63953371704407"
+     inkscape:cx="30.26219230573427"
+     inkscape:cy="37.50138340632168"
+     inkscape:window-width="2554"
+     inkscape:window-height="1352"
+     inkscape:window-x="1275"
+     inkscape:window-y="4"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Z-Wave-Logo--Streamline-Logos" />
+  <desc
+     id="desc3430">
+    Z Wave Logo Streamline Icon: https://streamlinehq.com
+  </desc>
+  <path
+     fill="#000000"
+     fill-rule="evenodd"
+     d="m 11.45454545454546,1.454545359986104 c -5.522909090909096,0 -10.000000000000007,4.477090909090912 -10.000000000000007,10.000000000000005 H 0 C 0,5.128727178167925 5.128727272727275,0 11.45454545454546,0 Z m 0,3.090909090909093 A 6.90909090909091,6.90909090909091 0 0 0 4.545454545454545,11.45454535998611 H 3.09090909090909 c 0,-4.618909090909099 3.744727272727273,-8.363636363636368 8.36363636363637,-8.363636363636368 z M 16,11.45454535998611 a 4.545454545454547,4.545454545454547 0 1 1 -9.090909090909088,0 4.545454545454552,4.545454545454552 0 0 1 9.090909090909088,0 z M 9.818181818181823,9.090908996349742 9.090909090909093,10.5454544508952 h 1.818181818181816 l -1.818181818181816,2.9090909090909 h 3.636363636363637 l 1.09090909090909,-1.45454545454544 H 12 l 1.81818181818182,-2.909090909090915 z"
+     clip-rule="evenodd"
+     stroke-width="2.6667"
+     id="path3432" />
+</svg>
