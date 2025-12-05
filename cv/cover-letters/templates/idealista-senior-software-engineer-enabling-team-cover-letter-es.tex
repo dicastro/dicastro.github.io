@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+
+% allows justifying paragraphs
+\usepackage{ragged2e}
+% disable word hyphening
+\usepackage[none]{hyphenat}
+
+% allow flexible spaces between words
+\sloppy
+
+\makeatletter
+
+\patchcmd{\makeletterhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@subject\\[3em]}
+  {\@subject\\[2em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@opening\\[1.5em]}
+  {\@opening\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterclosing}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[3em]}{\\[1em]}}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[2em]}{\\[1em]}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\makeatother
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\name{$first_name$}{$last_name$}
+\email{diegocastroviadero19@gmail.com}
+\address{Madrid}{}{}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com}
+
+\begin{document}
+
+\recipient{Equipo de selección}{Idealista - Madrid}
+\date{4 de diciembre de 2025}
+\subject{Senior Software Engineer - Enabling Team (Remote)}
+\opening{Estimado equipo de selección,}
+\closing{Un cordial saludo,}
+
+\makelettertitle
+
+\begin{justify}
+Me gustaría inscribirme en la oferta para formar parte del Enabling Team de idealista. Tras leer en detalle la descripción del rol, creo que encaja muy bien con mi trayectoria profesional, especialmente con mi experiencia en arquitectura, acompañamiento interequipos y trabajo en infraestructuras críticas.
+
+Llevo más de \textbf{15 años trabajando en backend}, principalmente con \textbf{Java y ecosistemas Spring}, aunque siempre he mantenido una visión global del stack: arquitectura, infraestructura, CI/CD, contenedores, seguridad y observabilidad. Más allá de la programación, suelo asumir roles de \textit{referente técnico}, mentor y facilitador en varios equipos.
+
+En mi experiencia más reciente:
+
+\begin{itemize}
+\item En \textbf{The Workshop}, he trabajado en una plataforma de alto rendimiento (500.000 usuarios activos, +1000 ops/s), participando en proyectos clave de arquitectura, actualizaciones de Kubernetes, optimización de servicios, migraciones tecnológicas y coordinación con equipos de DevOps, Network y terceros
+\item He colaborado estrechamente con múltiples equipos como \textit{punto de referencia técnico}, ayudando a desbloquearles, mejorar sus implementaciones y facilitarles buenas prácticas
+\item He impulsado automatizaciones, estandarizaciones de despliegues, refactors, revisiones de diseño y herramientas internas para mejorar la eficiencia global de la plataforma
+\item He trabajado de manera continua con APIs, gateways, seguridad y entornos basados en contenedores (Docker/Kubernetes)
+\end{itemize}
+
+Anteriormente, en \textbf{BBVA} formé parte del departamento de arquitectura del área CIB, trabajando en una plataforma interna tipo cloud para desplegar y operar servicios del banco, incluyendo integración con Kubernetes y definición de APIs.
+
+Además, en roles como \textbf{responsable técnico y referente}, he realizado formación, mentoría, revisión de código, definición de arquitecturas y soporte directo a equipos menos avanzados técnicamente, algo que encaja muy bien con el espíritu del \textit{Enabling Team}.
+
+\section{Por qué creo que encajo en vuestro equipo}
+\begin{itemize}
+\item Me gustan los retos que combinan arquitectura, infraestructura y desarrollo
+\item Tengo amplia experiencia trabajando junto a \textbf{equipos diversos} (negocio, seguridad, devops, QA ...)
+\item Me siento cómodo en contextos donde hay que detectar capacidades faltantes, acompañar y desbloquear
+\item Disfruto transmitiendo conocimiento, mentorizar y documentar para mejorar el nivel colectivo
+\item Soy curioso, proactivo y no tengo miedo a explorar áreas más allá del desarrollo tradicional
+\end{itemize}
+
+En cuanto a conocimientos adicionales:
+
+\begin{itemize}
+\item Experiencia en contenedores (Docker), Kubernetes, y entornos cloud
+\item Experiencia en configuración y uso de protocolos de autenticación (OAuth)
+\item Buen nivel de inglés y experiencia trabajando en entornos internacionales
+\item Experiencia trabajando con IaC y herramientas de automatización (Helm, Jenkins, Bamboo, Ansible)
+\end{itemize}
+
+Me encantaría aportar mi experiencia y seguir aprendiendo en un equipo facilitador como el vuestro, y estaría encantado de tener una entrevista para conocernos mejor.
+\end{justify}
+
+\makeletterclosing
+
+
+\end{document}

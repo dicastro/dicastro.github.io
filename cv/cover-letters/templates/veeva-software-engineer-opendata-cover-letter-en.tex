@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+
+% allows justifying paragraphs
+\usepackage{ragged2e}
+% disable word hyphening
+\usepackage[none]{hyphenat}
+
+% allow flexible spaces between words
+\sloppy
+
+\makeatletter
+
+\patchcmd{\makeletterhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\makeatother
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\name{$first_name$}{$last_name$}
+\email{diegocastroviadero19@gmail.com}
+\address{Madrid}{}{}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com/en}
+
+\begin{document}
+
+\recipient{Hiring team}{Veeva\\Spain}
+\date{December 3rd, 2025}
+\subject{Software Engineer - OpenData (Remote)}
+\opening{Dear Hiring Team,}
+\closing{Kind regards,}
+
+\makelettertitle
+
+\begin{justify}
+I am writing to express my interest in the Senior Software Engineer position for the Veeva OpenData Commercial team. I bring more than 15 years of experience in backend engineering, with the past few years focused on large-scale systems, performance improvements, and distributed architectures. I believe this combination of long-term backend expertise and recent experience in high-scale environments makes me a strong fit for this role.
+
+In my current position at The Workshop, I have worked on backend services that operate within a high-throughput ecosystem serving thousands of operations per second. My work has included optimizing core execution paths, significantly improving performance and stability, and contributing to the reliability of services deployed across Kubernetes. On a day-to-day basis I use Java (17+), Spring, Kubernetes, RabbitMQ, Kafka, Elasticsearch, Cassandra, and PostgreSQL.
+
+I have hands-on experience improving backend logic, data flows, and system consistency across distributed services. Much of my recent work has focused on refactoring, performance optimization, and enhancing the robustness and correctness of key backend components.
+
+Although my academic background includes a Master's degree in Data Science and Big Data, my professional focus has remained primarily on backend engineering. The program gave me strong foundations in SQL and data manipulation concepts, which still support my work today, even if I do not actively use technologies like Spark in my current role.
+
+I am particularly drawn to Veeva's mission-driven culture and long-term product mindset. Your emphasis on engineering excellence, data quality, and global impact aligns strongly with my motivations and the type of work I enjoy.
+
+I thrive in collaborative environments, enjoy learning new technologies, and bring a strong sense of ownership and curiosity to every project. I would be excited to contribute to the data backbone powering life sciences worldwide.
+
+Thank you for considering my application. I would welcome the opportunity to further discuss how my background and experience can contribute to the Veeva OpenData team.
+\end{justify}
+
+\makeletterclosing
+
+
+\end{document}

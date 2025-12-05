@@ -88,3 +88,5 @@ _vendor
 
 static/uploads/cv*.tex
 static/uploads/cv*.pdf
+
+NOTES.md
