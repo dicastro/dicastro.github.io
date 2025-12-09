@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+
+% allows justifying paragraphs
+\usepackage{ragged2e}
+% disable word hyphening
+\usepackage[none]{hyphenat}
+
+% allow flexible spaces between words
+\sloppy
+
+\makeatletter
+
+\patchcmd{\makeletterhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@subject\\[3em]}
+  {\@subject\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@opening\\[1.5em]}
+  {\@opening\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterclosing}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[3em]}{\\[1em]}}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[1em]}{\\[1em]}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\makeatother
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\name{$first_name$}{$last_name$}
+\email{diegocastroviadero19@gmail.com}
+\address{Madrid}{}{}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com/en}
+
+\begin{document}
+
+\recipient{Hiring team}{Cabify - Madrid}
+\date{December 8th, 2025}
+\subject{Backend Software Engineer}
+\opening{Dear Hiring Team,}
+\closing{Kind regards,}
+
+\makelettertitle
+
+\begin{justify}
+I am writing to express my interest in the \textbf{Backend Software Engineer} position at Cabify. I bring more than \textbf{15 years of experience} in backend engineering, with the past few years focused on large-scale systems, performance improvements, and distributed architectures. I believe this combination of long-term backend expertise and recent experience in high-scale environments makes me a strong fit for this role.
+
+Throughout my career, I have worked across diverse industries (energy, banking, IoT, large-scale consumer platforms) gaining a deep understanding of complex systems and the challenges of building reliable, scalable and data-oriented applications. Whether working in a fast-paced startup, a product company, or large multinational environments, I have consistently focused on writing clean, maintainable code, designing architectures that last, and driving projects from conception to production.
+
+Although most of my recent experience has been with \textbf{Java and the Spring ecosystem}, I am highly adaptable and thrive on learning new technologies. It is precisely this curiosity and adaptability that have allowed me to work comfortably across languages (Java, Python, TypeScript, JavaScript), systems (Kubernetes, Docker, distributed storage, streaming), and paradigms (microservices, event-driven architectures, data-intensive applications). I would be enthusiastic about learning and working with Go, Elixir or Ruby, as Cabify promotes. For me, the true value lies in deeply understanding problems and choosing the right tools to solve them.
+
+\section{Why Cabify?}
+
+Cabify's mission and culture resonate strongly with me. I appreciate your focus on improving mobility in cities, an area that has a real and positive impact on people's daily lives. Your principles and values feel genuinely lived, not just stated, and I particularly value the emphasis on coherence, accountability, and transparency.
+
+I also find it remarkable that Cabify publishes its handbook openly. This level of openness reflects maturity as an organization and gives candidates a clear understanding of how the company works and what it stands for. It is refreshing to see a company that aligns its internal culture with the way it communicates externally.
+
+Overall, Cabify strikes me as a place where thoughtful engineering, purpose-driven work, and continuous learning come together. This is the kind of environment in which I thrive and would be excited to contribute.
+
+\section{What I can bring to Cabify}
+
+\begin{itemize}
+\item Experience designing and operating distributed systems serving large user bases with strict performance and reliability requirements.
+\item Strong problem-solving skills, both at the application level and at the infrastructure/host level.
+\item Solid knowledge of architectural patterns, event-driven design, messaging systems, storage strategies, and observability.
+\item A passion for collaboration, code quality, testing strategy, and improving engineering culture.
+\item The ability to mentor, support, and inspire teams while remaining open to learning from others.
+\item A mindset focused on continuous improvement, thoughtful trade-offs, and pragmatic decision-making.
+\end{itemize}
+
+I am motivated by Cabify's mission and inspired by the ambition to make cities better places to live. I would be thrilled to contribute my experience, technical expertise, and enthusiasm for solving complex problems to your engineering team, and I look forward to the opportunity to further discuss how I can contribute to Cabify's goals.
+
+\end{justify}
+
+\makeletterclosing
+
+
+\end{document}
