@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+
+% allows justifying paragraphs
+\usepackage{ragged2e}
+% disable word hyphening
+\usepackage[none]{hyphenat}
+
+% allow flexible spaces between words
+\sloppy
+
+\makeatletter
+
+\patchcmd{\makeletterhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@subject\\[3em]}
+  {\@subject\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@opening\\[1.5em]}
+  {\@opening\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterclosing}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[3em]}{\\[1em]}}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[1em]}{\\[1em]}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\makeatother
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\name{$first_name$}{$last_name$}
+\email{diegocastroviadero19@gmail.com}
+\address{Madrid}{}{}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com/en}
+
+\begin{document}
+
+\recipient{Hiring team}{Bending Spoons}
+\date{December 10th, 2025}
+\subject{Software Engineer}
+\opening{Dear Hiring Team,}
+\closing{Kind regards,}
+
+\makelettertitle
+
+\begin{justify}
+I am a computer engineer who brings more than 15 years of experience in backend engineering, with the past few years focused on large-scale systems, performance improvements, and distributed architectures. I believe this combination of long-term backend expertise and recent experience in high-scale environments makes me a strong fit for this role.
+
+After reading your Software Engineer position, I immediately recognized a strong alignment between your engineering philosophy and the way I approach technology: think from first principles, simplify relentlessly, and take full ownership of the problems worth solving. That is exactly the environment where I know I can contribute the most and grow the fastest.
+
+Throughout my career, I have worked across a wide range of contexts: large multinational tech consulting groups, a fast-moving early-stage startup, and most recently \textbf{The Workshop}, a product company serving over \textbf{500,000 daily active users} and processing nearly \textbf{1,000 operations per second}. This diversity taught me to adapt quickly, master different tech stacks, and most importantly, reason deeply about problems instead of relying on trends or habits.
+
+In my current role, I've contributed significantly to system performance, operational reliability, and simplification of complex distributed architectures. For example:
+
+\begin{itemize}
+\item Achieved a 95\% reduction in execution time for the marketing campaign engine by rethinking exclusion logic, centralizing queue processing, and refactoring the execution flow, improving the performance of campaigns that reach millions of end users
+\item Acting as a key contributor in the Kubernetes cluster migration and in setting up a new full production environment from scratch in a second datacenter, working closely with Architecture, DevOps, Network, and Product teams
+\item Designing internal tools to automate on-call operations, from phone routing to incident logging, removing manual toil almost entirely
+\item Led initiatives to remove tenant-specific references across services, making the codebase fully agnostic and easier to maintain
+\item Provided hands-on support to onboard new and external teams, ensuring they reached full autonomy in using and contributing to the platform
+\item Contributing to a company-wide hackathon solution that achieved €300,000/year in potential savings, awarded 3rd place
+\end{itemize}
+
+Beyond technical impact, what defines me most is the willingness to learn, improve, and contribute to the team. I enjoy code reviews, knowledge sharing, and collaborative refinement of ideas. I am comfortable taking ownership from ideation to production, but equally comfortable getting my hands dirty to support teammates. And I always push myself to raise my own bar, technically and personally.
+
+Your philosophy of combining engineering excellence with entrepreneurial thinking resonates strongly with me. I am particularly drawn to your emphasis on capital allocation, hands-on ownership, and building long-term leverage through technology, data, and culture. I see Bending Spoons as a place where I could apply everything I know, and stretch far beyond it.
+
+I would be thrilled to explore how my experience in distributed systems, backend engineering, simplification, and cross-team collaboration could contribute to the products and platform you are building.
+
+Thank you very much for your time and consideration.
+\end{justify}
+
+\makeletterclosing
+
+
+\end{document}
