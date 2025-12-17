@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvcolor{cerulean}
+\moderncvstyle[]{contemporary}
+
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}
+
+% allows justifying paragraphs
+\usepackage{ragged2e}
+% disable word hyphening
+\usepackage[none]{hyphenat}
+
+% allow flexible spaces between words
+\sloppy
+
+\makeatletter
+
+\patchcmd{\makeletterhead}
+  {\httplink{\@homepage}}
+  {\href{\@homepageprotocol://\@homepage}{\@homepageprotocol://\@homepage}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@subject\\[3em]}
+  {\@subject\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterhead}
+  {\@opening\\[1.5em]}
+  {\@opening\\[1em]}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\patchcmd{\makeletterclosing}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[3em]}{\\[1em]}}
+  {\@closing\ifthenelse{\isundefined{\@signature}}{\\[1em]}{\\[1em]}}
+  {}
+  {\GenericWarning{}{Patching makeletterhead for Homepage failed}}
+
+\makeatother
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  \setsansfont[
+    ItalicFont={Fira Sans Light Italic},
+    BoldFont={Fira Sans},
+    BoldItalicFont={Fira Sans Italic}
+  ]{Fira Sans Light}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+\name{$first_name$}{$last_name$}
+\email{diegocastroviadero19@gmail.com}
+\address{Madrid}{}{}
+\phone[mobile]{(+34) 676 350 269}
+\homepage[https]{diegocastroviadero.com/en}
+
+\begin{document}
+
+\recipient{Hiring team}{Clarity AI}
+\date{December 16th, 2025}
+\subject{Senior Software Engineer - SFDR Team}
+\opening{Dear Hiring Team,}
+\closing{Kind regards,}
+
+\makelettertitle
+
+\begin{justify}
+I am writing to express my interest in the \textbf{Senior Software Engineer – SFDR Team} position at \textbf{Clarity AI}. I bring more than \textbf{15 years of experience} in backend engineering, with the past few years focused on large-scale systems, performance improvements, and distributed architectures. I believe this combination of long-term backend expertise and recent experience in high-scale environments makes me a strong fit for this role. I am highly motivated by the opportunity to contribute to a product that combines technical excellence with meaningful societal impact.
+
+Throughout my career, I have worked across a wide range of contexts: large multinational companies, highly regulated environments, product-based organizations, and early-stage startups. This has allowed me to develop a strong ability to adapt, collaborate effectively with diverse teams, and take ownership of complex systems throughout their entire lifecycle.
+
+Currently, at \textbf{The Workshop}, I work on a large-scale, multi-tenant backend platform serving over \textbf{500,000 daily active users} and processing close to \textbf{1,000 operations per second}. My work focuses on designing and maintaining resilient, scalable services using \textbf{Java 17+, Spring Boot, Kafka, RabbitMQ, Docker, and Kubernetes}. I actively participate in architectural decisions, production monitoring, incident resolution, and performance optimization, fully embracing a \textit{"you build it, you run it"} mindset.
+
+Some examples of my recent impact include:
+\begin{itemize}
+  \item Improving marketing campaigns execution times by \textbf{90--95\%} through logic refactoring and flow optimization.
+  \item Contributing to a company-wide Kubernetes cluster upgrade, coordinating with multiple internal and external teams to ensure a smooth production rollout.
+  \item Designing automation tools that significantly reduced manual operational effort for on-call and incident management.
+  \item Participating in technology migrations (e.g., Cassandra to Elasticsearch) to improve system maintainability and performance.
+\end{itemize}
+
+I place a strong emphasis on \textbf{clean code, testing, and observability}. I regularly work with unit, integration, contract, and end-to-end tests, and I have hands-on experience with monitoring and alerting using tools such as \textbf{Prometheus, Grafana, and Alertmanager}. I strongly believe that well-tested and observable systems are key to long-term scalability and reliability.
+
+Beyond pure engineering, I have a \textbf{product-oriented mindset}. I enjoy understanding the business context behind technical decisions and aim to deliver solutions that provide real, measurable value. My background in \textbf{Data Science and Big Data}, including a master’s degree in the field, also allows me to collaborate effectively with data-focused teams and understand data-intensive systems end to end.
+
+Clarity AI’s mission to bring transparency and sustainability to financial markets resonates strongly with me. I am particularly drawn to your fact-based culture, focus on impact, and commitment to building robust, scalable technology to support critical decision-making.
+
+I would welcome the opportunity to contribute my experience, technical leadership, and problem-solving mindset to the SFDR team at Clarity AI. Thank you very much for your time and consideration.
+\end{justify}
+
+\makeletterclosing
+
+
+\end{document}
