@@ -457,6 +457,13 @@ awards:
     icon: hero/trophy
     summary: |
       Développement d'une solution pour optimiser la gestion des licences logicielles de l'entreprise. Le projet a obtenu la 3e place au hackathon de l'entreprise grâce à son impact potentiel, estimé à plus de 300.000 € d'économies annuelles.
+  - title: Certified Kubernetes Application Developer (CKAD) with Tests
+    url: /uploads/certified_kubernetes_application_developer_with_tests_certificate.pdf
+    date: "2022-10-28"
+    awarder: Udemy
+    icon: hero/academic-cap
+    summary: |
+      Learn concepts and practice for the Kubernetes Certification with hands-on labs right in your browser
   - title: Spark and Python for Big Data with PySpark
     url: /uploads/spark_and_python_for_big_data_with_pyspark_certificate.pdf
     date: "2022-01-22"
