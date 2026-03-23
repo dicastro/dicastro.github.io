@@ -14,8 +14,18 @@ baseURL: 'https://diegocastroviadero.com/'
 
 defaultContentLanguage: es
 hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+defaultContentLanguageInSubdir: true
 removePathAccents: true
+
+############################
+## PAGE OPTIONS
+############################
+
+cascade:
+  - _target:
+      path: "**/slides/**"
+      kind: page
+    outputs: [HTML]
 
 ############################
 ## ADVANCED
@@ -30,7 +40,7 @@ pagination:
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 disableAliases: true
 outputs:
   home: [HTML, RSS, headers, redirects, backlinks]
@@ -43,7 +53,6 @@ imaging:
 timeout: 600000
 taxonomies:
   author: authors
-  category: categories
   tag: tags
   publication_type: publication_types
 markup:

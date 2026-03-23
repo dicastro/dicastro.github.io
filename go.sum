@@ -1,8 +1,8 @@
-github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify v1.1.2 h1:rgavbaIjA9ki73sJ9OkE/yIdUYF2AJALs6NzCg6kC60=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify v1.1.2/go.mod h1:C7jfxMLv1bEUqbM9XDSmEpfOpS8w06OgqNDEcbuRgL4=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-reveal v1.2.4 h1:Y9moOoDf7yePBCUHrHwIQwpli/mZ7w0/WP9fvvu2oAA=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-reveal v1.2.4/go.mod h1:rc3iv07XFylONQor5A4GdjTffe4asUSdnC1VgzmQ5+s=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.9.0 h1:lZJ3xjkZQ9c+cfZ++zm/q3HAS1XD7tERvGa4gPvu5TQ=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.9.0/go.mod h1:iiKLoehg9IqQd0R4jUfhl+wvJCiXPNgV88A/V8iKSLY=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.10.0 h1:LZnRHMenSA0UJqVGKS3Unk+W+y2IDiYRzdCaGueoFzc=
-github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind v0.10.0/go.mod h1:iiKLoehg9IqQd0R4jUfhl+wvJCiXPNgV88A/V8iKSLY=
+github.com/HugoBlox/kit/modules/analytics v0.3.1 h1:ycPhZARCshIBbad6opbPgj36zvWe4lj5u0LJVcRMyqw=
+github.com/HugoBlox/kit/modules/analytics v0.3.1/go.mod h1:B0DPb/ZHR713/rzAxWoUqOwGP+ZuX2kT8DHkJsgUPa8=
+github.com/HugoBlox/kit/modules/blox v0.11.0 h1:CktTx80szMNpMV9qWAjKWu7AVPiyrAIDrJwVniM2Q2g=
+github.com/HugoBlox/kit/modules/blox v0.11.0/go.mod h1:0F2Ss2NeylmaBP7+qx0U6zFPeMZ9NoLbAQakKXDqygo=
+github.com/HugoBlox/kit/modules/integrations/netlify v1.2.1 h1:0UKGUqNZWQkTPXHWV349tfsdzdGyIWtS33AzWQnBIvQ=
+github.com/HugoBlox/kit/modules/integrations/netlify v1.2.1/go.mod h1:C/3FXjO4EcecqPvgQSpY5CJjCS1p9Gsl7ufPV5AIFvE=
+github.com/HugoBlox/kit/modules/slides v1.2.5 h1:Jg+Q8dbc+PXbfk1X7ZeuK8kh2tOtr89Y5PnLNjiby30=
+github.com/HugoBlox/kit/modules/slides v1.2.5/go.mod h1:/XTQAtd2KCiwg/GVMAoSzKPf/DYPVbAAEysmBdWgYu4=

@@ -1,4 +1,5 @@
-FROM pandoc/latex:3.6.4.0-alpine
+ARG PANDOC_LATEX_BASE_IMAGE=3.6.4.0-alpine
+FROM pandoc/latex:${PANDOC_LATEX_BASE_IMAGE}
 
 RUN tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2024/tlnet-final && \
     tlmgr update --self && \
@@ -18,4 +19,12 @@ RUN curl -s -L https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2024/t
     mkdir -p /usr/share/fonts/OTF/fira && \
     tar --extract --file=/tmp/fira.tar.xz --xz --wildcards --strip-components=4 --directory=/usr/share/fonts/OTF/fira fonts/opentype/public/fira/*.otf && \
     fc-cache -f -v /usr/share/fonts/OTF/fira && \
-    rm -rf /tmp/fira.xz
+    rm -rf /tmp/fira.xz \
+
+VOLUME /data
+WORKDIR /data
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

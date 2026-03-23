@@ -68,7 +68,7 @@
 %\address{C/Cuesta 2, casa 4}{28400 Collado Villalba}{España}%
 \email{diegocastroviadero19@gmail.com}
 \phone[mobile]{(+34) 676 350 269}
-\homepage[https]{diegocastroviadero.com/fr}
+\homepage[https]{diegocastroviadero.com/fr/}
 \social[linkedin]{diego-castro-viadero-9192a278}
 \social[github]{dicastro}
 \photo[64pt][0pt]{cv/picture/me.jpg}
@@ -82,22 +82,22 @@
 \makecvtitle
 
 \section{Expériences}
-$for(work)$
+$for(experience)$
 \cventry
-  {$work.date_start_my$ -- $if(work.date_end_my)$$work.date_end_my$$else$Présent$endif$}
-  {$work.position$}
-  {$work.company_name$}
+  {$experience.start_my$ -- $if(experience.end_my)$$experience.end_my$$else$Actualm.$endif$}
+  {$experience.role$}
+  {$experience.org$}
   {}
   {}
-  {$work.summary$}
+  {$experience.summary$}
 $endfor$
 
 \newpage
 \section{Éducation}
 $for(education)$
 \cventry
-  {$education.date_start_y$ -- $education.date_end_y$}
-  {$education.area$}
+  {$education.start_y$ -- $education.end_y$}
+  {$education.degree$}
   {$education.institution$}
   {}
   {}
@@ -108,7 +108,7 @@ $endfor$
 $for(skills)$
 \cvitem{$skills.name$}{
   $for(skills.items)$
-  $skills.items.name$, 
+  $skills.items.label$,
   $endfor$
 }
 $endfor$

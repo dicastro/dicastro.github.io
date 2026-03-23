@@ -2,6 +2,9 @@
 title: 'Projets'
 date: 2025-11-24
 type: landing
+cascade:
+  authors:
+    - me
 
 #design:
 #  # Section spacing

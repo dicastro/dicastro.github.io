@@ -1,0 +1,20 @@
+schema: "hugoblox/author/v1"
+slug: "me"
+name:
+  display: "Diego Castro"
+  given: "Diego"
+  family: "Castro Viadero"
+is_owner: true
+status:
+  icon: "🚀"
+affiliations:
+  - name: "The Workshop"
+    url: "https://theworkshop.com"
+links:
+  - icon: "at-symbol"
+    url: "mailto:contact@diegocastroviadero.com"
+    label: "E-mail Me"
+  - icon: "brands/linkedin"
+    url: "https://www.linkedin.com/in/diego-castro-viadero-9192a278"
+  - icon: "brands/github"
+    url: "https://github.com/dicastro"

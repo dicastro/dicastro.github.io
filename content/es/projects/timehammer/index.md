@@ -7,7 +7,7 @@ links:
   - type: code
     url: https://github.com/kronostools/timehammer
   - type: slides
-    url: slides/timehammer
+    url: es/slides/timehammer
 tags:
   - Java
   - Quarkus

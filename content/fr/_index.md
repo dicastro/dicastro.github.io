@@ -12,7 +12,7 @@ sections:
   - block: resume-biography-3
     content:
       # Choose a user profile to display (a folder name within `content/authors/`)
-      username: admin
+      username: me
       text: ""
       button:
         text: Télécharger CV
@@ -33,7 +33,7 @@ sections:
   - block: resume-experience
     id: experience
     content:
-      username: admin
+      username: me
     design:
       spacing:
         padding: [2rem, 0, 1rem, 0]
@@ -46,7 +46,7 @@ sections:
     id: skills
     content:
       title: Compétences
-      username: admin
+      username: me
     design:
       spacing:
         padding: [1rem, 0, 1rem, 0]
@@ -57,7 +57,7 @@ sections:
     id: accomplishments
     content:
       title: Réalisations
-      username: admin
+      username: me
     design:
       spacing:
         padding: [1rem, 0, 1rem, 0]

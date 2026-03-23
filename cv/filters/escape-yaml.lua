@@ -163,8 +163,6 @@ local function addLineBreaksExcept(latex)
       or trimmed:match("^\\header*") then
       table.insert(output, trimmed)
     else
-      -- Normal text → add '\\'
-      --table.insert(output, trimmed .. "\\\\")
       table.insert(output, trimmed)
     end
 
@@ -211,9 +209,6 @@ local function sanitizeSummaryField(field)
   end
 
   local latex = blocksToSafeLatex(blocks)
-  -- Wrap in minipage for cventry safety
-  --local wrapped = "{\\begin{minipage}{\\linewidth}\n" .. latex .. "\n\\end{minipage}}"
-  --return pandoc.RawBlock("latex", wrapped)
 
   return pandoc.RawBlock("latex", latex)
 end
@@ -249,7 +244,7 @@ local function processMeta(meta)
     end
   end
 
-  sanitizeListOfItems(meta.work)
+  sanitizeListOfItems(meta.experience)
   sanitizeListOfItems(meta.education)
 end
 

@@ -1,9 +1,5 @@
 name: Deploy website to GitHub Pages
 
-env:
-  WC_HUGO_VERSION: '0.152.2'
-  NODE_VERSION: '24.11.0'
-
 on:
   # Trigger the workflow every time you push to the `main` branch
   push:
@@ -22,148 +18,62 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Generate CV pdfs
+  # Build website using reusable workflow (always runs for CI)
   generate-cv:
+    if: github.repository_owner != 'HugoBlox'
+    uses: ./.github/workflows/generate-cv.yml
+    secrets: inherit
+
+  # Check deployment configuration
+  config:
+    if: github.repository_owner != 'HugoBlox'
     runs-on: ubuntu-latest
+    outputs:
+      deploy-host: ${{ steps.check.outputs.host }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        # Fetch history for Hugo's .GitInfo and .Lastmod
-        fetch-depth: 0
+        sparse-checkout: hugoblox.yaml
+        sparse-checkout-cone-mode: false
 
-    - name: Build Docker image for CV
+    - name: Check deploy host
+      id: check
       run: |
-        docker build -t dicastro/pandoc-latex-cv:3.6.4.0-alpine ./cv/docker
+        # Install pinned yq version for robust YAML parsing
+        YQ_VERSION="v4.44.1"
+        if ! wget -q --tries=3 --waitretry=1 -O /tmp/yq \
+          "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"; then
+          echo "::error::Failed to download yq"
+          exit 1
+        fi
+        sudo mv /tmp/yq /usr/local/bin/yq
+        sudo chmod +x /usr/local/bin/yq
+        
+        # Read deploy.host from hugoblox.yaml, default to github-pages
+        HOST=$(yq '.deploy.host // ""' hugoblox.yaml 2>/dev/null | grep -v '^null$' || true)
+        HOST=${HOST:-github-pages}
+        
+        # Validate known hosts
+        if [[ ! "$HOST" =~ ^(github-pages|netlify|vercel|cloudflare|none)$ ]]; then
+          echo "::warning::Unknown deploy host '$HOST', defaulting to github-pages"
+          HOST="github-pages"
+        fi
+        
+        echo "host=$HOST" >> $GITHUB_OUTPUT
+        echo "Deployment target: $HOST"
 
-    - name: Generate CV pdf ES
-      run: |
-        docker run --rm -v "$PWD:/data" -w /data dicastro/pandoc-latex-cv:3.6.4.0-alpine \
-          content/es/authors/admin/_index.md \
-          --lua-filter cv/filters/escape-yaml.lua \
-          --columns 1000 \
-          --pdf-engine xelatex \
-          --from markdown+yaml_metadata_block \
-          --template cv/templates/moderncv-template-es.tex \
-          -o static/uploads/cv-diego-castro-viadero-es.pdf
-
-    - name: Generate CV pdf EN
-      run: |
-        docker run --rm -v "$PWD:/data" -w /data dicastro/pandoc-latex-cv:3.6.4.0-alpine \
-          content/en/authors/admin/_index.md \
-          --lua-filter cv/filters/escape-yaml.lua \
-          --columns 1000 \
-          --pdf-engine xelatex \
-          --from markdown+yaml_metadata_block \
-          --template cv/templates/moderncv-template-en.tex \
-          -o static/uploads/cv-diego-castro-viadero-en.pdf
-
-    - name: Generate CV pdf FR
-      run: |
-        docker run --rm -v "$PWD:/data" -w /data dicastro/pandoc-latex-cv:3.6.4.0-alpine \
-          content/fr/authors/admin/_index.md \
-          --lua-filter cv/filters/escape-yaml.lua \
-          --columns 1000 \
-          --pdf-engine xelatex \
-          --from markdown+yaml_metadata_block \
-          --template cv/templates/moderncv-template-fr.tex \
-          -o static/uploads/cv-diego-castro-viadero-fr.pdf
-
-    - name: Upload CV artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: cv-files
-        path: static/uploads/cv-*.pdf
-
-  # Build website
+  # Build website using reusable workflow (always runs for CI)
   build:
-    needs: generate-cv
+    needs: [generate-cv, config]
     if: github.repository_owner != 'HugoBlox'
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-          # Fetch history for Hugo's .GitInfo and .Lastmod
-        fetch-depth: 0
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-
-    - name: Setup pnpm
-      if: hashFiles('package.json') != ''
-      uses: pnpm/action-setup@v4
-
-    - name: Install dependencies
-      run: |
-        # Install Tailwind CLI if package.json exists
-        if [ -f "package.json" ]; then
-          echo "Installing Tailwind dependencies..."
-          pnpm install || npm install
-        fi
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v3
-      with:
-        hugo-version: ${{ env.WC_HUGO_VERSION }}
-        extended: true
-
-      # Cache dependencies (Go modules, node_modules) - stable, rarely changes
-    - uses: actions/cache@v4
-      with:
-        path: |
-          /tmp/hugo_cache_runner/
-          node_modules/
-          modules/*/node_modules/
-        key: ${{ runner.os }}-hugo-deps-${{ hashFiles('**/go.mod', '**/package-lock.json',
-          '**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-hugo-deps-
-
-      # Cache Hugo resources (processed images, CSS) - invalidates only when assets/config change
-    - uses: actions/cache@v4
-      with:
-        path: resources/
-        key: ${{ runner.os }}-hugo-resources-${{ hashFiles('assets/**/*', 'config/**/*',
-          'hugo.yaml', 'package.json') }}
-        restore-keys: |
-          ${{ runner.os }}-hugo-resources-
-
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v5
-
-    - name: Download CV artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: cv-files
-        path: static/uploads
-
-    - name: Build with Hugo
-      env:
-        HUGO_ENVIRONMENT: production
-      run: |
-        echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-        hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
-
-    - name: Generate Pagefind search index (if applicable)
-      run: |
-        # Check if site uses Pagefind search
-        if [ -f "package.json" ] && grep -q "pagefind" package.json; then
-          pnpm dlx pagefind --source "public" || npx pagefind --source "public"
-        fi
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v4
-      with:
-        path: ./public
-
-  # Deploy website to GitHub Pages hosting
+  # Deploy website to GitHub Pages hosting (only if configured)
   deploy:
-    if: github.repository_owner != 'HugoBlox'
-    needs: build
+    needs: [config, build]
+    if: needs.config.outputs.deploy-host == 'github-pages'
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write # to deploy to Pages

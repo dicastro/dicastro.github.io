@@ -1,6 +1,9 @@
 ---
 title: Blog
 view: article-grid
+cascade:
+  authors:
+    - me
 ---
 
 > [!NOTE]

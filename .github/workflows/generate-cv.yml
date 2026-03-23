@@ -1,0 +1,52 @@
+name: Generate CV
+
+env:
+  # --- CV Generation Engine (Pandoc + LaTeX) ---
+  CV_BASE_ENGINE_TAG: '3.6.4.0-alpine'
+  CV_CUSTOM_IMAGE_NAME: 'dicastro/pandoc-latex-cv'
+
+on:
+  # Reusable workflow trigger - called by deploy.yml
+  workflow_call:
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+# Read-only permissions for security
+permissions:
+  contents: read
+
+# Prevent duplicate builds for the same PR
+concurrency:
+  group: build-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  # Generate CV pdfs
+  generate-cv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      artifact-id: ${{ steps.uploadcv.outputs.artifact-id }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Fetch history for Hugo's .GitInfo and .Lastmod
+          fetch-depth: 0
+
+      - name: Build Docker image for CV
+        run: |
+          docker build \
+            --build-arg PANDOC_LATEX_BASE_IMAGE=${{ env.CV_BASE_ENGINE_TAG }} \
+            -t ${{ env.CV_CUSTOM_IMAGE_NAME }}:${{ env.CV_BASE_ENGINE_TAG }} ./cv/docker
+
+      - name: Generate CV pdf in all languages
+        run: |
+          docker run --rm -v "$PWD:/data" -w /data ${{ env.CV_CUSTOM_IMAGE_NAME }}:${{ env.CV_BASE_ENGINE_TAG }} all
+
+      - name: Upload CV artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-files
+          path: static/uploads/cv-*.pdf
+          if-no-files-found: error

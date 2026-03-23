@@ -7,7 +7,7 @@ docker run --rm `
     -v "${PWD}:/data" `
     -w /data `
     dicastro/pandoc-latex-cv:3.6.4.0-alpine `
-    content/en/authors/admin/_index.md `
+    data/en/authors/me.yaml `
     --lua-filter cv/filters/escape-yaml.lua `
     --columns 1000 `
     --pdf-engine xelatex `
