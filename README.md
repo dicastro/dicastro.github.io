@@ -4,28 +4,41 @@ This repository contains the source code for my personal website [diegocastrovia
 
 The site is built using [Hugo Blox](https://hugoblox.com) ![Hugo Blox Release][hugo-blox-release-shield] (Academic CV template), a powerful block-based framework for the [Hugo](https://gohugo.io) static site generator. It features a modern design powered by **Tailwind CSS v4** and includes an automated workflow to generate my CV in PDF format.
 
-### ⚠️ Important: Template Overrides for Multilingual Authors
+### ⚠️ Important: Template Overrides for Multilingual Authors & Markdown Support
 
-This repository contains local overrides in `layouts/_partials/functions/` for:
+This repository contains local overrides to fix specific limitations in the current Hugo Blox version (![Hugo Blox Release][hugo-blox-release-shield]):
 
+#### 1. Multilingual Author Logic
+
+**Location:** `layouts/_partials/functions/`
+ 
 - `get_author_profile.html`
 - `get_authors_data.html`
 
-**Why are these here?**
+**Why?** The original version doesn't support multilingual author data in subfolders (e.g., `data/en/authors/`). The logic has been backported from the `main` branch (March 2026) to correctly merge base data with language-specific translations.
 
-The version of Hugo Blox used in this project (![Hugo Blox Release][hugo-blox-release-shield]) has a known limitation: the original `get_author_profile.html` does not support multilingual author data stored in subfolders (e.g., `data/en/authors/`).
+#### 2. Markdown & Assets Link Support in Resume Bio
 
-To fix this, we have backported the logic from the Hugo Blox `main` branch (as of March 2026). This allows the site to correctly merge the base author data with language-specific translations.
+**Location:** `layouts/_partials/hbx/blocks/resume-biography-3/block.html`
+
+**Why?** This override solves two issues
+
+1. **Markdown support**: The default `resume-biography-3` widget renders the author's `bio` as plain text. The logic has been backported from the `main` branch (March 2026) to enable **Markdown** (bold, links, paragraphs) and `emojify` support directly from the author's profile
+1. **Broken Asset Links:** The original code uses `relLangURL` for buttons, which incorrectly prefixes static assets (like `/uploads/cv.pdf`) with the language code (e.g., `/es/uploads/...`), causing 404 errors. I've changed this to `relURL` to maintain absolute paths from the root
 
 **Future Maintenance:**
 
 When upgrading to a newer version of Hugo Blox (posterior to ![Hugo Blox Release][hugo-blox-release-shield]):
  
 1. Upgrade the Hugo Blox module
-1. Temporarily rename the `layouts/_partials/functions/` folder to `layouts/_partials/myfunctions/` in order to be ignored
+1. Temporarily rename the `layouts/_partials/functions/` folder to `layouts/_hidden_partials/functions/` in order to be ignored
+1. Temporarily rename the `layouts/_partials/hbx/` folder to `layouts/_hidden_partials/hbx/` in order to be ignored
 1. Rebuild de site locally `npm run dev`
-1. Check if the "Resume" blocks still render correctly in all languages
-1. If they do, these local overrides can be safely removed
+1. **Verification:**
+    - Check if the "Resume" blocks render correctly in **all languages**
+    - Confirm that **Markdown** (bold/links) still works in the Bio section
+    - Verify the **CV Download button** points to the correct root path (no language prefix)
+1. If everything works natively, these local overrides can be safely removed
 
 ---
 
