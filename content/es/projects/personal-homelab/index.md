@@ -3,7 +3,6 @@ slug: homelab-personal
 title: HomeLab
 summary: Infraestructura personal para gestión de datos, servicios y privacidad
 date: 2025-03-07
-lastmod: 2025-11-28
 tags:
   - Proxmox
   - Docker

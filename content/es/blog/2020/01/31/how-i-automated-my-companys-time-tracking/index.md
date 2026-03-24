@@ -3,7 +3,6 @@ slug: como-automatice-los-fichajes-de-mi-empresa
 title: Cómo automaticé los fichajes de mi empresa
 summary: En este post explicaré el proyecto que he desarrollado para automatizar los fichajes de mi empresa
 date: 2020-01-31
-lastmod: 2025-12-17
 tags:
   - timehammer
   - chatbot

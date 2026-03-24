@@ -3,7 +3,6 @@ slug: monto-un-cluster-kubernetes-con-rpi-parte-iv
 title: Monto un cluster Kubernetes con Raspberry Pi (parte IV)
 summary: Cuarta parte de una serie donde explico cómo he montado un cluster de Kubernetes utilizando Raspberry Pi. En esta entrega explicaré el mecanismo que utilizo para medir el consumo eléctrico del cluster.
 date: 2020-10-22
-lastmod: 2025-12-04
 tags:
   - cluster
   - raspberry

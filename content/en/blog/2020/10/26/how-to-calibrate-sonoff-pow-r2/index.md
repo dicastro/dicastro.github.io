@@ -2,7 +2,6 @@
 title: How to Calibrate a Sonoff Pow R2
 summary: In this post I explain how to calibrate a Sonoff Pow R2 so that its measurements are more accurate
 date: 2020-10-26
-lastmod: 2025-12-09
 tags:
   - cluster
   - sonoff

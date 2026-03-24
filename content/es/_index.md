@@ -3,6 +3,8 @@
 title: ""
 date: 2025-11-24
 type: landing
+description: |
+  Web personal de Diego Castro Viadero, Ingeniero Informático con +15 años de experiencia. Especialista en aportar soluciones sólidas a problemas complejos, con una trayectoria que combina el rigor de las grandes multinacionales y la agilidad de las startups.
 
 design:
   # Default section spacing

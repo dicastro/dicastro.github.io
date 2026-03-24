@@ -1,17 +1,18 @@
 ---
-title: Personal Website & Online Resume
-summary: Personal website to showcase my résumé, projects, and a technical blog
+title: Personal Website
+summary: |
+  My central digital identity node: a multilingual platform automated with Hugo Blox, Docker, and Pandoc to manage my career and projects independently.
 date: 2019-12-15
-lastmod: 2025-11-25
 tags:
-  - Hugo
   - Hugo Blox
+  - CI/CD
+  - Docker
+  - Data Sovereignty
+  - Automation
 ---
 
-This website is built with [Hugo Blox](https://hugoblox.com) and serves as my personal space to showcase my professional background and projects. It includes a web-based version of my résumé, which can also be exported to PDF using *Pandoc* together with the *ModernCV* LaTeX template, ensuring that I maintain full control over an up-to-date and consistent version of my CV.
+This site is my central node for digital identity and data sovereignty. Built with [Hugo Blox](https://hugoblox.com), it stems from the need to own my professional space without relying on third-party platforms.
 
-A key goal of this project is to be the **owner of my professional data**, rather than relying solely on platforms such as LinkedIn or InfoJobs. Here, I can present both my work experience and my personal projects, helping recruiters and companies gain a better understanding of my technical skills and interests.
-
-The site also features a [blog](/en/blog), where I write about programming, 3D printing, and other areas I'm passionate about. Writing articles helps me improve my communication skills—an essential part of my day-to-day work.
+The project goes beyond a static website: it integrates an automation workflow using Docker and Pandoc to generate my CV in PDF with a single commit, ensuring my trajectory is always available and updated under my control. Furthermore, it serves as a meeting point for my passions: software engineering, home automation, and 3D printing, where I document designs and physical solutions to everyday problems. Writing here allows me to process what I've learned and improve a critical skill in my daily work: effective technical communication.
 
 {{< embed platform="github" resource="dicastro/dicastro.github.io" type="repo" >}}

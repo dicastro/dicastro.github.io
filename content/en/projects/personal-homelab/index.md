@@ -2,7 +2,6 @@
 title: HomeLab
 summary: Personal infrastructure for data management, services, and privacy
 date: 2025-03-07
-lastmod: 2025-11-28
 tags:
   - Proxmox
   - Docker

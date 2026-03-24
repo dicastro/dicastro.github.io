@@ -33,7 +33,7 @@ cascade:
 
 build:
   writeStats: true
-enableGitInfo: false
+enableGitInfo: true
 summaryLength: 30
 pagination:
   pagerSize: 10
@@ -63,3 +63,10 @@ security:
   _merge: deep
 sitemap:
   _merge: deep
+content:
+  frontmatter:
+    lastmod:
+      - :git
+      - lastmod
+      - date
+      - :fileModTime

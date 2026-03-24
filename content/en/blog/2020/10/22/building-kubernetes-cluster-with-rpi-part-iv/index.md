@@ -2,7 +2,6 @@
 title: Building a Kubernetes Cluster with Raspberry Pi (Part IV)
 summary: Fourth part of a series where I explain how I built a Kubernetes cluster using Raspberry Pi. In this article I describe the mechanism I use to measure the cluster's power consumption.
 date: 2020-10-22
-lastmod: 2025-12-04
 tags:
   - cluster
   - raspberry

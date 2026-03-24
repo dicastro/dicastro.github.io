@@ -1,18 +1,19 @@
 ---
 slug: site-personnel
-title: Site personnel et CV en ligne
-summary: Site personnel pour présenter mon CV, mes projets et un blog technique
+title: Site personnel
+summary: |
+  Mon nœud central d'identité numérique : une plateforme multilingue automatisée avec Hugo Blox, Docker et Pandoc pour gérer mon parcours et mes projets en toute indépendance.
 date: 2019-12-15
-lastmod: 2025-11-25
 tags:
-  - Hugo
   - Hugo Blox
+  - CI/CD
+  - Docker
+  - Data Sovereignty
+  - Automation
 ---
 
-Ce site web est construit avec [Hugo Blox](https://hugoblox.com) et constitue mon espace personnel pour présenter mon parcours professionnel et mes projets. Il inclut une version en ligne de mon CV, qui peut également être généré en PDF grâce à *Pandoc* et au modèle *ModernCV*, ce qui me permet de garder un contrôle complet sur une version toujours à jour.
+Ce site est mon nœud central d'identité numérique et de souveraineté des données. Construit avec [Hugo Blox](https://hugoblox.com), il est né du besoin de posséder mon propre espace professionnel sans dépendre de plateformes tierces.
 
-L'objectif principal de ce projet est d'être le **propriétaire de mes données professionnelles**, sans dépendre uniquement de plateformes comme LinkedIn, InfoJobs ou autres. Ici, je peux présenter mon expérience ainsi que mes projets personnels, afin que les recruteurs et entreprises puissent mieux comprendre mon profil technique et mes centres d'intérêt.
-
-Le site comprend également un [blog](/fr/blog), où j'écris sur la programmation, l'impression 3D et d'autres sujets qui me passionnent. Rédiger des articles m'aide à améliorer mes compétences de communication, un aspect essentiel de mon travail quotidien.
+Le projet va au-delà d'un site statique : il intègre un flux d'automatisation via Docker et Pandoc pour générer mon CV en PDF en un seul commit, garantissant que mon parcours soit toujours disponible et à jour sous mon contrôle. De plus, il sert de point de rencontre pour mes passions : l'ingénierie logicielle, la domotique et l'impression 3D, où je documente des designs et des solutions physiques aux problèmes quotidiens. Écrire ici me permet de traiter mes acquis et d'améliorer une compétence cruciale dans mon travail quotidien : la communication technique efficace.
 
 {{< embed platform="github" resource="dicastro/dicastro.github.io" type="repo" >}}

@@ -2,7 +2,6 @@
 title: Building a Kubernetes Cluster with Raspberry Pi (Part III)
 summary: Third part of a series where I explain how I built a Kubernetes cluster using Raspberry Pi. In this article I explain how to install Kubernetes with k3s.
 date: 2020-10-14
-lastmod: 2025-12-04
 tags:
   - kubernetes
   - cluster

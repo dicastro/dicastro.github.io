@@ -2,7 +2,6 @@
 title: TimeHammer
 summary: Sistema de automatización de fichajes
 date: 2020-08-13
-lastmod: 2025-12-17
 links:
   - type: code
     url: https://github.com/kronostools/timehammer

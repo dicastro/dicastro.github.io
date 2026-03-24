@@ -3,7 +3,6 @@ slug: monto-un-cluster-kubernetes-con-rpi-parte-ii
 title: Monto un cluster Kubernetes con Raspberry Pi (parte II)
 summary: Segunda parte de una serie donde explico cómo he montado un cluster de Kubernetes utilizando Raspberry Pi. En esta entrega describo qué sistema operativo instalar en los nodos y cómo instalar Docker en ellos.
 date: 2020-09-27
-lastmod: 2025-12-03
 tags:
   - kubernetes
   - cluster

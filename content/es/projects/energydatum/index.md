@@ -2,7 +2,6 @@
 title: EnergyDatum
 summary: Análisis y comparación de costes eléctricos basados en consumo real
 date: 2022-05-26
-lastmod: 2025-11-27
 tags:
   - Python
   - PySpark

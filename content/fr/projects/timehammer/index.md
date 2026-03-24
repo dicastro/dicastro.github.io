@@ -2,7 +2,6 @@
 title: TimeHammer
 summary: Système d'automatisation de pointage
 date: 2020-08-13
-lastmod: 2025-11-25
 links:
   - type: code
     url: https://github.com/kronostools/timehammer

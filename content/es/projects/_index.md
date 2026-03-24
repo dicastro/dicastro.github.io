@@ -1,5 +1,7 @@
 ---
 title: 'Projectos'
+description: |
+  Portfolio de Diego Castro Viadero: Proyectos de ingeniería centrados en la resolución de problemas reales, la automatización y la soberanía tecnológica. Soluciones que integran software, hardware y diseño funcional.
 date: 2025-11-24
 type: landing
 cascade:
@@ -15,7 +17,8 @@ sections:
   - block: collection
     content:
       title: Proyectos destacables
-      text: Disfruto programando y resolviendo problemas. Aquí muestro algunos de mis proyectos personales.
+      text: |
+        Entiendo la tecnología como una herramienta para ganar autonomía y resolver necesidades concretas. Aquí recojo sistemas que he diseñado y desplegado: desde mi infraestructura personal basada en la privacidad, hasta aplicaciones de visión artificial y arquitecturas reactivas. No son solo pruebas de concepto, son soluciones funcionales que reflejan mi forma de abordar la ingeniería.
       filters:
         folders:
           - projects

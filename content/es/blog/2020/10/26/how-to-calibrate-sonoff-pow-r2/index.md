@@ -3,7 +3,6 @@ slug: como-calibrar-un-sonoff-pow-r2
 title: Cómo calibrar un Sonoff Pow R2
 summary: En este post explico cómo calibrar un Sonoff Pow R2 para que sea más preciso en sus mediciones
 date: 2020-10-26
-lastmod: 2025-12-09
 tags:
   - cluster
   - sonoff

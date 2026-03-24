@@ -2,7 +2,6 @@
 title: Building a Kubernetes Cluster with Raspberry Pi (Part I)
 summary: First part of a series where I explain how I built a Kubernetes cluster using Raspberry Pi. In this article I describe the hardware and physical infrastructure used.
 date: 2020-09-18
-lastmod: 2025-12-03
 tags:
   - kubernetes
   - cluster

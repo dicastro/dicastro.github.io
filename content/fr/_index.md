@@ -3,6 +3,8 @@
 title: ""
 date: 2025-11-24
 type: landing
+description: |
+  Site personnel de Diego Castro Viadero, Ingénieur Logiciel avec une solide expérience. Spécialiste des solutions robustes aux problèmes complexes, avec un parcours alliant la rigueur des multinationales et l'agilité des startups.
 
 design:
   # Default section spacing

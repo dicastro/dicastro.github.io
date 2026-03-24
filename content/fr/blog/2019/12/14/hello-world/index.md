@@ -4,7 +4,6 @@ title: Bonjour le monde !
 type: post
 summary: Mon premier article de blog
 date: 2019-12-14
-lastmod: 2025-12-02
 ---
 
 Ceci est mon premier article de test.

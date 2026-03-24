@@ -2,7 +2,6 @@
 title: Building a Kubernetes Cluster with Raspberry Pi (Part II)
 summary: Second part of a series where I explain how I built a Kubernetes cluster using Raspberry Pi. In this article I describe which operating system to install on the nodes and how to install Docker on them.
 date: 2020-09-27
-lastmod: 2025-12-03
 tags:
   - kubernetes
   - cluster

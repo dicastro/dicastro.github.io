@@ -2,7 +2,6 @@
 title: TimeHammer
 summary: Sistema de automatización de fichajes
 date: 2020-08-14
-lastmod: 2020-09-05
 authors:
   - me
 slides:

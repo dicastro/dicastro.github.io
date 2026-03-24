@@ -3,6 +3,8 @@
 title: ""
 date: 2025-11-24
 type: landing
+description: |
+  Personal website of Diego Castro Viadero, Software Engineer with extensive experience. Specialist in delivering solid solutions to complex problems, with a career combining the rigor of large multinationals and the agility of startups.
 
 design:
   # Default section spacing

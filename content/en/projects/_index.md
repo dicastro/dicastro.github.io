@@ -1,5 +1,7 @@
 ---
 title: 'Projects'
+description: |
+  Engineering portfolio of Diego Castro Viadero: Projects focused on real-world problem solving, automation, and data sovereignty. Solutions integrating software, hardware, and functional design.
 date: 2024-05-19
 type: landing
 cascade:
@@ -15,7 +17,8 @@ sections:
   - block: collection
     content:
       title: Featured Projects
-      text: I enjoy programming and solving problems. Here are some of my personal projects.
+      text: |
+        I see technology as a tool to gain autonomy and solve specific needs. Here I collect systems I have designed and deployed: from my privacy-based personal infrastructure to computer vision applications and reactive architectures. These are not just proofs of concept; they are functional solutions that reflect my engineering approach.
       filters:
         folders:
           - projects

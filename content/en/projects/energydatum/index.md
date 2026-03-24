@@ -2,7 +2,6 @@
 title: EnergyDatum
 summary: Analysis and comparison of electricity costs based on actual consumption
 date: 2022-05-26
-lastmod: 2025-11-27
 tags:
   - Python
   - PySpark

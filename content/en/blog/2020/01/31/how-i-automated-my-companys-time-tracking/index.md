@@ -2,7 +2,6 @@
 title: How I automated my company's time tracking
 summary: In this post I explain the project I developed to automate my company's time tracking
 date: 2020-01-31
-lastmod: 2025-12-17
 tags:
   - timehammer
   - chatbot

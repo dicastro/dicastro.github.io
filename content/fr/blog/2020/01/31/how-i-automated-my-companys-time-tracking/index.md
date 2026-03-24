@@ -3,7 +3,6 @@ slug: comment-jai-automatise-le-pointage-dans-mon-entreprise
 title: Comment j'ai automatisé le pointage dans mon entreprise
 summary: Dans cet article, j'explique le projet que j'ai développé pour automatiser le pointage dans mon entreprise
 date: 2020-01-31
-lastmod: 2025-12-17
 tags:
   - timehammer
   - chatbot
