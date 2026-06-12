@@ -10,16 +10,16 @@ tags:
   - Privacidad
 ---
 
-> [!NOTE]
-> Todavía en desarrollo
+> [!IMPORTANT]
+> Este proyecto ha sido finalizado y ya no recibe actualizaciones. Aunque la arquitectura propuesta es funcional, he decidido migrar mi infraestructura hacia una solución basada en un QNAP TS-264 para priorizar la facilidad de mantenimiento y la estabilidad a largo plazo. Puedes leer los motivos detallados en los artículos del blog enlazados abajo.
 
 Homelab es mi infraestructura personal de servidores para gestionar servicios propios, automatizar despliegues y asegurar la privacidad de mis datos. Surge de mi experiencia con un NAS QNAP, que quedó limitado en recursos y velocidad, y de mi interés creciente por depender lo menos posible de servicios de grandes compañías de IT.
 
 El sistema se basa en dos miniPC con Proxmox y Proxmox Backup Server:
 
-- **MiniPC principal:** i9 con 20 cores, 64 GB RAM, 2 TB de almacenamiento. Aquí se ejecutan todas las máquinas virtuales necesarias según los servicios que quiero desplegar.
-- **MiniPC secundario:** menos potente, dedicado a Proxmox Backup Server para optimizar el espacio y tener una segunda copia local de los backups.
-- **Copia remota cifrada:** se mantiene en un cloud, siguiendo la estrategia 3-2-1 de backups (tres copias, dos medios, una ubicación externa).
+* **MiniPC principal:** i9 con 20 cores, 64 GB RAM, 2 TB de almacenamiento. Aquí se ejecutan todas las máquinas virtuales necesarias según los servicios que quiero desplegar.
+* **MiniPC secundario:** menos potente, dedicado a Proxmox Backup Server para optimizar el espacio y tener una segunda copia local de los backups.
+* **Copia remota cifrada:** se mantiene en un cloud, siguiendo la estrategia 3-2-1 de backups (tres copias, dos medios, una ubicación externa).
 
 Tanto la creación y configuración de las máquinas virtuales como el despliegue de todos los servicios (mediante contenedores Docker) está automatizada con Ansible.
 
@@ -50,9 +50,14 @@ Tanto la creación y configuración de las máquinas virtuales como el despliegu
 
 **Principales objetivos alcanzados:**
 
-- Acceso remoto seguro a todos los servicios sin abrir puertos directamente en el router.
-- Acceso a los servicios mediante DNS interno y generación y renovación automática de certificados TLS con Let's Encrypt, evitando IPs y puertos visibles.
-- Organización de servicios según recursos hardware y criticidad de los datos, definiendo frecuencia y número de backups.
-- Control total sobre mis datos, almacenamiento y aplicaciones, reemplazando servicios de terceros (como Dropbox, Google Docs, Google Fotos, Google Keep, etc).
+* Acceso remoto seguro a todos los servicios sin abrir puertos directamente en el router.
+* Acceso a los servicios mediante DNS interno y generación y renovación automática de certificados TLS con Let's Encrypt, evitando IPs y puertos visibles.
+* Organización de servicios según recursos hardware y criticidad de los datos, definiendo frecuencia y número de backups.
+* Control total sobre mis datos, almacenamiento y aplicaciones, reemplazando servicios de terceros (como Dropbox, Google Docs, Google Fotos, Google Keep, etc).
 
 {{< embed platform="github" resource="dicastro/homelab" type="repo" >}}
+
+## Artículos relacionados
+
+* [De la resistencia soldada al Homelab: El fin de una era y el cambio de enfoque]({{< ref "from-soldered-resistor-to-homelab-the-necessary-pivot" >}})
+* [El coste del tiempo: Por qué he decidido cerrar mi Homelab y volver a QNAP]({{< ref "the-cost-of-time-why-i-moved-back-to-qnap" >}})
